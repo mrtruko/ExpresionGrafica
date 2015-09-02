@@ -1,3 +1,2 @@
 # ExpresionGrafica
-Privado
-g
+Proyecto En desarrollo
