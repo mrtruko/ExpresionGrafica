@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/login/login.controller.ng.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/login/login.view.ng.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/routes-base.ng.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/usuarios/controllers/usuarios.controller.ng.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/usuarios/views/usuarios.view.ng.html" charset="UTF-8" />
+  </component>
+</project>

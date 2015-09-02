@@ -1,0 +1,47 @@
+<header >
+    <!-- NAV-BAR -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div id="logo">
+                    <a href="index.html"><img src="/img/logo/logo.png" height="100" alt="logo name" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/NAV-BAR -->
+</header>
+<section id="login_bg" class="visible">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-box">
+                    <h2 class="bigintro">Inicio Sesión</h2>
+                    <div class="divide-40"></div>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Usuario </label>
+                            <i class="fa fa-envelope"></i>
+                            <input type="text" class="form-control" id="username" name="username" ng-model="lc.credentials.email" >
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Contraseña</label>
+                            <i class="fa fa-lock"></i>
+                            <input type="password" class="form-control" id="password" name="password" ng-model="lc.credentials.password">
+                        </div>
+                        <div>
+                            <label class="checkbox"> <input type="checkbox" class="uniform" value=""> Recordar contraseña</label>
+                            <button ng-click="lc.login()" class="btn btn-danger">Iniciar Sesión</button>
+                        </div>
+                    </form>
+                    <div ng-show="error" class="text-center text-danger">
+                        <small>{{ error }}</small>
+                    </div>
+                    <!-- SOCIAL LOGIN -->
+                    <!-- Borramos botones de login -->
+                    <!-- /SOCIAL LOGIN -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

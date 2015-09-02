@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="chat-widget">
+        <div class="col-md-12">
+            <!-- BOX -->
+            <div class="box border red">
+                <div class="box-title">
+                    <h4><i class="fa fa-comment"></i>Chat Widget</h4>
+                    <div class="tools">
+                        <a href="javascript:;" class="expand">
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <a href="javascript:;" class="remove">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="box-body" style="display:none">
+                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 350px;"><div class="scroller" data-height="350px" data-always-visible="1" data-rail-visible="1" style="overflow: auto; width: auto; height: 350px;">
+                        <ul id="list-mensajes" class="media-list chat-list">
+
+                        </ul>
+                    </div><div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(161, 178, 189);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: block; border-radius: 7px; opacity: 0.1; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+                    <div class="divide-20"></div>
+                    <form  onsubmit="msg()" role="form">
+                        <div class="chat-form">
+                            <div class="input-group">
+                                <input placeholder="Ingrese Mensaje" type="text" id="msgInput" class="form-control" >
+                                <span class="input-group-btn"> <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i></button> </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /BOX -->
+        </div>
+    </div>
+</div>
