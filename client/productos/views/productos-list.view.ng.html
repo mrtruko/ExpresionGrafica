@@ -1,0 +1,224 @@
+<section id="page">
+    <div id="main-content"  data-ng-init="find()">
+        <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Exportar</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a class="btn btn-danger btn-icon input-block-level multiple-buttons" ng-click="print()" data-dismiss="modal">
+                                    <i class="fa fa-plus fa-2x"></i>
+                                    <div>PDF</div>
+
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a class="btn btn-primary btn-icon input-block-level multiple-buttons" data-dismiss="modal" onclick="$('#bodega').tableExport({type:'excel',escape:'false'});" href="javascript:void(0);">
+                                    <i class="fa fa-pencil fa-2x"></i>
+                                    <div>Excel</div>
+
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="container">
+            <div class="row">
+                <div id="content" class="col-lg-12">
+                    <!-- PAGE HEADER-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-header">
+                                <!-- STYLER -->
+
+                                <!-- /STYLER -->
+                                <!-- BREADCRUMBS -->
+                                <ul class="breadcrumb">
+                                    <li>
+                                        <i class="fa fa-home"></i>
+                                        <a href="/#!/">Home</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-list-ol"></i>
+                                        <a >Listado de Productos</a>
+                                    </li>
+
+                                </ul>
+                                <!-- /BREADCRUMBS -->
+                                <div class="clearfix">
+                                    <h3 class="content-title pull-left">Control de Bodega</h3>
+                                </div>
+                                <div class="description"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /PAGE HEADER -->
+                    <!-- DATA TABLES -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BOX -->
+                            <!-- aqui va la tabla Dynamic Data Tables  -->
+                            <!-- /BOX -->
+                        </div>
+                    </div>
+                    <!-- /DATA TABLES -->
+
+                    <!-- TABLE IN MODAL -->
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a class="btn btn-danger btn-icon input-block-level multiple-buttons" href="/productos/create">
+                                    <i class="fa fa-plus fa-2x"></i>
+                                    <div>Nuevo Producto</div>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+                    <div class="separator"></div>
+                    <!-- EXPORT TABLES -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BOX -->
+                            <div class="box border purple">
+                                <div class="box-title">
+                                    <h4><i class="fa fa-table"></i>Productos en Bodega</h4>
+                                    <div class="tools hidden-xs">
+                                        <a href="#box-config" data-toggle="modal" class="config">
+                                            <i class="fa fa-cog"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+                                                <input type="text" class="form-control" placeholder="Buscar" ng-model="searchFish">
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div id="imprimir">
+                                        <table id="bodega" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>
+                                                    <a ng-click="sortType = 'codigo'; sortReverse = !sortReverse">
+                                                        Código
+                                                        <span ng-show="sortType == 'codigo'" class="fa fa-caret-down"></span>
+                                                    </a>
+                                                </th>
+                                                <th>
+                                                    <a ng-click="sortType = 'nombreProducto'; sortReverse = !sortReverse">
+                                                        Nombre
+                                                        <span ng-show="sortType == 'nombreProducto'" class="fa fa-caret-down"></span>
+                                                    </a>
+                                                </th>
+                                                <th>
+                                                    <a ng-click="sortType = 'descripcion'; sortReverse = !sortReverse">
+                                                        Descripcion
+                                                        <span ng-show="sortType == 'descripcion'" class="fa fa-caret-down"></span>
+                                                    </a>
+                                                </th>
+                                                <th>
+                                                    <a ng-click="sortType = 'estado'; sortReverse = !sortReverse">
+                                                        Estado
+                                                        <span ng-show="sortType == 'estado'" class="fa fa-caret-down"></span>
+                                                    </a>
+                                                </th>
+                                                <th>
+                                                    <a ng-click="sortType = 'cantidad'; sortReverse = !sortReverse">
+                                                        Cantidad
+                                                        <span ng-show="sortType == 'cantidad'" class="fa fa-caret-down"></span>
+                                                    </a>
+                                                </th>
+                                                <th class="codigo">Acciones</th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr data-ng-repeat="producto in productos | orderBy:sortType:sortReverse | filter:searchFish">
+                                                <td data-ng-bind="producto.codigo"></td>
+                                                <td data-ng-bind="producto.nombreProducto"></td>
+                                                <td data-ng-bind="producto.descripcion"></td>
+                                                <td data-ng-bind="producto.estado"></td>
+                                                <td data-ng-bind="producto.cantidad"></td>
+                                                <td class="codigo"><a href="/productos/{{producto._id}}">Editar</a><br><a href="/productos/{{producto._id}}/movimientos">Movimientos</a></td>
+                                            </tr>
+
+
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <th>
+                                                    <a ng-click="sortType = 'codigo'; sortReverse = !sortReverse">
+                                                        Código
+                                                        <span ng-show="sortType == 'codigo'" class="fa fa-caret-down"></span>
+                                                    </a>
+                                                </th>
+                                                <th>
+                                                    <a ng-click="sortType = 'nombreProducto'; sortReverse = !sortReverse">
+                                                        Nombre
+                                                        <span ng-show="sortType == 'nombreProducto'" class="fa fa-caret-down"></span>
+                                                    </a>
+                                                </th>
+                                                <th>
+                                                    <a ng-click="sortType = 'descripcion'; sortReverse = !sortReverse">
+                                                        Descripcion
+                                                        <span ng-show="sortType == 'descripcion'" class="fa fa-caret-down"></span>
+                                                    </a>
+                                                </th>
+                                                <th>
+                                                    <a ng-click="sortType = 'estado'; sortReverse = !sortReverse">
+                                                        Estado
+                                                        <span ng-show="sortType == 'estado'" class="fa fa-caret-down"></span>
+                                                    </a>
+                                                </th>
+                                                <th>
+                                                    <a ng-click="sortType = 'cantidad'; sortReverse = !sortReverse">
+                                                        Cantidad
+                                                        <span ng-show="sortType == 'cantidad'" class="fa fa-caret-down"></span>
+                                                    </a>
+                                                </th>
+                                                <th class="codigo">Acciones</th>
+
+                                            </tr>
+                                            </tfoot>
+
+                                        </table>
+                                        <p>Cantidad De Productos: {{productosCount.count}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /BOX -->
+                        </div>
+                    </div>
+                    <!-- /EXPORT TABLES -->
+                    <div class="footer-tools">
+                            <span class="go-top">
+                                <i class="fa fa-chevron-up"></i> Arriba
+                            </span>
+                    </div>
+                </div><!-- /CONTENT-->
+            </div>
+        </div>
+    </div>
+</section>
