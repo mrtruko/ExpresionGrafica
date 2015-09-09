@@ -2,23 +2,36 @@
 
 angular.module('graficaExpresionApp')
 .controller('ProductoDetailCtrl', function($scope, $stateParams, $meteor) {
-  $scope.producto = $scope.$meteorObject(Productos, $stateParams.productoId);
+  $scope.producto = $scope.$meteorObject(Productos, $stateParams.productoId, false);
   $scope.$meteorSubscribe('productos');
   
   $scope.save = function() {
-    if($scope.form.$valid) {
+    console.log($scope.producto.comerciable);
       $scope.producto.save().then(
         function(numberOfDocs) {
-          console.log('save successful, docs affected ', numberOfDocs);
+          $scope.msgAlerta("Producto Guardado.","success");
         },
         function(error) {
-          console.log('save error ', error);
+          $scope.msgAlerta(error,"error");
         }
       )
-    }
+
   };
         
   $scope.reset = function() {
     $scope.producto.reset();
   };
+      $scope.msgAlerta = function(msg,tipo){
+        Messenger.options = {
+          extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
+          theme: "future"
+        }
+        //Call
+        Messenger().post({
+          message:msg,
+          showCloseButton: true,
+          type: tipo
+        });
+
+      }
 });

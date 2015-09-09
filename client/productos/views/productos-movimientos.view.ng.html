@@ -88,24 +88,24 @@
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label">Cantidad</label>
                                                     <div class="col-sm-9">
-                                                        <input data-ng-model="cantidad" id="precioAgencia" type="number" min="0"  class="form-control" placeholder="Cantidad">
+                                                        <input data-ng-model="movimiento.cantidad" id="cantidad" type="number" min="0"  class="form-control" placeholder="Cantidad">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label">Tipo</label>
                                                     <div class="col-sm-9">
                                                         <label class="checkbox-inline">
-                                                            <input type="radio" data-ng-model="tipo" id="tipo0" value="Descuento"> Descuento
+                                                            <input type="radio" data-ng-model="movimiento.tipo" id="tipo0" value="Descuento"> Descuento
                                                         </label>
                                                         <label class="checkbox-inline">
-                                                            <input type="radio" data-ng-model="tipo"  id="tipo1" value="Incremento"> Incremento
+                                                            <input type="radio" data-ng-model="movimiento.tipo"  id="tipo1" value="Incremento"> Incremento
                                                         </label>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="col-md-3 control-label">Motivo:</label>
-                                                    <div class="col-md-9"><textarea data-ng-model="motivo" id="descripcion" style="max-width:100%;margin: 0px -8px 0px 0px; width: 640px; height: 79px;" rows="3" cols="5" name="textarea" class="form-control"></textarea></div>
+                                                    <div class="col-md-9"><textarea data-ng-model="movimiento.motivo" id="descripcion" style="max-width:100%;margin: 0px -8px 0px 0px; width: 640px; height: 79px;" rows="3" cols="5" name="textarea" class="form-control"></textarea></div>
                                                 </div>
                                                 <div data-ng-show="error" style="text-align: center;" class="text-danger">
                                                     <strong data-ng-bind="error"></strong>
@@ -117,9 +117,9 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="col-md-offset-3 col-md-9">
-                                                                <button type="submit" ng-click="x = 1" class="btn btn-primary">Guardar y Regresar</button>
-                                                                <button type="submit" ng-click="x = 0" class="btn btn-success">Guardar</button>
-                                                                <a type="button" href="/#!/productos" class="btn btn-danger">Cancelar</a>
+                                                                <button type="button" ng-click="save()" class="btn btn-primary">Guardar y Regresar</button>
+                                                                <button type="button" ng-click="save()" class="btn btn-success">Guardar</button>
+                                                                <a type="button" href="/productos" class="btn btn-danger">Cancelar</a>
                                                             </div>
                                                         </div>
                                                     </div>

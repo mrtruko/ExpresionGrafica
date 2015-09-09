@@ -12,22 +12,21 @@ Productos.allow({
   }
 });
 Schema = {};
-
 Schema.Producto = new SimpleSchema({
   nombreProducto: {
     type: String
   },
-  apellido: {
+  codigo: {
     type: String
   },
   precioComercial: {
-    type: String
+    type: Number
   },
   precioAgencia: {
-    type: String
+    type: Number
   },
   cantidad: {
-    type: String
+    type: Number
   },
   tipo: {
     type: String
@@ -39,7 +38,8 @@ Schema.Producto = new SimpleSchema({
     type: String
   },
   descripcion: {
-    type: String
+    type: String,
+    optional: true
   },
   created: {
     type: Date,
@@ -68,7 +68,29 @@ Schema.Producto = new SimpleSchema({
     autoValue:function(){ return this.userId }
   },
   movimientos:{
-    type: [Object],
-  }
+    type: Array,
+    optional: true
+  },
+  "movimientos.$": {
+    type: Object
+  },
+  "movimientos.$.motivo": {
+    type: String
+  },
+  "movimientos.$.cantidad": {
+    type: Number
+  },
+  "movimientos.$.responsable": {
+    type: String
+  },
+  "movimientos.$.tipo": {
+    type: String
+  },
+  "movimientos.$.fecha": {
+    type: Date,
+    autoValue: function() {
+      return new Date;
+    }
+  },
 });
 Productos.attachSchema(Schema.Producto);
