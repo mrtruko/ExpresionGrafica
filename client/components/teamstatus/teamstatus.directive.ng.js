@@ -8,6 +8,7 @@ angular.module('graficaExpresionApp')
     replace: true,
     link: function(scope, elem, attrs) {
       scope.property = 'teamstatus';
+
     }
   };
 });

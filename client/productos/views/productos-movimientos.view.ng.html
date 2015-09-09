@@ -142,12 +142,12 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr data-ng-repeat="movimiento in producto.movimientos"><!-- reverse -->
+                                                <tr data-ng-repeat="movimiento in producto.movimientos | reverse"><!-- reverse -->
                                                     <td data-ng-bind="movimiento.responsable"></td>
                                                     <td data-ng-bind="movimiento.tipo"></td>
                                                     <td data-ng-bind="movimiento.motivo"></td>
                                                     <td data-ng-bind="movimiento.cantidad"></td>
-                                                    <td data-ng-bind="movimiento.fecha"></td>
+                                                    <td>{{movimiento.fecha | date:"dd/MM/yyyy 'A las' h:mma"}}</td>
                                                 </tr>
 
 

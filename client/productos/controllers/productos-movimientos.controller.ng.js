@@ -24,46 +24,32 @@ angular.module('graficaExpresionApp')
                         }
                         if($scope.stock){
                             $scope.producto.movimientos.push({
-                                "responsable":"nicolas",
+                                "responsable":$scope.currentUser.profile.displayName,
                                 "cantidad":$scope.movimiento.cantidad,
                                 "tipo":$scope.movimiento.tipo,
-                                "motivo":$scope.movimiento.motivo
+                                "motivo":$scope.movimiento.motivo,
+                                "fecha": moment().format("DD/MM/YYYY HH:mm")
                             });
-                            console.log($scope.producto);
+                            //console.log($scope.producto);
                             $scope.producto.save().then(
                                 function(numberOfDocs) {
                                     $scope.msgAlerta("Producto Guardado.","success");
                                 },
                                 function(error) {
-                                    console.log(error);
+                                    $scope.msgAlerta(error,"error");
                                 }
                             )
                             $scope.movimiento = {};
-
                         }else{
-                            //$scope.error = "Stock Insuficiente";
-                            //$scope.success = ""; // pIpe
                             $scope.msgAlerta("Stock Insuficiente","error");
                         }
-
                     }else{
-                        //$scope.error = "Debe Ingresar el motivo"; // pIpe
-                        //$scope.success = ""; // pIpe
-
                         $scope.msgAlerta("Debe Ingresar el motivo","error");
                     }
-
                 }else{
-                    //$scope.error = "Ingrese El Tipo de Movimiento"; // pIpe
-                    //$scope.success = ""; // pIpe
-
                     $scope.msgAlerta("Ingrese El Tipo de Movimiento","error");
-
                 }
-
             }else{
-                //$scope.error = "Ingrese Un Numero"; // pIpe
-                //$scope.success = ""; // pIpe
                 $scope.msgAlerta("Ingrese Un Numero","error");
             }
 
@@ -83,3 +69,15 @@ angular.module('graficaExpresionApp')
         }
 
     });
+angular.module('graficaExpresionApp').filter('reverse', [
+    function() {
+        return function(items) {
+            if(items){
+                return items.slice().reverse();
+            }else{
+                return;
+            }
+
+        };
+    }
+]);

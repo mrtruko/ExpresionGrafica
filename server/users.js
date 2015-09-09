@@ -78,11 +78,11 @@ Meteor.methods({
     'insertUser': function(usuario){
         return Accounts.createUser(usuario);
     },'roles': function(id){
-        console.log(id);
+        //console.log(id);
         Roles.addUsersToRoles(id, ['inactivo']);
     },'setPass': function(usuario){
-        console.log(usuario.pass+"_Pass");
-        console.log(usuario);
+        //console.log(usuario.pass+"_Pass");
+        //console.log(usuario);
         Accounts.setPassword(usuario.id, usuario.pass);
     }
 });

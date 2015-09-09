@@ -87,10 +87,7 @@ Schema.Producto = new SimpleSchema({
     type: String
   },
   "movimientos.$.fecha": {
-    type: Date,
-    autoValue: function() {
-      return new Date;
-    }
+    type: String
   },
 });
 Productos.attachSchema(Schema.Producto);
