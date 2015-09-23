@@ -1,0 +1,169 @@
+<section id="page">
+    <div id="main-content">
+        <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Box Settings</h4>
+                    </div>
+                    <div class="modal-body">
+                        Here goes box setting content.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+
+        <div class="container">
+            <div class="row">
+                <div id="content" class="col-lg-12">
+                    <!-- PAGE HEADER-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-header">
+                                <!-- STYLER -->
+
+                                <!-- /STYLER -->
+                                <!-- BREADCRUMBS -->
+                                <ul class="breadcrumb">
+                                    <li>
+                                        <i class="fa fa-home"></i>
+                                        <a href="/#!/">Home</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-book"></i>
+                                        <a >Agenda de Clientes</a>
+                                    </li>
+
+                                </ul>
+                                <!-- /BREADCRUMBS -->
+                                <div class="clearfix">
+                                    <h3 class="content-title pull-left">Clientes</h3>
+                                </div>
+                                <div class="description"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /PAGE HEADER -->
+                    <!-- DATA TABLES -->
+                    <div class="box border green">
+                        <div class="box-title">
+                            <h4><i class="fa fa-book"></i>Lista de Contactos</h4>
+
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-4" style="overflow-y:auto;height:600px">
+                                    <div id="address-book">
+                                        <form>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+                                                    <input type="text" class="form-control" placeholder="Buscar" ng-model="searchFish">
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="slider-content">
+
+                                            <ul data-ng-repeat="cliente in clientes | orderBy:'nombreCliente' | filter:{nombreCliente:searchFish}">
+                                                <li><a id="5592f396da075ec809ca8b7c" name="cliente" ng-click="handleSliderNav(cliente)" data-ng-bind="cliente.nombreCliente" href="javacript:"></a></li>
+                                            </ul>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8" >
+                                    <div id="contact-card" class="panel panel-default" style="display: none;">
+                                        <div class="panel-heading">
+                                            <h2 class="panel-title">John Doe</h2>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div id="card" class="row">
+                                                <div class="col-md-12" >
+                                                    <table class="table table-hover" >
+                                                        <tbody>
+                                                        <tr>
+                                                            <td><i class="fa fa-font"></i> Nombre:</td>
+                                                            <td id="card-name"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><i class="fa fa-bold"></i> Apellido:</td>
+                                                            <td id="card-apellidoCliente"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><i class="fa fa-info"></i> RUT:</td>
+                                                            <td id="card-rut"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><i class="fa fa-home"></i> Dirección:</td>
+                                                            <td id="card-direccion"></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td><i class="fa fa-phone"></i> Teléfono:</td>
+                                                            <td id="card-fono"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><i class="fa fa-envelope"></i> Email</td>
+                                                            <td id="card-email"></td>
+                                                        </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="panel-body">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                        <tr>
+                                                            <th><i class="fa fa-user"></i> Numero de Orden</th>
+                                                            <th><i class="fa fa-calendar"></i> Fecha</th>
+                                                            <th><i class="fa fa-calendar"></i> Fecha de Entrega</th>
+                                                            <th><i class="fa fa-bars"></i> Estado</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr ng-repeat="orden in ordenes | filter:filtro">
+                                                            <td><a href="javacript:">{{orden.nroOrden}}</a></td>
+                                                            <td><a >{{orden.fecha}}</a></td>
+                                                            <td><a >{{orden.fechaCompromiso}}</a></td>
+                                                            <td><span class="label label-success label-sm">{{orden.estado}}</span></td>
+                                                        </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- /EXPORT TABLES -->
+                    <div class="footer-tools">
+                            <span class="go-top">
+                                <i class="fa fa-chevron-up"></i> Arriba
+                            </span>
+                    </div>
+                </div><!-- /CONTENT-->
+            </div>
+        </div>
+
+
+
+    </div>
+</section>

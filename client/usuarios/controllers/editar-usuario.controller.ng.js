@@ -7,13 +7,17 @@ angular.module('graficaExpresionApp')
 
       $scope.guardar = function(x){
         $scope.usuario.profile.displayName = $scope.usuario.profile.nombre + " " + $scope.usuario.profile.apellido;
-        console.log($scope.usuario.displayName);
         $scope.usuario.save().then(function(numberOfDocs){
           $scope.msgAlerta("Guardado","success");
         }, function(error){
           $scope.msgAlerta("Error Al Guardar","error");
         });
       }
+
+
+
+
+
       $scope.msgAlerta = function(msg,tipo){
         Messenger.options = {
           extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',

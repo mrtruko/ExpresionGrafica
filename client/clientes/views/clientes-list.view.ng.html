@@ -1,0 +1,243 @@
+<section id="page">
+    <div id="main-content"  data-ng-init="find()">
+        <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Box Settings</h4>
+                    </div>
+                    <div class="modal-body">
+                        Here goes box setting content.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="container">
+            <div class="row">
+                <div id="content" class="col-lg-12">
+                    <!-- PAGE HEADER-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-header">
+                                <!-- STYLER -->
+
+                                <!-- /STYLER -->
+                                <!-- BREADCRUMBS -->
+                                <ul class="breadcrumb">
+                                    <li>
+                                        <i class="fa fa-home"></i>
+                                        <a href="/#!/">Home</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-list-ol"></i>
+                                        <a >Listado de Clientes</a>
+                                    </li>
+
+
+                                </ul>
+                                <!-- /BREADCRUMBS -->
+                                <div class="clearfix">
+                                    <h3 class="content-title pull-left">Clientes</h3>
+                                </div>
+                                <div class="description"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /PAGE HEADER -->
+                    <!-- DATA TABLES -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BOX -->
+                            <!-- aqui va la tabla Dynamic Data Tables  -->
+                            <!-- /BOX -->
+                        </div>
+                    </div>
+                    <!-- /DATA TABLES -->
+
+                    <!-- TABLE IN MODAL -->
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a class="btn btn-danger btn-icon input-block-level multiple-buttons" href="/cliente">
+                                    <i class="fa fa-plus fa-2x"></i>
+                                    <div>Nuevo Cliente</div>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+                    <div class="separator"></div>
+                    <!-- EXPORT TABLES -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BOX -->
+                            <div class="box border purple">
+                                <div class="box-title">
+
+                                    <h4><i class="fa fa-table"></i>Lista de Clientes </h4>
+
+
+
+
+                                    <div class="tools hidden-xs">
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="box-body">
+
+                                    <form>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+                                                <input type="text" class="form-control" placeholder="Buscar" ng-model="searchFish">
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <table id="cliente" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered table-hover">
+                                        <thead>
+                                        <tr>
+
+                                            <th>
+                                                <a ng-click="sortType = 'rut'; sortReverse = !sortReverse">
+                                                    Rut
+                                                    <span ng-show="sortType == 'rut'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a ng-click="sortType = 'nombreCliente'; sortReverse = !sortReverse">
+                                                    Nombre
+                                                    <span ng-show="sortType == 'nombreCliente'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a ng-click="sortType = 'apellidoCliente'; sortReverse = !sortReverse">
+                                                    Apellido
+                                                    <span ng-show="sortType == 'apellidoCliente'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a ng-click="sortType = 'email'; sortReverse = !sortReverse">
+                                                    Email
+                                                    <span ng-show="sortType == 'email'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+
+                                            <th>
+                                                <a ng-click="sortType = 'fono'; sortReverse = !sortReverse">
+                                                    Teléfono
+                                                    <span ng-show="sortType == 'fono'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a ng-click="sortType = 'direccion'; sortReverse = !sortReverse">
+                                                    Dirección
+                                                    <span ng-show="sortType == 'direccion'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+
+
+
+
+
+                                            <th>Acciones</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        <tr  data-ng-repeat="cliente in clientes | orderBy:sortType:sortReverse |  filter:searchFish">
+                                            <td  data-ng-bind="cliente.rut"></td>
+                                            <td data-ng-bind="cliente.nombreCliente"></td>
+                                            <td data-ng-bind="cliente.apellidoCliente"></td>
+                                            <td data-ng-bind="cliente.email"></td>
+                                            <td data-ng-bind="cliente.fono"></td>
+                                            <td data-ng-bind="cliente.direccion"></td>
+
+
+
+
+                                            <td><a href="/clientes/{{cliente._id}}">Editar</a><br>
+                                                <a ng-click="eliminarCliente(cliente._id);" >Eliminar</a></td>
+                                        </tr>
+
+
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <th>
+                                                <a ng-click="sortType = 'rut'; sortReverse = !sortReverse">
+                                                    Rut
+                                                    <span ng-show="sortType == 'rut'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a ng-click="sortType = 'nombreCliente'; sortReverse = !sortReverse">
+                                                    Nombre
+                                                    <span ng-show="sortType == 'nombreCliente'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a ng-click="sortType = 'apellidoCliente'; sortReverse = !sortReverse">
+                                                    Apellido
+                                                    <span ng-show="sortType == 'apellidoCliente'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a ng-click="sortType = 'email'; sortReverse = !sortReverse">
+                                                    Email
+                                                    <span ng-show="sortType == 'email'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+
+                                            <th>
+                                                <a ng-click="sortType = 'fono'; sortReverse = !sortReverse">
+                                                    Telefono
+                                                    <span ng-show="sortType == 'fono'" class="fa fa-caret-down"></span>
+                                                </a>
+
+                                            </th>
+                                            <th>
+                                                <a ng-click="sortType = 'direccion'; sortReverse = !sortReverse">
+                                                    Dirección
+                                                    <span ng-show="sortType == 'direccion'" class="fa fa-caret-down"></span>
+                                                </a>
+                                            </th>
+
+
+
+
+                                            <th>Acciones</th>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /BOX -->
+                        </div>
+                    </div>
+                    <!-- /EXPORT TABLES -->
+                    <div class="footer-tools">
+                            <span class="go-top">
+                                <i class="fa fa-chevron-up"></i> Arriba
+                            </span>
+                    </div>
+                </div><!-- /CONTENT-->
+            </div>
+        </div>
+    </div>
+</section>

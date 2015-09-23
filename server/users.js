@@ -88,8 +88,16 @@ Meteor.methods({
 });
 Accounts.validateLoginAttempt(function(attempt) {
     if(attempt.user!= undefined){
-        //if(Roles.userIsInRole(attempt.user._id, ['inactivo'])) { attempt.allowed = false; throw new Meteor.Error(403, "User account is inactive!"); }
+        //if(Roles.userIsInRole(attempt.user._id, ['inactivo'])) { attempt.allowed = false; throw new Meteor.Error(403, "Error al Ingresar!"); }
     }
      return true;
 
 });
+//Accounts.validateLoginAttempt(function(attempt){
+//    if (attempt.user && attempt.user.emails && !attempt.user.emails[0].verified ) {
+//        console.log('Verificar email');
+//
+//        return false;
+//   }
+//    return true;
+//});
