@@ -2,7 +2,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
 </head>
-<body ng-class="{'login': $root.currentUser || $root.loggingIn,'notLogin': !$root.currentUser || !$root.loggingIn}">
+<body ng-class="{login: $root.currentUser || $root.loggingIn,notLogin: !$root.currentUser || !$root.loggingIn}">
 
 <header ng-show="$root.currentUser || $root.loggingIn" style="margin-bottom:0px;" class="navbar clearfix" id="header">
     <toolbar></toolbar>

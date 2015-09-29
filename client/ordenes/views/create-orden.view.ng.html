@@ -70,36 +70,14 @@
                                     </div>
                                 </div>
                                 <div class="box-body form">
-                                    <form id="wizForm" data-ng-submit="create(x)" class="form-horizontal" >
+                                    <form id="wizForm" class="form-horizontal">
                                         <div class="wizard-form">
                                             <div class="wizard-content">
-                                                <ul class="nav nav-pills nav-justified steps">
-                                                    <li>
-                                                        <a href="#account" data-toggle="tab" class="wiz-step">
-                                                            <span class="step-number">1</span>
-                                                            <span class="step-name"><i class="fa fa-check"></i> Buscar Cliente </span>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#payment" data-toggle="tab" class="wiz-step">
-                                                            <span class="step-number">2</span>
-                                                            <span class="step-name"><i class="fa fa-check"></i> Crear Orden </span>
-                                                        </a>
-                                                    </li>
-
-
-
-                                                    <li>
-                                                        <a href="#confirm" data-toggle="tab" class="wiz-step">
-                                                            <span class="step-number">3</span>
-                                                            <span class="step-name"><i class="fa fa-check"></i> Confirmar Orden </span>
-                                                        </a>
-                                                    </li>
+                                                <ul style="display: none;" class="nav nav-pills nav-justified steps">
+                                                    <a id="clientesTab" href="#account" data-toggle="tab" class="wiz-step"></a>
+                                                    <a id="productosTab" href="#payment" data-toggle="tab" class="wiz-step"></a>
+                                                    <a id="ordenTab" href="#confirm" data-toggle="tab" class="wiz-step"></a>
                                                 </ul>
-                                                <div id="bar" class="progress progress-striped progress-sm active" role="progressbar">
-                                                    <div class="progress-bar progress-bar-warning"></div>
-                                                </div>
                                                 <div class="tab-content">
                                                     <div class="alert alert-danger display-none">
                                                         <a class="close" aria-hidden="true" href="#" data-dismiss="alert">×</a>
@@ -110,7 +88,6 @@
                                                         Your form validation is successful!
                                                     </div>
                                                     <div class="tab-pane active" id="account">
-
                                                         <div class="panel panel-default">
                                                             <div class="panel-body">
                                                                 <div class="tabbable">
@@ -411,10 +388,17 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
-
-
-
+                                                        <div class="wizard-buttons">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="col-md-offset-3 col-md-9">
+                                                                        <a ng-click="wizProductos();" href="javascript:;" class="btn btn-primary nextBtn">
+                                                                            Continue <i class="fa fa-arrow-circle-right"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="tab-pane" id="payment">
 
@@ -456,14 +440,14 @@
                                                                                         <div class="form-group">
                                                                                             <label class="control-label col-md-1">Fecha:<span class="required"></span> </label>
                                                                                             <div class="col-md-2">
-                                                                                                <input readonly type="text" class="form-control" data-ng-model="fecha">
+                                                                                                <input readonly type="text" class="form-control" data-ng-model="orden.fecha">
                                                                                                 <span class="error-span"></span>
 
                                                                                             </div>
                                                                                             <div class="form-group">
                                                                                                 <label class="control-label col-md-2">Fecha Entrega:<span class="required"></span></label>
                                                                                                 <div class="col-md-4">
-                                                                                                    <input type="date" data-ng-model="fechaCompromiso" name="fechae">
+                                                                                                    <input type="date" data-ng-model="orden.fechaCompromiso" name="fechae">
                                                                                                     <span class="error-span"></span>
                                                                                                 </div>
                                                                                             </div>
@@ -548,7 +532,7 @@
                                                                                         </tr>
                                                                                         </thead>
                                                                                         <tbody>
-                                                                                        <tr ng-repeat="produc in productosOrden">
+                                                                                        <tr ng-repeat="produc in orden.productosOrden">
                                                                                             <td>
                                                                                                 {{produc.codigo}}
                                                                                             </td>
@@ -607,6 +591,20 @@
 
                                                         </div>
 
+                                                        <div class="wizard-buttons">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="col-md-offset-3 col-md-9">
+                                                                        <a ng-click="wizClientes();" href="javascript:;" class="btn btn-default prevBtn">
+                                                                            <i class="fa fa-arrow-circle-left"></i> Back
+                                                                        </a>
+                                                                        <a ng-click="wizOrden();" href="javascript:;" class="btn btn-primary nextBtn">
+                                                                            Continue <i class="fa fa-arrow-circle-right"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="tab-pane" id="confirm">
 
@@ -740,7 +738,7 @@
                                                                                         </tr>
                                                                                         </thead>
                                                                                         <tbody>
-                                                                                        <tr ng-repeat="produc in productosOrden">
+                                                                                        <tr ng-repeat="produc in orden.productosOrden">
                                                                                             <td>
                                                                                                 {{produc.codigo}}
                                                                                             </td>
@@ -878,8 +876,23 @@
                                                                                     </table>
                                                                                 </div>
                                                                             </div>
-
-                                                                            <button type="submit" ng-click="x = 0" class="btn btn-success" style="width: 200px;height: 50px;margin: 40px;margin-left: 40%;">Guardar</button>
+                                                                            <div class="wizard-buttons">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="col-md-offset-3 col-md-9">
+                                                                                            <a ng-click="wizProductosbck();" href="javascript:;" class="btn btn-default prevBtn">
+                                                                                                <i class="fa fa-arrow-circle-left"></i> Back
+                                                                                            </a>
+                                                                                            <a ng-click="saveOrden();" href="javascript:;" class="btn btn-success nextBtn">
+                                                                                                Guardar Orden
+                                                                                            </a>
+                                                                                            <a ng-click="saveCotizacion();" href="javascript:;" class="btn btn-success nextBtn">
+                                                                                                Guardar Cotizacion
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -888,23 +901,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="wizard-buttons">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="col-md-offset-3 col-md-9">
-                                                                <a href="javascript:;" class="btn btn-default prevBtn">
-                                                                    <i class="fa fa-arrow-circle-left"></i> Back
-                                                                </a>
-                                                                <a href="javascript:;" class="btn btn-primary nextBtn">
-                                                                    Continue <i class="fa fa-arrow-circle-right"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div data-ng-show="error" style="text-align: center;" class="text-danger">
-                                                    <strong data-ng-bind="error">a</strong>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </form>

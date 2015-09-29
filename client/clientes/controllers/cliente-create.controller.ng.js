@@ -7,7 +7,7 @@ angular.module('graficaExpresionApp').controller('ClientesCreateCtrl', function(
                 $scope.msgAlerta(error,"error");
 
             }else if(result){
-                $scope.msgAlerta("Producto Guardado.","success");
+                $scope.msgAlerta("Cliente Guardado.","success");
                 $scope.cliente = {};
             }
         });
