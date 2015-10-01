@@ -23,13 +23,9 @@ angular.module('graficaExpresionApp')
                             $scope.stock = true;
                         }
                         if($scope.stock){
-                            $scope.producto.movimientos.push({
-                                "responsable":$scope.currentUser.profile.displayName,
-                                "cantidad":$scope.movimiento.cantidad,
-                                "tipo":$scope.movimiento.tipo,
-                                "motivo":$scope.movimiento.motivo,
-                                "fecha": moment().format("DD/MM/YYYY HH:mm")
-                            });
+                            $scope.movimiento.fecha = moment().format("DD/MM/YYYY HH:mm");
+                            $scope.movimiento.responsable = $scope.currentUser.profile.displayName;
+                            $scope.producto.movimientos.push($scope.movimiento);
                             //console.log($scope.producto);
                             $scope.producto.save().then(
                                 function(numberOfDocs) {

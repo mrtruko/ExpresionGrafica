@@ -447,7 +447,7 @@
                                                                                             <div class="form-group">
                                                                                                 <label class="control-label col-md-2">Fecha Entrega:<span class="required"></span></label>
                                                                                                 <div class="col-md-4">
-                                                                                                    <input type="date" data-ng-model="orden.fechaCompromiso" name="fechae">
+                                                                                                    <input type="date" ng-change="fecha();" min="{{ hoy }}" data-ng-model="fechasel" name="fechae">
                                                                                                     <span class="error-span"></span>
                                                                                                 </div>
                                                                                             </div>
@@ -459,6 +459,7 @@
 
                                                                                     <div class="separator"></div>
                                                                                     <div class='invoice-title' style="margin-left: 20px;">Buscar Producto</div>
+
 
                                                                                     <div class="form-group">
                                                                                         <label class="control-label col-md-1">Buscar:<span class="required"></span></label>
@@ -575,7 +576,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-1"><span class="required"></span></label>
                                                             <div class="col-md-10">
-                                                                <textarea data-ng-model="observacion" class="form-control" rows="3"></textarea>
+                                                                <textarea data-ng-model="orden.observacion" class="form-control" rows="3"></textarea>
                                                                 <span class="error-span"></span>
                                                             </div>
                                                         </div>
@@ -607,16 +608,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane" id="confirm">
-
-
-
-
-
-                                                        <!-- BOX -->
                                                         <div class="box">
                                                             <div class="box-title">
                                                                 <div class='invoice-title' style="margin-left: 20px;"><i style="color:#000;" class="fa fa-shopping-cart"></i> Información de la Orden de Pedido</div>
-
                                                             </div>
                                                             <div class="box-body">
                                                                 <div class="panel panel-default">
@@ -629,7 +623,6 @@
                                                                                     </h3>
                                                                                     <div class='pull-right'>
                                                                                         <div class='btn-group'>
-
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -641,7 +634,7 @@
                                                                                 <div class='col-sm-6 seller'>
                                                                                     <img style="float:left" src="/img/logo/expresion.png">
                                                                                     <address>
-                                                                                        <strong>Vendedor(a): </strong>{{ vendedora }}
+                                                                                        <strong>Vendedor(a): </strong>{{ orden.responsable }}
                                                                                     </address>
                                                                                 </div>
                                                                                 <div class='col-sm-6 buyer' style="text-align: center;float: right;">
@@ -672,7 +665,7 @@
                                                       <strong>Fono</strong> {{ cliente.fono }}
                                                           <br>
                                                     </span>
-                                                      <span style="float:right"><strong>Fecha: </strong> {{ fecha }}
+                                                      <span style="float:right"><strong>Fecha: </strong> {{ orden.fecha}}
                                                           <br>
                                                       <strong>Ciudad: </strong>Antofagasta
                                                       <br>
@@ -707,7 +700,7 @@
                                                           <br>
                                                         </span>
                                                       <span style="float:right;margin-left: 40px;">
-                                                        <strong>Fecha: </strong> {{ fecha }}
+                                                        <strong>Fecha: </strong> {{ orden.fecha }}
                                                           <br>
                                                         <strong></strong>
                                                         <br>
@@ -767,7 +760,7 @@
                                                                                                 NETO
                                                                                             </th>
                                                                                             <th>
-                                                                                                ${{ neto }}
+                                                                                                ${{ orden.neto }}
                                                                                             </th>
                                                                                         </tr>
                                                                                         <tr>
@@ -780,7 +773,7 @@
                                                                                                 I.V.A
                                                                                             </th>
                                                                                             <th>
-                                                                                                ${{ iva }}
+                                                                                                ${{ orden.iva }}
                                                                                             </th>
 
                                                                                         </tr>
@@ -789,18 +782,18 @@
                                                                                             <th style="border-top: 0px solid #dddddd;padding:0px;"><table style="width:100%;">
                                                                                                 <tr>
                                                                                                     <td style="width:30%">
-                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="text" readonly class="form-control" value="${{total}}" placeholder="Total">
+                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="text" readonly class="form-control" value="${{ orden.total }}" placeholder="Total">
 
                                                                                                     </td>
                                                                                                     <td style="width:30%">
 
-                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="text" ng-change="abono(abono1)" data-ng-model="abono1" class="form-control" placeholder="Abono">
+                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="text" ng-change="abono(orgen.abono1)" data-ng-model="orgen.abono1" class="form-control" placeholder="Abono">
 
                                                                                                     </td>
                                                                                                     <td style="width:30%">
 
 
-                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="text" data-ng-model="saldo" class="form-control" placeholder="Saldo">
+                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="text" data-ng-model="orden.saldo" class="form-control" placeholder="Saldo">
 
 
                                                                                                     </td>
@@ -812,7 +805,7 @@
                                                                                                 Total
                                                                                             </th>
                                                                                             <th style="border-bottom: 2px solid #dddddd;">
-                                                                                                ${{ total }}
+                                                                                                ${{ orden.total }}
                                                                                             </th>
 
                                                                                         </tr>
@@ -830,7 +823,7 @@
 
                                                                                             <strong>*VALORES MAS IVA.-</strong>
                                                                                             <br>
-                                                                                            <strong>Fecha de Entrega</strong> {{ fechaCompromiso }}
+                                                                                            <strong>Fecha de Entrega</strong> {{ orden.fechaCompromiso }}
                                                                                             <br>
                                                                                             <strong>Plazo de retiro de trabajo hasta 60 dias, luego de esa fecha. La empresa no se hace responsable.</strong>
                                                                                             <br>

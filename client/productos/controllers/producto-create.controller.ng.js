@@ -2,6 +2,7 @@ angular.module('graficaExpresionApp')
     .controller('ProductosCreateCtrl', function($scope, $stateParams, $meteor) {
         $scope.productos = $scope.$meteorCollection(Productos, false);
         $scope.save = function() {
+            $scope.producto.movimientos = [];
                 Productos.insert($scope.producto,function(error,result){
                     if(error){
                         console.log(error);
