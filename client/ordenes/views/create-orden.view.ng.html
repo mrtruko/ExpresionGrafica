@@ -530,6 +530,9 @@
                                                                                             <th>
 
                                                                                             </th>
+                                                                                            <th>
+
+                                                                                            </th>
                                                                                         </tr>
                                                                                         </thead>
                                                                                         <tbody>
@@ -549,6 +552,9 @@
                                                                                             </td>
                                                                                             <td>
                                                                                                 {{produc.precio}}
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <button class="btn btn-primary" ng-show="produc.tipo === 'Sub-Producto'" data-ng-click="adjuntar(produc)">Adjuntar</button>
                                                                                             </td>
                                                                                             <td data-ng-click="eliminar($index)">
                                                                                                 X

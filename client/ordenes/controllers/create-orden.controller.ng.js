@@ -115,8 +115,8 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         });
         if($scope.agregar){
             $scope.productosOrdenObjs.push(producto);
-            console.log(producto);
-            $scope.orden.productosOrden.push({'id':producto._id, 'codigo':producto.codigo, 'nombreProducto': producto.nombreProducto,'precio':0, 'cantidad':0,'precioComercial':producto.precioComercial,'precioAgencia':producto.precioAgencia,'cantidadP':producto.cantidad });
+
+            $scope.orden.productosOrden.push({'id':producto._id,'tipo':producto.tipo, 'codigo':producto.codigo, 'nombreProducto': producto.nombreProducto,'precio':0, 'cantidad':0,'precioComercial':producto.precioComercial,'precioAgencia':producto.precioAgencia,'cantidadP':producto.cantidad });
         }
         $scope.calcularTotal();
     };
