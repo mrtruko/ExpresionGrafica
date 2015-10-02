@@ -165,7 +165,10 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         }
         $scope.calcularTotal();
     };
-
+    $scope.pSelecionado = function(producto){
+        console.log(producto);
+        $scope.producSelec = producto;
+    }
     $scope.abono = function(abono1){
         console.log(1);
         $scope.orden.saldo = $scope.orden.total - abono1;
