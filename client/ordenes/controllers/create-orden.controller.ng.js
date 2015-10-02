@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($scope, $location) {
+angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($scope, $location, $modal) {
     $scope.ordenes = $scope.$meteorCollection(Ordenes).subscribe("ordenes");
     $scope.clientes = $scope.$meteorCollection(Clientes).subscribe("clientes");
     $scope.productos = $scope.$meteorCollection(Productos).subscribe("productos");
@@ -20,14 +20,38 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.orden.iva = 0;
     $scope.orden.saldo = 0;
     $scope.hoy = moment().format("YYYY-MM-DD");
+    $scope.mempresa = {};
+    $scope.mempresa.contactos = [];
 
     $scope.fecha = function(){
         $scope.orden.fechaCompromiso = moment($scope.fechasel).format("DD-MM-YYYY");
 
     };
 
+    $scope.saveEmpresa = function() {
 
+        if($scope.mempresa.contactos.length === 0){
+            $scope.msgAlerta("Ingrese almenos 1 Contacto","error");
+            return;
+        }
+        Empresas.insert($scope.mempresa,function(error,result){
+            if(error){
+                $scope.msgAlerta(error,"error");
 
+            }else if(result){
+                $scope.msgAlerta("Empresa Guardada.","success");
+                $scope.mempresa = {};
+                $scope.mempresa.contactos = [];
+            }
+        });
+    };
+    $scope.agregarContacto = function(){
+        $scope.mempresa.contactos.push({});
+
+    }
+    $scope.eliminarContacto = function(contacto){
+        $scope.mempresa.contactos.splice(contacto,1);
+    }
 
 
     $scope.saveCotizacion = function(){
@@ -39,6 +63,16 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         }
         Cotizaciones.insert($scope.orden);
     }
+    $scope.saveCliente = function() {
+        Clientes.insert($scope.mcliente,function(error,result){
+            if(error){
+                $scope.msgAlerta(error,"error");
+            }else if(result){
+                $scope.msgAlerta("Cliente Guardado.","success");
+                $scope.mcliente = {};
+            }
+        });
+    };
     $scope.saveOrden = function() {
         if($scope.mostrarCliente){
             $scope.orden.cliente = $scope.cliente._id;
@@ -165,8 +199,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
             }
         }
 
-    }
-
+    };
 
     $scope.wizClientes = function(){
         var l = document.getElementById('clientesTab');

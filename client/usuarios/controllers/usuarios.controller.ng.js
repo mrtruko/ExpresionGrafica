@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('graficaExpresionApp')
-.controller('UsuariosCtrl', function($scope,$meteor,$rootScope, $state) {
+.controller('UsuariosCtrl', function($scope,$meteor,$rootScope, $state, $modal) {
   $scope.viewName = 'Usuarios';
         $scope.users = $meteor.collection(Meteor.users, false).subscribe("users");
         $scope.imagenes = $meteor.collectionFS(Imagenes, false, Imagenes).subscribe('imagenes');
@@ -157,6 +157,7 @@ angular.module('graficaExpresionApp')
                 }
             );
         }
+
         $scope.msgAlerta = function(msg,tipo){
             Messenger.options = {
                 extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
