@@ -168,7 +168,19 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.pSelecionado = function(producto){
         console.log(producto);
         $scope.producSelec = producto;
+    };
+    $scope.addImages = function(files) {
+        if (files.length > 0) {
+            console.log(files);
+            for (var i = 0, ln = files.length; i < ln; i++) {
+                console.log(files[i]);
+               Uploads.insert(files[i], function (err, fileObj){
+                    // Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
+               // });
+            });
+        }
     }
+    };
     $scope.abono = function(abono1){
         console.log(1);
         $scope.orden.saldo = $scope.orden.total - abono1;

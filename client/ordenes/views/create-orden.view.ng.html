@@ -110,6 +110,18 @@
                                                                 <div class="col-sm-9">
                                                                 </div>
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Agregar Archivos </label>
+                                                                <div class="col-sm-9">
+                                                                    <div ngf-drop ngf-select
+                                                                         ngf-change="addImages($files)"
+                                                                         ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" class="drop-box"
+                                                                         ngf-multiple="true"  ngf-allow-dir="false"
+                                                                         ngf-drop-available="dropAvailable">
+                                                                        <div>Subir Img de Perfil</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <div class="wizard-buttons">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
