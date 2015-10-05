@@ -175,11 +175,23 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
             for (var i = 0, ln = files.length; i < ln; i++) {
                 console.log(files[i]);
                Uploads.insert(files[i], function (err, fileObj){
-                    // Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
+                   if(err){
+                       console.log(err);
+                   }else{
+                       console.log($scope.producSelec.codigo);
+                       console.log(fileObj.url({brokenIsFine: true}));
+                       if(!$scope.producSelec.archivos)
+                           $scope.producSelec.archivos = [];
+
+                       $scope.producSelec.archivos.push({"num":"1"});
+                       console.log($scope.producSelec.archivos);
+                   }
+
                // });
             });
         }
     }
+
     };
     $scope.abono = function(abono1){
         console.log(1);
@@ -221,6 +233,8 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         l.click();
     }
     $scope.wizOrden = function(){
+        if(!$scope.fechasel)
+            return;
         var l = document.getElementById('ordenTab');
         l.click();
     }

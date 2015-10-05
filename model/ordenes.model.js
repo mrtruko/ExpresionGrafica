@@ -83,6 +83,9 @@ Schema.Orden = new SimpleSchema({
   "productosOrden.$.codigo": {
     type: String
   },
+  "productosOrden.$.tipo": {
+    type: String
+  },
 "productosOrden.$.nombreProducto": {
     type: String
   },
@@ -98,6 +101,14 @@ Schema.Orden = new SimpleSchema({
 "productosOrden.$.cantidadP": {
   type: Number
 },
+  "productosOrden.$.comentario": {
+    type: String,
+    optional: true
+  },
+  "productosOrden.$.url": {
+    type: [String],
+    optional: true
+  },
   created: {
     type: Date,
     autoValue: function() {

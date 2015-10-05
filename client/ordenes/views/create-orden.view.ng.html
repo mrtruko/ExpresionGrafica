@@ -108,6 +108,7 @@
                                                             <div class="form-group">
                                                                 <label class="col-sm-3 control-label">Comentarios </label>
                                                                 <div class="col-sm-9">
+                                                                    <textarea data-ng-model="producSelec.comentario" class="form-control" rows="3"></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -122,6 +123,15 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <th>Archivo</th>
+                                                                        </tr>
+                                                                        <tr ng-repeat="archivo in producSelec.archivos">
+                                                                            <td>{{ archivo}}</td>
+                                                                        </tr>
+                                                                    </table>
+
                                                             <div class="wizard-buttons">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
