@@ -47,8 +47,7 @@ Schema.Orden = new SimpleSchema({
     optional: true
   },
   abono: {
-    type: Number,
-    optional: true
+    type: Number
   },
   iva: {
     type: Number,

@@ -1,0 +1,339 @@
+<section id="page">
+    <div id="main-content">
+        <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Box Settings</h4>
+                    </div>
+                    <div class="modal-body">
+                        Here goes box setting content.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="container">
+            <div class="row">
+                <div id="content" class="col-lg-12">
+                    <!-- PAGE HEADER-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-header">
+                                <!-- STYLER -->
+
+                                <!-- /STYLER -->
+                                <!-- BREADCRUMBS -->
+                                <ul class="breadcrumb">
+                                    <li>
+                                        <i class="fa fa-home"></i>
+                                        <a href="index.html">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">More Pages</a>
+                                    </li>
+                                    <li>Invoice</li>
+                                </ul>
+                                <!-- /BREADCRUMBS -->
+                                <div class="clearfix">
+                                    <h3 class="content-title pull-left">Invoice</h3>
+                                </div>
+                                <div class="description">Payment and Invoice</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /PAGE HEADER -->
+                    <!-- INVOICE -->
+                    <div class="">
+                        <div class="col-md-12">
+                            <!-- BOX -->
+                            <div class="box">
+                                <div class="box-title">
+                                    <div class='invoice-title' style="margin-left: 20px;"><i style="color:#000;" class="fa fa-shopping-cart"></i> Información de la Orden de Pedido</div>
+
+                                </div>
+                                <div class="box-body">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body" id="impresion">
+                                            <div class='row'>
+                                                <div class='col-md-12'>
+                                                    <div class="invoice-header clearfix">
+                                                        <h3 class='pull-left'>
+                                                            <i class='fa fa-money'></i>
+                                                            <span>Orden N°: </span>
+                                                            <span class='text-muted'>#{{ orden.idOrden}}</span>
+                                                        </h3>
+                                                        <div class='pull-right'>
+                                                            <div class='btn-group'>
+
+                                                                <a class="btn btn-success" href="/ordenes"><i class='fa fa-check'></i>
+                                                                    {{ orden.estado }}
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class='row'>
+                                                <div class='row'>
+                                                    <div class='col-sm-6 seller'>
+                                                        <img style="float:left" src="/img/logo/expresion.png">
+                                                        <address>
+                                                            <strong>Vendedor(a): </strong>{{ orden.responsable }}
+                                                        </address>
+                                                    </div>
+                                                    <div class='col-sm-6 buyer' style="text-align: center;float: right;">
+                                                        <address>
+                                                            <h1>MARCELA VERGARA CORTES</h1>
+                                                            <strong>Rut:</strong>12.442.510-7
+                                                            <br>
+                                                            CONFECCION DE
+                                                            <br>
+                                                            ADHESIVOS, LETREROS, IMPRESION
+                                                            <br>
+                                                            DE ROPA Y ARTICULOS VARIOS
+                                                            <br>
+                                                            <strong>AVDA. RENDIC 5535 FONO 2483659 - 2291566</strong><br>
+                                                            <small>graficaexpresion@gmail.com</small>
+                                                        </address>
+                                                    </div>
+                                                </div>
+                                                <div class="row" ng-show="orden.clienteO">
+                                                    <div class='col-sm-12 payment-info'>
+                                                        <div class='invoice-title text-muted'>Detalle Acuerdo Cliente</div>
+                                                        <div id="pagoImpresioncss"  class="col-sm-12 well" style="width:100%;border-left:1px solid #e3e3e3;border-radius: 20px 20px 20px 20px;">
+                                                      <span style="float:left">
+                                                      <strong>SEÑOR (ES)</strong> {{ orden.clienteO.nombreCliente }} {{ orden.clienteO.apellidoCliente}}
+                                                          <br>
+                                                      <strong>DIRRECCION</strong> {{ orden.clienteO.direccion }}
+                                                          <br>
+                                                      <strong>Fono</strong> {{ orden.clienteO.fono }}
+                                                          <br>
+                                                    </span>
+                                                      <span style="float:right"><strong>Fecha: </strong> {{ orden.fecha }}
+                                                          <br>
+                                                      <strong>Ciudad: </strong>Antofagasta
+                                                      <br>
+                                                      <strong></strong>
+                                                      <br></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" ng-show="orden.empresaO">
+                                                    <div class='col-sm-12 payment-info'>
+                                                        <div class='invoice-title text-muted'>Detalle Acuerdo Empresa</div>
+                                                        <div  class="col-sm-12" style="border-left:1px solid #e3e3e3;border-radius: 20px 0 0 20px;">
+                                                        <span style="float:left">
+                                                        <strong>SEÑOR (ES): </strong> {{ orden.empresaO.nombrec }} {{ orden.empresaO.apellidoc }}
+                                                            <br>
+                                                        <strong>EMPRESA: </strong> {{ orden.empresOa.nombreEmpresa }}
+                                                            <br>
+                                                        <strong>DIRRECCION: </strong> {{ orden.empresaO.direccionEmpresa }}
+                                                            <br>
+                                                       </span>
+                                                      <span style="float:left;margin-left: 40px;">
+                                                        <strong>Telefono Cliente: </strong> {{ orden.empresaO.fono }}
+                                                          <br>
+                                                        <strong>Email Cliente: </strong> {{ orden.empresaO.mailempresa }}
+                                                          <br>
+                                                        <strong>Fono Empresa: </strong> {{ orden.empresaO.fonoEmpresa }}
+                                                          <br>
+                                                        </span>
+                                                      <span style="float:right;margin-left: 40px;">
+                                                        <strong>Fecha: </strong> {{ orden.fecha }}
+                                                          <br>
+                                                        <strong></strong>
+                                                        <br>
+                                                        <strong>Ciudad: </strong> Antofagasta
+                                                        <br>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class='col-sm-12'>
+                                                    <div class="row">
+                                                        <table class="table table-striped table-hover font-400 font-14">
+                                                            <thead>
+                                                            <div class="separator"></div>
+                                                            <tr>
+                                                                <th style="width:12%">Código</th>
+                                                                <th style="width:52%">Item/ Descripción</th>
+                                                                <th style="width:12%">
+                                                                    Cantidad
+                                                                </th>
+                                                                <th style="width:12%">
+                                                                    Costo Unitario
+                                                                </th>
+                                                                <th style="width:12%">
+                                                                    Precio Total
+                                                                </th>
+
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr ng-repeat="produc in orden.productosOrden">
+                                                                <td>
+                                                                    {{produc.codigo}}
+                                                                </td>
+                                                                <td>
+                                                                    {{produc.nombreProducto}}
+                                                                </td>
+                                                                <td>
+                                                                    {{produc.cantidad}}
+                                                                </td>
+                                                                <td>
+                                                                    {{produc.precioComercial}}
+                                                                </td>
+                                                                <td>
+                                                                    {{produc.precio}}
+                                                                </td>
+
+
+                                                            </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                            <tr>
+                                                                <th style="border-top: 0px solid #dddddd;"></th>
+                                                                <th style="border-top: 0px solid #dddddd;"></th>
+                                                                <th style="border-top: 0px solid #dddddd;"></th>
+                                                                <th style="float:right;width:40%;text-align:right;border-left: 1px solid #dddddd;border-right: 1px solid #dddddd;">
+                                                                    NETO
+                                                                </th>
+                                                                <th>
+                                                                    ${{ orden.neto }}
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="border-top: 0px solid #dddddd;"></th>
+                                                                <th style="border-top: 0px solid #dddddd;">
+
+                                                                </th>
+                                                                <th style="border-top: 0px solid #dddddd;"></th>
+                                                                <th style="float:right;width:40%;text-align:right;border-left: 1px solid #dddddd;border-right: 1px solid #dddddd;">
+                                                                    I.V.A
+                                                                </th>
+                                                                <th>
+                                                                    ${{ orden.iva }}
+                                                                </th>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="border-top: 0px solid #dddddd;"></th>
+                                                                <th style="border-top: 0px solid #dddddd;padding:0px;"><table style="width:100%;">
+                                                                    <tr>
+                                                                        <td style="width:30%">
+                                                                            <input style="padding:0 0px 0px 10px;height: 27px;" type="text" readonly class="form-control" value="${{orden.total}}" placeholder="Total">
+
+                                                                        </td>
+                                                                        <td style="width:30%">
+
+                                                                            <input style="padding:0 0px 0px 10px;height: 27px;" type="text" readonly  data-ng-model="orden.abono" class="form-control" placeholder="Abono">
+
+                                                                        </td>
+                                                                        <td style="width:30%">
+
+
+                                                                            <input style="padding:0 0px 0px 10px;height: 27px;" type="text" readonly data-ng-model="orden.saldo" class="form-control" placeholder="Saldo">
+
+
+                                                                        </td>
+                                                                    </tr>
+
+                                                                </table></th>
+                                                                <th style="border-top: 0px solid #dddddd;"></th>
+                                                                <th style="float:right;width:40%;text-align:right;border-left: 1px solid #dddddd;border-right: 1px solid #dddddd;border-bottom: 2px solid #dddddd;">
+                                                                    Total
+                                                                </th>
+                                                                <th style="border-bottom: 2px solid #dddddd;">
+                                                                    ${{ orden.total }}
+                                                                </th>
+
+                                                            </tr>
+                                                            </tfoot>
+
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class='row'>
+                                                    <div class="col-md-8">
+                                                        <div  class="col-sm-12">
+                                                            <div class='invoice-title text-muted'>OBSERVACIONES</div>
+                                                            <div class="well" style="border-left:1px solid #e3e3e3;border-radius: 20px 20px 20px 20px;">
+
+                                                                <strong>*VALORES MAS IVA.-</strong>
+                                                                <br>
+                                                                <strong>Fecha de Entrega</strong> {{ orden.fechaCompromiso }}
+                                                                <br>
+                                                                <strong>Plazo de retiro de trabajo hasta 60 dias, luego de esa fecha. La empresa no se hace responsable.</strong>
+                                                                <br>
+                                                                <strong>Formas de pago: 50% Inicio - 50% Contra entrega</strong>
+                                                                <br>
+                                                            </div>
+                                                            <div class="col-md-6">
+
+                                                            </div>
+                                                            <div class="col-md-6">
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-sm-4'>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div  class="col-sm-12">
+                                                        <table>
+                                                            <tr>
+                                                                <td style="width: 10%;text-align:right;">
+                                                                </td>
+                                                                <td style="width: 10%;text-align:right;">
+                                                                    Documentos N°
+                                                                </td>
+                                                                <td style="border-bottom: 2px solid #dddddd;width:10%;text-align:right;">
+
+                                                                </td>
+                                                                <td style="width: 10%;text-align:right;">
+                                                                    Banco
+                                                                </td>
+                                                                <td style="border-bottom: 2px solid #dddddd;width:10%;text-align:right;"></td>
+                                                                <td style="width:10%;text-align:right;">
+                                                                </td>
+                                                                <td style="width:10%;text-align:right;">
+                                                                    Firma Cliente
+                                                                </td>
+                                                                <td style="border-bottom: 2px solid #dddddd;width:10%;text-align:right;">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <a id="btnImprimir" class="btn btn-lg btn-default" style="width: 200px;height: 50px;margin: 40px;margin-left: 40%;" onclick="javascript:window.print();"><i class="fa fa-print"></i> Imprimir</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /BOX -->
+                                </div>
+                            </div>
+                            <!-- /INVOICE -->
+                            <div class="footer-tools">
+							<span class="go-top">
+								<i class="fa fa-chevron-up"></i> Top
+							</span>
+                            </div>
+                        </div><!-- /CONTENT-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

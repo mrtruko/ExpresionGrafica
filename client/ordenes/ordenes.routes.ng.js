@@ -21,5 +21,14 @@ angular.module('graficaExpresionApp')
             return $meteor.requireUser();
           }]
         }
-      });
+   }).state('viewOrden', {
+          url: '/orden/:idOrden',
+          templateUrl: 'client/ordenes/views/view-orden.view.ng.html',
+          controller: 'viewOrdenCtrl',
+          resolve: {
+              currentUser: ['$meteor', function($meteor) {
+                  return $meteor.requireUser();
+              }]
+          }
+   });
 });

@@ -65,7 +65,7 @@
                                         <div class="col-md-4">
                                             <div class="panel panel-default">
                                                 <div class="panel-body orders">
-                                                    <div class="scroller" data-height="650px" data-always-visible="1" data-rail-visible="1">
+                                                    <div style="height: 650px;overflow: auto;" >
                                                         <ul class="list-unstyled" ng-click="alerta3(ordene);" ng-repeat="ordene in ordenes">
                                                             <li class="clearfix">
                                                                 <div class="pull-left">
@@ -119,7 +119,7 @@
                                                     </div>
                                                     <div class="pull-right hidden-xs">
                                                         <div class="btn-group">
-                                                            <a href="/#!/ordenes/{{ordene._id}}" class="btn btn-default"><i class="fa fa-bars"></i> Detalle Pedido</a>
+                                                            <a href="/orden/{{ordene._id}}" class="btn btn-default"><i class="fa fa-bars"></i> Detalle Pedido</a>
                                                             <button ng-show="ordene.estado == 'Inicial'"  ng-click="terminada(ordene)" class="btn btn-success"><i class="fa fa-check"></i> Marcar como Completado</button>
                                                         </div>
                                                     </div>
@@ -148,7 +148,7 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <tr ng-repeat="producto in ordene.productos">
+                                                        <tr ng-repeat="producto in ordene.productosOrden">
 
                                                             <td class='only-checkbox'>
                                                                 <input type='checkbox'>

@@ -1,0 +1,94 @@
+@media print {
+    #header {
+        display: none;
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    .page-header {
+        display: none;
+    }
+
+    .box-title {
+        display: none;
+    }
+
+    .footer-tools {
+        display: none;
+    }
+
+    #content {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+    }
+    #main-content {
+        margin-left: 0px !important;
+        border: none;
+    }
+    .seller address, .buyer address, .payment-info address {
+        float: left;
+        font-size: 11px;
+        margin-left: 20px;
+    }
+    h1, .h1 {
+        font-size: 17px;
+        margin-bottom: 4px;
+    }
+    h3, .h3 {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+    table.table.table-striped.table-hover.font-400.font-14 {
+        font-size: 67%;
+    }
+    .well.ng-binding {
+        font-size: 70%;
+    }
+    table{
+        font-size: 70%;
+    }
+    a#btnImprimir {
+        display: none;
+    }
+
+    .invoice-title.text-muted {
+        font-size: 80%;
+    }
+    input.form-control {
+        font-size: 9px;
+    }
+    .separator{
+        display: none;
+    }
+    .invoice-title {
+        margin-bottom: 6px;
+    }
+    .col-sm-12.payment-info {
+        font-size: 75%;
+    }
+    ul.messenger.messenger-fixed.messenger-on-top.messenger-on-right.messenger-theme-future {
+        display: none;
+    }
+    div#pagoImpresioncss {
+        border-left: none !important;
+        min-height: 20px;
+        padding: 19px;
+        margin-bottom: 0px;
+        background-color: white !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border-bottom: none !important;
+        border-top: none !important;
+        border: none !important;
+    }
+}
+.invoice-header {
+    display: block;
+    margin-bottom: -10px !important;
+}
+.invoice-title {
+    margin-bottom: 6px !important;
+}

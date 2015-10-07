@@ -21,8 +21,10 @@
     <file url="file://$PROJECT_DIR$/client/login/login.view.ng.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/ordenes/controllers/ordenes.controller.ng.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/ordenes/controllers/view-orden.controller.ng.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/productos/views/productos-list.view.ng.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/routes-base.ng.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/usuarios/controllers/usuarios.controller.ng.js" charset="UTF-8" />

@@ -3,7 +3,7 @@
 angular.module('graficaExpresionApp')
 .controller('LoginCtrl', function($scope,$rootScope,$meteor,$window,$state) {
   $scope.viewName = 'Login';
-      if(Meteor.user()){
+      if(Meteor.userId()){
           $state.go("main");
       }
       var vm = this;

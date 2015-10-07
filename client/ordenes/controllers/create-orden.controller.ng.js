@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($scope, $location, $modal) {
+angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($scope, $location) {
     $scope.ordenes = $scope.$meteorCollection(Ordenes).subscribe("ordenes");
     $scope.clientes = $scope.$meteorCollection(Clientes).subscribe("clientes");
     $scope.productos = $scope.$meteorCollection(Productos).subscribe("productos");
@@ -16,7 +16,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.orden.responsable = $scope.currentUser.profile.displayName;
     $scope.orden.total = 0;
     $scope.orden.neto = 0;
-    $scope.orden.abono1 = 0;
+    $scope.orden.abono = 0;
     $scope.orden.iva = 0;
     $scope.orden.saldo = 0;
     $scope.hoy = moment().format("YYYY-MM-DD");
@@ -24,7 +24,10 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.mempresa.contactos = [];
 
     $scope.fecha = function(){
-        $scope.orden.fechaCompromiso = moment($scope.fechasel).format("DD-MM-YYYY");
+        if($scope.fechasel){
+            $scope.orden.fechaCompromiso = moment($scope.fechasel).format("DD-MM-YYYY");
+        }
+
 
     };
 
@@ -83,7 +86,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
             if(error){
                 $scope.msgAlerta(error,"error");
             }else if(result){
-                $scope.msgAlerta("Orden Guardada.","success");
+                $scope.errorProductos = false;
                     angular.forEach($scope.orden.productosOrden, function(valuePro, keyPro) {
                         $scope.producto = $scope.$meteorObject(Productos, valuePro.id, false);
                         $scope.producto.cantidad = $scope.producto.cantidad - valuePro.cantidad;
@@ -107,10 +110,13 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                             },
                             function(error) {
                                 $scope.msgAlerta(error,"Error Orden Productos Contactar Administrador");
+                                $scope.errorProductos = true;
                             }
                         );
                     });
-
+                $location.path('orden/' + result);
+                //console.log('orden/' + result);
+                $scope.msgAlerta("Orden Guardada.","success");
             }
         });
     };
@@ -176,15 +182,19 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                 console.log(files[i]);
                Uploads.insert(files[i], function (err, fileObj){
                    if(err){
-                       console.log(err);
+                       $scope.msgAlerta("Error al subir un archivo Intente denuevo","error");
                    }else{
                        console.log($scope.producSelec.codigo);
                        console.log(fileObj.url({brokenIsFine: true}));
                        if(!$scope.producSelec.archivos)
                            $scope.producSelec.archivos = [];
 
-                       $scope.producSelec.archivos.push({"num":"1"});
-                       console.log($scope.producSelec.archivos);
+                       if(!$scope.producSelec.url)
+                           $scope.producSelec.url = [];
+
+                       $scope.producSelec.url.push(fileObj.url({brokenIsFine: true}));
+                       $scope.producSelec.archivos.push(fileObj);
+                       $scope.$apply();
                    }
 
                // });
@@ -193,6 +203,9 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     }
 
     };
+    $scope.eliminarArchivo = function(arhivo){
+        $scope.producSelec.archivos.splice(arhivo,1);
+    }
     $scope.abono = function(abono1){
         console.log(1);
         $scope.orden.saldo = $scope.orden.total - abono1;
@@ -233,8 +246,11 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         l.click();
     }
     $scope.wizOrden = function(){
-        if(!$scope.fechasel)
+        if(!$scope.fechasel){
+            $scope.msgAlerta("Ingrese Fecha de compromiso","error");
             return;
+        }
+
         var l = document.getElementById('ordenTab');
         l.click();
     }
