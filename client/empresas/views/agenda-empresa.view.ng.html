@@ -27,10 +27,6 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="page-header">
-                                <!-- STYLER -->
-
-                                <!-- /STYLER -->
-                                <!-- BREADCRUMBS -->
                                 <ul class="breadcrumb">
                                     <li>
                                         <i class="fa fa-home"></i>
@@ -40,8 +36,6 @@
                                         <i class="fa fa-book"></i>
                                         <a >Agenda de Empresas</a>
                                     </li>
-
-
                                 </ul>
                                 <!-- /BREADCRUMBS -->
                                 <div class="clearfix">
@@ -66,18 +60,14 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon"><i class="fa fa-search"></i></div>
-
                                                     <input type="text" class="form-control" placeholder="Buscar" ng-model="searchFish">
-
                                                 </div>
                                             </div>
                                         </form>
                                         <div class="slider-content">
-
                                             <ul data-ng-repeat="empresa in empresas | orderBy:'nombreEmpresa' | filter:{nombreEmpresa:searchFish}">
                                                 <li><a id="5594669614f5704021c3efdf" name="empresa" ng-click="handleSliderNav(empresa)" data-ng-bind="empresa.nombreEmpresa" href="javacript:"></a></li>
                                             </ul>
-
                                         </div>
                                     </div>
                                 </div>

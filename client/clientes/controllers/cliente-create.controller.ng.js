@@ -2,6 +2,7 @@ angular.module('graficaExpresionApp').controller('ClientesCreateCtrl', function(
     $scope.clientes = $scope.$meteorCollection(Clientes, false);
     $scope.cliente = {};
     $scope.save = function() {
+        console.log($scope.cliente);
         Clientes.insert($scope.cliente,function(error,result){
             if(error){
                 $scope.msgAlerta(error,"error");

@@ -84,6 +84,9 @@
         border-top: none !important;
         border: none !important;
     }
+    .backstretch {
+        display: none;
+    }
 }
 .invoice-header {
     display: block;
@@ -91,4 +94,12 @@
 }
 .invoice-title {
     margin-bottom: 6px !important;
+}
+.medidas{
+    background-color: transparent;
+    border: dotted;
+    border-width: 1px;
+}
+.medidas:focus{
+    background-color: white !important;
 }

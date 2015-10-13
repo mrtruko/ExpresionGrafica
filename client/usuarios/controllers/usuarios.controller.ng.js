@@ -67,6 +67,16 @@ angular.module('graficaExpresionApp')
                     // }
                 });
         };
+        $scope.sms = function(){
+            Meteor.call('sms', 1,
+                function(error,result){
+                    if(error){
+                        console.log(error);
+                    }else{
+                        console.log("enviado");
+                    }
+                });
+        }
         $scope.addImages = function (files) {
             if (files.length > 0) {
                 var reader = new FileReader();

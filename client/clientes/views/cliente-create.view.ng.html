@@ -95,6 +95,17 @@
                                                         <input data-ng-model="cliente.direccion" id="direccion" type="text" class="form-control" placeholder="Direccion">
                                                     </div>
                                                 </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Preferencia</label>
+                                                    <div class="col-sm-9">
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="preferencia" id="inlineCheckbox1" ng-model="cliente.agencia"> Agencia
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="preferencia" id="inlineCheckbox2" ng-model="cliente.vip"> V.I.P.
+                                                        </label>
+                                                    </div>
+                                                </div>
                                                 <div data-ng-show="error" style="text-align: center;" class="text-danger">
                                                     <strong data-ng-bind="error"></strong>
                                                 </div>

@@ -16,7 +16,6 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.orden.responsable = $scope.currentUser.profile.displayName;
     $scope.orden.total = 0;
     $scope.orden.neto = 0;
-    $scope.orden.abono = 0;
     $scope.orden.iva = 0;
     $scope.orden.saldo = 0;
     $scope.hoy = moment().format("YYYY-MM-DD");
@@ -66,6 +65,18 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         }
         Cotizaciones.insert($scope.orden);
     }
+    $scope.saveProducto = function() {
+        $scope.mproducto.movimientos = [];
+        Productos.insert($scope.mproducto,function(error,result){
+            if(error){
+                console.log(error);
+                $scope.msgAlerta(error,"error");
+            }else if(result){
+                $scope.msgAlerta("Producto Guardado.","success");
+                $scope.mproducto = {};
+            }
+        });
+    };
     $scope.saveCliente = function() {
         Clientes.insert($scope.mcliente,function(error,result){
             if(error){
@@ -155,9 +166,20 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         });
         if($scope.agregar){
             $scope.productosOrdenObjs.push(producto);
-
-            $scope.orden.productosOrden.push({'id':producto._id,'tipo':producto.tipo, 'codigo':producto.codigo, 'nombreProducto': producto.nombreProducto,'precio':0, 'cantidad':0,'precioComercial':producto.precioComercial,'precioAgencia':producto.precioAgencia,'cantidadP':producto.cantidad });
+            $scope.orden.productosOrden.push({
+                'id':producto._id,
+                'tipo':producto.tipo,
+                'codigo':producto.codigo,
+                'nombreProducto': producto.nombreProducto,
+                'cantidad':1,
+                'precioVenta':producto.precioVenta,
+                'precioTotal':producto.precioTotal,
+                'precioComercial':producto.precioComercial,
+                'precioAgencia':producto.precioAgencia,
+                'descuento':0,
+                'cantidadP':producto.cantidad });
         }
+        console.log($scope.orden.productosOrden);
         $scope.calcularTotal();
     };
     $scope.eliminar = function(index){
@@ -203,6 +225,36 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     }
 
     };
+    $scope.descuentoA = function(){
+        if($scope.cliente){
+            if($scope.cliente.vip||$scope.cliente.agencia){
+                return false;
+            }
+        }
+
+        if($scope.empresa){
+            if($scope.empresa.vip||$scope.empresa.agencia){
+            return false;
+            }
+        }
+
+        return true;
+    }
+    $scope.descuentoV = function(){
+        if($scope.cliente){
+            if($scope.cliente.vip){
+                return false;
+            }
+        }
+
+        if($scope.empresa){
+            if($scope.empresa.vip){
+                return false;
+            }
+        }
+
+        return true;
+    }
     $scope.eliminarArchivo = function(arhivo){
         $scope.producSelec.archivos.splice(arhivo,1);
     }
@@ -211,9 +263,11 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         $scope.orden.saldo = $scope.orden.total - abono1;
     };
     $scope.calcularTotal =  function(){
+        console.log($scope.cliente);
+        console.log($scope.empresa);
         $scope.orden.total = 0;
         angular.forEach($scope.orden.productosOrden, function(value, key) {
-            $scope.orden.total = $scope.orden.total + value.precio;
+            $scope.orden.total = $scope.orden.total + value.precioTotal;
 
         });
         $scope.orden.neto = window.Math.round($scope.orden.total / 1.19);

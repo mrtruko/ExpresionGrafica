@@ -35,6 +35,14 @@ Schema.Empresa = new SimpleSchema({
     type: String,
     regEx: SimpleSchema.RegEx.Email
   },
+  vip: {
+    type: Boolean,
+    optional: true
+  },
+  agencia: {
+    type: Boolean,
+    optional: true
+  },
   contactos:{
     type: Array,
   },

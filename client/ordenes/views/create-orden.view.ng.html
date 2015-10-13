@@ -315,6 +315,131 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="box-config4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body" style="padding: 1px;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="box border orange">
+                                                    <div class="box-title">
+                                                        <h4><i class="fa fa-bars"></i>Agregar Producto</h4>
+                                                    </div>
+                                                    <div class="box-body big">
+                                                        <form class="form-horizontal" ng-init="x = 0" data-ng-submit="create(x)" role="form">
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Nombre Producto</label>
+                                                                <div class="col-sm-9">
+
+                                                                    <input  type="text" data-ng-model="mproducto.nombreProducto" id="nombreProducto" class="form-control" placeholder="Nombre Producto">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Codigo</label>
+                                                                <div class="col-sm-9">
+                                                                    <input data-ng-model="mproducto.codigo" id="codigo" placeholder="Codigo Producto" type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Precio Comercial</label>
+                                                                <div class="col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon">$</span>
+                                                                        <input data-ng-model="mproducto.precioComercial" id="precioComercial"  type="text" class="form-control" placeholder="Precio">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Precio Agencia</label>
+                                                                <div class="col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon">$</span>
+                                                                        <input data-ng-model="mproducto.precioAgencia" id="precioAgencia" type="text" class="form-control" placeholder="Precio">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Cantidad Inicial</label>
+                                                                <div class="col-sm-9">
+                                                                    <input data-ng-model="mproducto.cantidad" id="cantidad" type="text" class="form-control" placeholder="Cantidad">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Tipo</label>
+                                                                <div class="col-sm-9">
+                                                                    <label class="checkbox-inline">
+                                                                        <input type="radio" data-ng-model="mproducto.tipo" id="tipo0" value="Producto"> Producto
+                                                                    </label>
+                                                                    <label class="checkbox-inline">
+                                                                        <input type="radio" data-ng-model="mproducto.tipo"  id="tipo1" value="Sub-Producto"> Sub-Producto
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Comerciable</label>
+                                                                <div class="col-sm-9">
+                                                                    <div class="input-group">
+                                                      <span class="input-group-addon">
+                                                        <input data-ng-model="mproducto.comerciable" ng-init="mproducto.comerciable=false" id="comerciable" type="checkbox">
+                                                      </span>
+                                                                        <input type="text"  readonly class="form-control" value="Es vendible?" style="cursor:default">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Estado Inicial</label>
+                                                                <div class="col-sm-9">
+                                                                    <select data-ng-model="mproducto.estado" id="estado" class="form-control">
+                                                                        <option value="En Venta">En Venta</option>
+                                                                        <option value="En Espera">En Espera</option>
+                                                                        <option value="En Bajo Stock">En Bajo Stock</option>
+                                                                        <option value="Sin Stock">Sin Stock</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-md-3 control-label">Descripcion:</label>
+                                                                <div class="col-md-9"><textarea data-ng-model="mproducto.descripcion" id="descripcion" style="max-width:100%;margin:0px -8px 0px 0px; width: 640px; height: 79px;" rows="3" cols="5" name="textarea" class="form-control" ></textarea></div>
+                                                            </div>
+                                                            <div data-ng-show="error" class="text-danger" style="text-align: center;">
+                                                                <strong data-ng-bind="error"></strong>
+                                                            </div>
+                                                            <div data-ng-show="success" class="text-success" style="text-align: center;">
+                                                                <strong data-ng-bind="success"></strong>
+                                                            </div>
+                                                            <div class="wizard-buttons">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="col-md-offset-3 col-md-9">
+                                                                            <button type="button" ng-click="saveProducto();" class="btn btn-success">Guardar</button>
+                                                                            <button type="button" class="btn btn-danger" ng-click="mproducto={};" data-dismiss="modal">Cancelar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </form>
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
 
         <div class="container" data-ng-init="formWizard()">
@@ -703,7 +828,7 @@
 
 
 
-                                                                                            <span class="">Producto no existe? <A HREF="/#!/productos/create">Agregar nuevo producto.   </A></span>
+                                                                                            <span class="">Producto no existe? <A href="#box-config4" ng-click="mproducto={}" data-toggle="modal" class="config">Agregar nuevo producto.   </A></span>
                                                                                             <span class="error-span"></span>
                                                                                         </div>
                                                                                     </div>
@@ -746,11 +871,15 @@
                                                                                         <tr>
                                                                                             <th>Código</th>
                                                                                             <th>Item/ Descripción</th>
+                                                                                            <th width="125">Medida</th>
                                                                                             <th>
                                                                                                 Cantidad
                                                                                             </th>
                                                                                             <th>
                                                                                                 Costo Unitario
+                                                                                            </th>
+                                                                                            <th>
+                                                                                               Descuento
                                                                                             </th>
                                                                                             <th>
                                                                                                 Precio Total
@@ -771,15 +900,39 @@
                                                                                             <td>
                                                                                                 <input ng-model="produc.nombreProducto" type="text">
                                                                                             </td>
+                                                                                            <td>
+                                                                                                <div ng-show="produc.tipo === 'Sub-Producto'"><input ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();" class="medidas" ng-init="produc.ancho=1" style="width: 45px;" ng-model="produc.ancho" type="number"> x
+                                                                                                    <input ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();" ng-init="produc.alto=1" class="medidas" style="width: 45px;" ng-model="produc.alto" type="number">
+                                                                                                </div>
+
+                                                                                            </td>
                                                                                             <td id="cantidad">
-                                                                                                <input ng-model="produc.cantidad" max="{{produc.cantidadP}}" min="0" ng-change="produc.precio=(produc.precioComercial*produc.cantidad);calcularTotal()" type="number">
-                                                                                                <span for="" style="display:none !important" class="error-span">Please enter a value less than or equal to 10.</span>
+                                                                                                <input ng-model="produc.cantidad" max="{{produc.cantidadP}}" min="0" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();" type="number">
                                                                                             </td>
                                                                                             <td>
-                                                                                                <input ng-model="produc.precioComercial" ng-change="produc.precio=(produc.precioComercial*produc.cantidad);calcularTotal()" type="text">
+                                                                                                <select ng-model="produc.precioVenta" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();">
+                                                                                                    <option selected="true" value="{{produc.precioComercial}}">{{ produc.precioComercial }} | Precio Comercial</option>
+                                                                                                    <option ng-hide="descuentoA();" value="{{produc.precioAgencia}}">{{produc.precioAgencia}} | Precio Agencia</option>
+                                                                                                </select>
                                                                                             </td>
                                                                                             <td>
-                                                                                                {{produc.precio}}
+                                                                                                <select ng-model="produc.descuento" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();">
+                                                                                                    <option value="0">0%</option>
+                                                                                                    <option ng-hide="descuentoA();" value="5">5%</option>
+                                                                                                    <option ng-hide="descuentoA();" value="10">10%</option>
+                                                                                                    <option ng-hide="descuentoA();" value="20">20%</option>
+                                                                                                    <option ng-hide="descuentoA();" value="30">30%</option>
+                                                                                                    <option ng-hide="descuentoA();" value="40">40%</option>
+                                                                                                    <option ng-hide="descuentoV();" value="50">50%</option>
+                                                                                                    <option ng-hide="descuentoV();" value="60">60%</option>
+                                                                                                    <option ng-hide="descuentoV();" value="70">70%</option>
+                                                                                                    <option ng-hide="descuentoV();" value="80">80%</option>
+                                                                                                    <option ng-hide="descuentoV();" value="90">90%</option>
+                                                                                                    <option ng-hide="descuentoV();" value="100">100%</option>
+                                                                                                </select>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                {{produc.precioTotal}}
                                                                                             </td>
                                                                                             <td>
                                                                                                 <A href="#box-config3" ng-show="produc.tipo === 'Sub-Producto'" class="btn btn-primary config"  ng-click="pSelecionado(produc);" data-toggle="modal">Detalle</A>
@@ -974,10 +1127,10 @@
                                                                                                 {{produc.cantidad}}
                                                                                             </td>
                                                                                             <td>
-                                                                                                {{produc.precioComercial}}
+                                                                                                {{produc.precioVenta}}
                                                                                             </td>
                                                                                             <td>
-                                                                                                {{produc.precio}}
+                                                                                                {{produc.precioTotal}}
                                                                                             </td>
 
                                                                                         </tr>
@@ -1019,13 +1172,13 @@
                                                                                                     </td>
                                                                                                     <td style="width:30%">
 
-                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="text" ng-change="abono(orden.abono)" data-ng-model="orden.abono" class="form-control" placeholder="Abono">
+                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="number" min="0" max="{{ orden.total }}"  ng-change="abono(orden.abono)" data-ng-model="orden.abono" class="form-control" placeholder="Abono">
 
                                                                                                     </td>
                                                                                                     <td style="width:30%">
 
 
-                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="text" data-ng-model="orden.saldo" class="form-control" placeholder="Saldo">
+                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="number" readonly ng-init="orden.saldo=0" data-ng-model="orden.saldo" class="form-control" placeholder="Saldo">
 
 
                                                                                                     </td>
@@ -1081,13 +1234,13 @@
                                                                                             <td style="width: 10%;text-align:right;">
                                                                                             </td>
                                                                                             <td style="width: 10%;text-align:right;">
-                                                                                                Documentos N°
+                                                                                                <input type="text" class="form-control" ng-model="orden.documento" placeholder="Documentos N°">
                                                                                             </td>
                                                                                             <td style="border-bottom: 2px solid #dddddd;width:10%;text-align:right;">
 
                                                                                             </td>
                                                                                             <td style="width: 10%;text-align:right;">
-                                                                                                Banco
+                                                                                                <input type="text" class="form-control" ng-model="orden.banco"  placeholder="Banco">
                                                                                             </td>
                                                                                             <td style="border-bottom: 2px solid #dddddd;width:10%;text-align:right;"></td>
                                                                                             <td style="width:10%;text-align:right;">

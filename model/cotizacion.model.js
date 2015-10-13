@@ -1,19 +1,18 @@
-Ordenes = new Mongo.Collection('ordenes');
+Cotizacion = new Mongo.Collection('cotizacion');
 
-Ordenes.allow({
-  insert: function(userId, ordene) {
+Cotizacion.allow({
+  insert: function(userId, cotizacion) {
     return true;
   },
-  update: function(userId, ordene, fields, modifier) {
+  update: function(userId, cotizacion, fields, modifier) {
     return true;
   },
-  remove: function(userId, ordene) {
+  remove: function(userId, cotizacion) {
     return true;
   }
 });
-
 Schema = {};
-Schema.Orden = new SimpleSchema({
+Schema.Cotizacion = new SimpleSchema({
   cliente: {
     type: String,
     optional: true
@@ -96,7 +95,7 @@ Schema.Orden = new SimpleSchema({
     type: String,
     optional: true
   },
-"productosOrden.$.nombreProducto": {
+  "productosOrden.$.nombreProducto": {
     type: String
   },
   "productosOrden.$.cantidad": {
@@ -105,18 +104,18 @@ Schema.Orden = new SimpleSchema({
   "productosOrden.$.precioVenta": {
     type: Number
   },
-"productosOrden.$.precioTotal": {
-  type: Number
-},
+  "productosOrden.$.precioTotal": {
+    type: Number
+  },
   "productosOrden.$.precioAgencia": {
     type: Number
   },
   "productosOrden.$.precioComercial": {
     type: Number
   },
-"productosOrden.$.cantidadP": {
-  type: Number
-},
+  "productosOrden.$.cantidadP": {
+    type: Number
+  },
   "productosOrden.$.comentario": {
     type: String,
     optional: true
@@ -153,4 +152,4 @@ Schema.Orden = new SimpleSchema({
     }
   }
 });
-Ordenes.attachSchema(Schema.Orden);
+Cotizacion.attachSchema(Schema.Cotizacion);

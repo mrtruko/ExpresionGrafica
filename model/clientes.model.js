@@ -31,6 +31,14 @@ Schema.Cliente = new SimpleSchema({
   direccion: {
     type: String,
   },
+  vip: {
+    type: Boolean,
+    optional: true
+  },
+  agencia: {
+    type: Boolean,
+    optional: true
+  },
   created: {
     type: Date,
     autoValue: function() {

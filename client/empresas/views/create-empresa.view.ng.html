@@ -117,6 +117,17 @@
                                                         <input data-ng-model="empresa.fonoEmpresa" id="fonoEmpresa" type="text" class="form-control" placeholder="Teléfono Empresa">
                                                     </div>
                                                 </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Preferencia</label>
+                                                    <div class="col-sm-9">
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" ng-model="empresa.agencia"> Agencia
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox2" ng-model="empresa.vip"> V.I.P.
+                                                        </label>
+                                                    </div>
+                                                </div>
                                                 <fieldset  data-ng-repeat="contacto in empresa.contactos">
                                                 <h4> Contacto {{ $index + 1 }}</h4>
                                                 <div class="separator"></div>

@@ -84,7 +84,26 @@ Meteor.methods({
         //console.log(usuario.pass+"_Pass");
         //console.log(usuario);
         Accounts.setPassword(usuario.id, usuario.pass);
+    },'sms': function(msg){
+        twilio = Twilio("ACc45a719d49a4ec30afa9af9b7fe8bcb2", "a082498ec88c8e9a971e9890dec49b42");
+        twilio.sendSms({
+            to:'+56962374910', // Any number Twilio can deliver to
+            from: '+16468464197', // A number you bought from Twilio and can use for outbound communication
+            body: 'se creo una cuenta con tu numero de telefono en GraficaExpresion.(Te crei bkn pipisimo)' // body of the SMS message
+        }, function(err, responseData) { //this function is executed when a response is received from Twilio
+            if (!err) { // "err" is an error received during the request, if any
+                // "responseData" is a JavaScript object containing data received from Twilio.
+                // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
+                // http://www.twilio.com/docs/api/rest/sending-sms#example-1
+                console.log(responseData.from); // outputs "+14506667788"
+                console.log(responseData.body); // outputs "word to your mother."
+            }else{
+                console.log("no enviado");
+                console.log(responseData)
+            }
+        });
     }
+
 });
 Accounts.validateLoginAttempt(function(attempt) {
     if(attempt.user!= undefined){
