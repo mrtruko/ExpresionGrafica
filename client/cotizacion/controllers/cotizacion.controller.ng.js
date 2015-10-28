@@ -2,5 +2,5 @@
 
 angular.module('graficaExpresionApp')
 .controller('CotizacionCtrl', function($scope) {
-  $scope.viewName = 'Cotizacion';
+      $scope.cotizaciones = $scope.$meteorCollection(Cotizacion).subscribe("cotizacion");
 });

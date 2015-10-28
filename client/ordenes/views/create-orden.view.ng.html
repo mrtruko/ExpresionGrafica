@@ -1,6 +1,5 @@
 <section id="page">
     <div id="main-content">
-
         <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
         <div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -84,7 +83,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -644,97 +642,111 @@
                                                                                 </tr>
                                                                                 </tbody>
                                                                             </table>
-                                                                            <div class='invoice-title' style="margin-left: 164px;">Datos del Cliente Contacto <span class="text-pipe-divider" style="
-    margin-left: 100px;">&nbsp; &nbsp;</span> <div class='invoice-title' style="margin-left: 703px; margin-top: -29px;" >Datos de Empresa</div></div>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label col-md-1">Nombre<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.nombrec" name="name" placeholder="Por favor ingrese nombre"/>
-                                                                                    <span class="error-span"></span>
-                                                                                </div>
-                                                                                <label class="control-label col-md-2">RUT<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.rutEmpresa" name="rutEmpresa" placeholder="Por favor ingrese rut"/>
-                                                                                    <span class="error-span"></span>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label col-md-1">Apellido<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.apellidoc" name="apellido" placeholder="Por favor ingrese apellido"/>
-                                                                                    <span class="error-span"></span>
-                                                                                </div>
-                                                                                <label class="control-label col-md-2">Nombre Empresa<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.nombreEmpresa" name="name" placeholder="Por favor ingrese nombre"/>
-                                                                                    <span class="error-span"></span>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label col-md-1">Rut<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.rut" name="rut" placeholder="Por favor ingrese rut"/>
-                                                                                    <span class="error-span"></span>
-                                                                                </div>
-                                                                                <label class="control-label col-md-2">Giro<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.giro" name="name" placeholder="Por favor ingrese giro"/>
-                                                                                    <span class="error-span"></span>
-                                                                                </div>
-                                                                            </div>
 
-                                                                            <div class="form-group">
-                                                                                <label class="control-label col-md-1">Email<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.email" name="email" placeholder="Por favor ingrese un email "/>
-                                                                                    <span class="error-span"></span>
-                                                                                </div>
-                                                                                <label class="control-label col-md-2">Email Empresa<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.mailempresa" name="mailempresa" placeholder="Por favor ingrese email"/>
-                                                                                    <span class="error-span"></span>
-                                                                                </div>
-                                                                            </div>
 
-                                                                            <div class="form-group">
-                                                                                <label class="control-label col-md-1">Teléfono<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.fono" name="fono" placeholder="Por favor ingrese teléfono"/>
-                                                                                    <span class="error-span"></span>
+                                                                            <div class="col-md-6">
+                                                                                <div  class="invoice-title" style="text-align:center">Datos del Cliente Contacto <a  ng-show="contactoSeleccionado" ng-click="contactoSeleccionado=null;" class="btn btn-alert" style="font-weight: 900;color: red;">
+                                                                                    X
+                                                                                </a> <span class="text-pipe-divider" style="
+    margin-left: 100px;">&nbsp; &nbsp;</span> </div>
+                                                                                <table ng-hide="contactoSeleccionado" ng-hi cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered table-hover">
+                                                                                    <tr>
+
+                                                                                        <th>Rut</th>
+                                                                                        <th>Nombre</th>
+                                                                                        <th>Apellido</th>
+                                                                                    </tr>
+                                                                                    <tr ng-repeat="contacto in empresa.contactos" ng-click="contactoSelec(contacto);">
+                                                                                        <td>{{contacto.rut}}</td>
+                                                                                        <td>{{contacto.nombre}}</td>
+                                                                                        <td>{{contacto.apellido}}</td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                                <div ng-show="contactoSeleccionado">
+                                                                                    <div class="form-group">
+                                                                                    <label class="control-label col-md-2">Nombre<span class="required"></span></label>
+                                                                                    <div class="col-md-8">
+                                                                                        <input type="text" readonly class="form-control" data-ng-model="contactoSeleccionado.nombre" name="name" placeholder="Por favor ingrese nombre"/>
+                                                                                        <span class="error-span"></span>
+                                                                                    </div>
                                                                                 </div>
-                                                                                <label class="control-label col-md-2">Teléfono Empresa<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.fonoEmpresa" name="fonoEmpresa" placeholder="Por favor ingrese nombre"/>
-                                                                                    <span class="error-span"></span>
+                                                                                    <div class="form-group">
+                                                                                        <label class="control-label col-md-2">Apellido<span class="required"></span></label>
+                                                                                        <div class="col-md-8">
+                                                                                            <input type="text" readonly class="form-control" data-ng-model="contactoSeleccionado.apellido" name="apellido" placeholder="Por favor ingrese apellido"/>
+                                                                                            <span class="error-span"></span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label class="control-label col-md-2">Rut<span class="required"></span></label>
+                                                                                        <div class="col-md-8">
+                                                                                            <input type="text" readonly class="form-control" data-ng-model="contactoSeleccionado.rut" name="rut" placeholder="Por favor ingrese rut"/>
+                                                                                            <span class="error-span"></span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label class="control-label col-md-2">Email<span class="required"></span></label>
+                                                                                        <div class="col-md-8">
+                                                                                            <input type="text" readonly class="form-control" data-ng-model="contactoSeleccionado.email" name="email" placeholder="Por favor ingrese un email "/>
+                                                                                            <span class="error-span"></span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label class="control-label col-md-2">Teléfono<span class="required"></span></label>
+                                                                                        <div class="col-md-8">
+                                                                                            <input type="text" readonly class="form-control" data-ng-model="contactoSeleccionado.fono" name="fono" placeholder="Por favor ingrese teléfono"/>
+                                                                                            <span class="error-span"></span>
+                                                                                        </div>
+                                                                                    </div>
+
                                                                                 </div>
 
                                                                             </div>
-
-
-                                                                            <div class="form-group">
-                                                                                <label class="control-label col-md-1"><span class="required"></span></label>
-                                                                                <div class="col-md-4">
-
+                                                                            <div class="col-md-6">
+                                                                                <div class='invoice-title' style="text-align:center">Datos de Empresa</div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label col-md-2">RUT<span class="required"></span></label>
+                                                                                    <div class="col-md-8">
+                                                                                        <input type="text" readonly class="form-control" data-ng-model="empresa.rutEmpresa" name="rutEmpresa" placeholder="Por favor ingrese rut"/>
+                                                                                        <span class="error-span"></span>
+                                                                                    </div>
                                                                                 </div>
-                                                                                <label class="control-label col-md-2">Dirección Empresa<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-                                                                                    <input type="text" readonly class="form-control" data-ng-model="empresa.direccionEmpresa" name="direccionEmpresa" placeholder="Por favor ingrese direccion"/>
-                                                                                    <span class="error-span"></span>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label col-md-2">Nombre Empresa<span class="required"></span></label>
+                                                                                    <div class="col-md-8">
+                                                                                        <input type="text" readonly class="form-control" data-ng-model="empresa.nombreEmpresa" name="name" placeholder="Por favor ingrese nombre"/>
+                                                                                        <span class="error-span"></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label col-md-2">Giro<span class="required"></span></label>
+                                                                                    <div class="col-md-8">
+                                                                                        <input type="text" readonly class="form-control" data-ng-model="empresa.giro" name="name" placeholder="Por favor ingrese giro"/>
+                                                                                        <span class="error-span"></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label col-md-2">Email Empresa<span class="required"></span></label>
+                                                                                    <div class="col-md-8">
+                                                                                        <input type="text" readonly class="form-control" data-ng-model="empresa.mailempresa" name="mailempresa" placeholder="Por favor ingrese email"/>
+                                                                                        <span class="error-span"></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label col-md-2">Teléfono Empresa<span class="required"></span></label>
+                                                                                    <div class="col-md-8">
+                                                                                        <input type="text" readonly class="form-control" data-ng-model="empresa.fonoEmpresa" name="fonoEmpresa" placeholder="Por favor ingrese nombre"/>
+                                                                                        <span class="error-span"></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label col-md-2">Dirección Empresa<span class="required"></span></label>
+                                                                                    <div class="col-md-8">
+                                                                                        <input type="text" readonly class="form-control" data-ng-model="empresa.direccionEmpresa" name="direccionEmpresa" placeholder="Por favor ingrese direccion"/>
+                                                                                        <span class="error-span"></span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
                                                                         </div>
 
                                                                     </div>
@@ -828,7 +840,7 @@
 
 
 
-                                                                                            <span class="">Producto no existe? <A href="#box-config4" ng-click="mproducto={}" data-toggle="modal" class="config">Agregar nuevo producto.   </A></span>
+                                                                                            <span class="">Producto no existe? <A href="#box-config4" ng-click="mproducto={}" data-toggle="modal" class="config">Agregar nuevo producto</A>, <A href="javascript:" ng-click="orden.productosOrden.push({'codigo':'espec','tipo':'especial',id:'0000','cantidad':1,'estado':'pendiente','descuento':0})">Agregar Producto Especial</A></span>
                                                                                             <span class="error-span"></span>
                                                                                         </div>
                                                                                     </div>
@@ -901,7 +913,7 @@
                                                                                                 <input ng-model="produc.nombreProducto" type="text">
                                                                                             </td>
                                                                                             <td>
-                                                                                                <div ng-show="produc.tipo === 'Sub-Producto'"><input ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();" class="medidas" ng-init="produc.ancho=1" style="width: 45px;" ng-model="produc.ancho" type="number"> x
+                                                                                                <div ng-show="produc.tipo === 'Sub-Producto' || produc.tipo === 'especial'"><input ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();" class="medidas" ng-init="produc.ancho=1" style="width: 45px;" ng-model="produc.ancho" type="number"> x
                                                                                                     <input ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();" ng-init="produc.alto=1" class="medidas" style="width: 45px;" ng-model="produc.alto" type="number">
                                                                                                 </div>
 
@@ -910,7 +922,8 @@
                                                                                                 <input ng-model="produc.cantidad" max="{{produc.cantidadP}}" min="0" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();" type="number">
                                                                                             </td>
                                                                                             <td>
-                                                                                                <select ng-model="produc.precioVenta" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();">
+                                                                                                <input ng-model="produc.precioVenta" ng-show="produc.tipo === 'especial'" type="text" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();">
+                                                                                                <select ng-model="produc.precioVenta" ng-hide="produc.tipo === 'especial'" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();">
                                                                                                     <option selected="true" value="{{produc.precioComercial}}">{{ produc.precioComercial }} | Precio Comercial</option>
                                                                                                     <option ng-hide="descuentoA();" value="{{produc.precioAgencia}}">{{produc.precioAgencia}} | Precio Agencia</option>
                                                                                                 </select>
@@ -935,7 +948,7 @@
                                                                                                 {{produc.precioTotal}}
                                                                                             </td>
                                                                                             <td>
-                                                                                                <A href="#box-config3" ng-show="produc.tipo === 'Sub-Producto'" class="btn btn-primary config"  ng-click="pSelecionado(produc);" data-toggle="modal">Detalle</A>
+                                                                                                <A href="#box-config3" ng-show="produc.tipo === 'Sub-Producto' || produc.tipo === 'especial'" class="btn btn-primary config"  ng-click="pSelecionado(produc);" data-toggle="modal">Detalle</A>
                                                                                             </td>
                                                                                             <td data-ng-click="eliminar($index)">
                                                                                                 X
@@ -1172,7 +1185,7 @@
                                                                                                     </td>
                                                                                                     <td style="width:30%">
 
-                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="number" min="0" max="{{ orden.total }}"  ng-change="abono(orden.abono)" data-ng-model="orden.abono" class="form-control" placeholder="Abono">
+                                                                                                        <input style="padding:0 0px 0px 10px;height: 27px;" type="number" min="0" max="{{ orden.total }}"  ng-change="abono(orden.abono)" ng-init="orden.abono=0;" data-ng-model="orden.abono" class="form-control" placeholder="Abono">
 
                                                                                                     </td>
                                                                                                     <td style="width:30%">

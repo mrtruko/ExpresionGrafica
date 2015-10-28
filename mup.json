@@ -1,0 +1,33 @@
+{
+  "servers": [
+    {
+      "host": "104.131.22.226",
+      "username": "root",
+      "password": "demo123"
+
+    }
+  ],
+
+  "setupMongo": true,
+
+  "setupNode": true,
+
+  "nodeVersion": "0.10.36",
+
+  "setupPhantom": true,
+
+  "enableUploadProgressBar": true,
+
+
+  "appName": "GraficaExpresion",
+
+
+  "app": ".",
+
+
+  "env": {
+    "ROOT_URL": "http://104.131.22.226"
+  },
+
+  "deployCheckWaitTime": 15
+}

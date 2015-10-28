@@ -31,4 +31,13 @@ angular.module('graficaExpresionApp')
         });
 
       }
-});
+}).run(function($rootScope) {
+        $rootScope.globalRoles = function(roles) {
+            if (Roles.userIsInRole(Meteor.user(), roles)) {
+                // NOTE: This example assumes the user is not using groups.
+                return true;
+            }else{
+                return false;
+            }
+        };
+    });

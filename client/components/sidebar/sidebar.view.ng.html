@@ -11,7 +11,7 @@
                     <span class="selected"></span>
                 </a>
             </li>
-            <li class="has-sub">
+            <li class="has-sub" ng-show="globalRoles(['admin','Gerente','Recepcionista'])">
                 <a href="javascript:;" class="">
                     <i class="fa fa-users fa-fw"></i> <span class="menu-text">Clientes</span>
                     <span class="arrow"></span>
@@ -23,22 +23,27 @@
                     <li><a class="" href="/empresas"><span class="sub-menu-text"><i class="fa fa-building-o fa-fw"></i>Lista de Empresas</span></a></li>
                 </ul>
             </li>
-            <li class="has-sub">
-                <a href="/productos">
+            <li class="has-sub" ng-show="globalRoles(['admin','Gerente','Bodeguero'])">
+                <a  href="/productos">
                     <i class="fa fa-dropbox fa-fw"></i> <span class="menu-text">Bodega</span>
                 </a>
             </li>
-            <li class="has-sub">
+            <li ng-show="globalRoles(['admin','Gerente','Recepcionista','Produccion'])" class="has-sub">
                 <a href="javascript:;" class="">
                     <i class="fa fa-pencil-square-o fa-fw"></i> <span class="menu-text">Ordenes</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="/orden"><span class="sub-menu-text">Orden de Pedido</span></a></li>
-                    <li><a class="" href="/ordenes"><span class="sub-menu-text">Orden de Trabajo</span></a></li>
+                    <li ng-show="globalRoles(['admin','Gerente','Recepcionista'])"><a class="" href="/orden"><span class="sub-menu-text">Orden de Pedido</span></a></li>
+                    <li ng-show="globalRoles(['admin','Gerente','Recepcionista','Produccion'])"><a class="" href="/ordenes"><span class="sub-menu-text">Orden de Trabajo</span></a></li>
                 </ul>
             </li>
-            <li class="has-sub">
+            <li ng-show="globalRoles(['admin','Gerente','Recepcionista'])" class="has-sub">
+                <a href="/cotizacion">
+                    <i class="fa fa-dropbox fa-fw"></i> <span class="menu-text">Cotizaciones</span>
+                </a>
+            </li>
+            <li ng-show="globalRoles(['admin','Gerente'])" class="has-sub">
                 <a href="/usuarios">
                     <i class="fa fa-user fa-fw"></i> <span class="menu-text">Usuarios</span>
                 </a>

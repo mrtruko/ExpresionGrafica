@@ -2,13 +2,30 @@
 
 angular.module('graficaExpresionApp')
 .controller('UsuariosCtrl', function($scope,$meteor,$rootScope, $state, $modal) {
+
   $scope.viewName = 'Usuarios';
         $scope.users = $meteor.collection(Meteor.users, false).subscribe("users");
         $scope.imagenes = $meteor.collectionFS(Imagenes, false, Imagenes).subscribe('imagenes');
+        $scope.roles = ['Produccion', 'Bodeguero', 'Recepcionista', 'Gerente'];
         $scope.usuario = {};
+        $scope.usuario.selection = [];
         //Roles.addUsersToRoles("Xv6v3X62FvSNN8D9r", ['player','goalie'])
         //Roles.removeUsersFromRoles("Xv6v3X62FvSNN8D9r", 'goalie');
         console.log($scope.users);
+        $scope.toggleSelection = function toggleSelection(role) {
+            var idx = $scope.usuario.selection.indexOf(role);
+
+            // is currently selected
+            if (idx > -1) {
+                $scope.usuario.selection.splice(idx, 1);
+            }
+
+            // is newly selected
+            else {
+                $scope.usuario.selection.push(role);
+            }
+            console.log($scope.usuario.selection);
+        };
         $scope.create = function(nose){
             $scope.usuario.displayName = $scope.usuario.firstName +" " +$scope.usuario.lastName;
             if($scope.usuario.password===undefined){
@@ -56,7 +73,7 @@ angular.module('graficaExpresionApp')
                             });
                         }
 
-                        Roles.addUsersToRoles(result, ['admin']);
+                        Roles.addUsersToRoles(result, $scope.usuario.selection);
                         $state.go("usuarios");
                         $scope.msgAlerta("Guardado","success");
                         $scope.usuario = {};

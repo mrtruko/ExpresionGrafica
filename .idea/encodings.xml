@@ -11,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/client/clientes/views/clientes-list.view.ng.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/components/sidebar/sidebar.view.ng.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/cotizacion/views/cotizacion.view.ng.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/empresas/controllers/create-empresa.controllers.ng.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/empresas/controllers/empresas.controller.ng.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/empresas/empresas.routes.ng.js" charset="UTF-8" />

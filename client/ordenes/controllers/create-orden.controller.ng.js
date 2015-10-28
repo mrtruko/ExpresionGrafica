@@ -5,6 +5,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.clientes = $scope.$meteorCollection(Clientes).subscribe("clientes");
     $scope.productos = $scope.$meteorCollection(Productos).subscribe("productos");
     $scope.empresas = $scope.$meteorCollection(Empresas).subscribe("empresas");
+    $scope.cotizacion = $scope.$meteorCollection(Cotizacion).subscribe("cotizacion");
     $scope.orden = {};
     $scope.mostrarCliente = true;
     $scope.Math = window.Math;
@@ -26,8 +27,6 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         if($scope.fechasel){
             $scope.orden.fechaCompromiso = moment($scope.fechasel).format("DD-MM-YYYY");
         }
-
-
     };
 
     $scope.saveEmpresa = function() {
@@ -63,7 +62,14 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         }else{
             $scope.orden.empresa = $scope.empresa._id;
         }
-        Cotizaciones.insert($scope.orden);
+        Cotizacion.insert($scope.orden,function(error,result){
+            if(error){
+                $scope.msgAlerta(error,"error");
+            }else if(result){
+
+                $scope.msgAlerta("Cotizacion Guardada.","success");
+            }
+        });
     }
     $scope.saveProducto = function() {
         $scope.mproducto.movimientos = [];
@@ -93,12 +99,16 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         }else{
             $scope.orden.empresa = $scope.empresa._id;
         }
+        $scope.orden.estado = "inicial";
         Ordenes.insert($scope.orden,function(error,result){
             if(error){
                 $scope.msgAlerta(error,"error");
             }else if(result){
                 $scope.errorProductos = false;
                     angular.forEach($scope.orden.productosOrden, function(valuePro, keyPro) {
+                        if(valuePro.codigo==="espec"){
+                            return;
+                        }
                         $scope.producto = $scope.$meteorObject(Productos, valuePro.id, false);
                         $scope.producto.cantidad = $scope.producto.cantidad - valuePro.cantidad;
                         if(!$scope.producto.movimientos){
@@ -120,7 +130,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
 
                             },
                             function(error) {
-                                $scope.msgAlerta(error,"Error Orden Productos Contactar Administrador");
+                                $scope.msgAlerta("Error Orden Productos Contactar Administrador"+error,"error");
                                 $scope.errorProductos = true;
                             }
                         );
@@ -131,7 +141,11 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
             }
         });
     };
+    $scope.contactoSelec = function(contacto){
 
+        $scope.contactoSeleccionado = contacto;
+        console.log($scope.contactoSeleccionado);
+    }
 
     $scope.alerta = function(empresa){
         $scope.empresa = empresa;
@@ -146,6 +160,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.motrarCliente = function(){
         $scope.mostrarCliente = true;
         $scope.empresa = null;
+        $scope.contactoSeleccionado = null;
     };
     $scope.mostrarEmpresa = function(){
         $scope.mostrarCliente = false;
@@ -176,6 +191,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                 'precioTotal':producto.precioTotal,
                 'precioComercial':producto.precioComercial,
                 'precioAgencia':producto.precioAgencia,
+                'estado':"pendiente",
                 'descuento':0,
                 'cantidadP':producto.cantidad });
         }
@@ -258,9 +274,8 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.eliminarArchivo = function(arhivo){
         $scope.producSelec.archivos.splice(arhivo,1);
     }
-    $scope.abono = function(abono1){
-        console.log(1);
-        $scope.orden.saldo = $scope.orden.total - abono1;
+    $scope.abono = function(){
+        $scope.orden.saldo = $scope.orden.total - $scope.orden.abono;
     };
     $scope.calcularTotal =  function(){
         console.log($scope.cliente);
@@ -285,10 +300,15 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
             }
         }else{
             if($scope.empresa){
+                if($scope.contactoSeleccionado){
+                    var l = document.getElementById('productosTab');
+                    l.click();
+                }else{
+                    $scope.msgAlerta("Seleccione un contacto de Empresa","error");
+                }
 
-                var l = document.getElementById('productosTab');
-                l.click();
             }else{
+
                 $scope.msgAlerta("Seleccione una Empresa","error");
             }
         }

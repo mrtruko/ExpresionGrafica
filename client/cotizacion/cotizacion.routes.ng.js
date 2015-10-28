@@ -12,5 +12,14 @@ angular.module('graficaExpresionApp')
         return $meteor.requireUser();
       }]
     }
-  });
+  }).state('cotizacionrevisar', {
+        url: '/cotizacion/:idCotizacion',
+        templateUrl: 'client/cotizacion/views/cotizacion-revisar.view.ng.html',
+        controller: 'CotizacionRevisarCtrl',
+        resolve: {
+          currentUser: ['$meteor', function($meteor) {
+            return $meteor.requireUser();
+          }]
+        }
+      });
 });

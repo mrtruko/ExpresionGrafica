@@ -76,9 +76,25 @@ Schema.Orden = new SimpleSchema({
   saldo: {
     type: Number
   },
+  colaboradores:{
+    type: Array,
+    optional: true
+  },
+  "colaboradores.$": {
+    type: Object
+  },
+  "colaboradores.$.id": {
+    type: String
+  },
+  "colaboradores.$.url": {
+    type: String
+  },
   productosOrden:{
     type: Array,
     optional: true
+  },
+  estado:{
+    type: String
   },
   "productosOrden.$": {
     type: Object
@@ -91,6 +107,10 @@ Schema.Orden = new SimpleSchema({
   },
   "productosOrden.$.tipo": {
     type: String
+  },
+  "productosOrden.$.estado": {
+    type: String,
+    optional: true
   },
   "productosOrden.$.medida": {
     type: String,
@@ -109,13 +129,16 @@ Schema.Orden = new SimpleSchema({
   type: Number
 },
   "productosOrden.$.precioAgencia": {
-    type: Number
+    type: Number,
+    optional: true
   },
   "productosOrden.$.precioComercial": {
-    type: Number
+    type: Number,
+    optional: true
   },
 "productosOrden.$.cantidadP": {
-  type: Number
+  type: Number,
+  optional: true
 },
   "productosOrden.$.comentario": {
     type: String,
@@ -144,11 +167,14 @@ Schema.Orden = new SimpleSchema({
   idOrden:{
     type: Number,
     autoValue:function(){
-      if(Ordenes.findOne({},{sort:{idOrden:-1}})){
-        return Ordenes.findOne({},{sort:{idOrden:-1}}).idOrden+1 || 1;
-      }else{
-        return 1;
+      if (this.isInsert) {
+        if(Ordenes.findOne({},{sort:{idOrden:-1}})){
+          return Ordenes.findOne({},{sort:{idOrden:-1}}).idOrden+1 || 1;
+        }else{
+          return 1;
+        }
       }
+
 
     }
   }

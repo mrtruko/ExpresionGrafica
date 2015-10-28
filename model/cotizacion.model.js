@@ -46,7 +46,8 @@ Schema.Cotizacion = new SimpleSchema({
     optional: true
   },
   abono: {
-    type: Number
+    type: Number,
+    optional: true
   },
   iva: {
     type: Number,
@@ -73,7 +74,8 @@ Schema.Cotizacion = new SimpleSchema({
     optional: true
   },
   saldo: {
-    type: Number
+    type: Number,
+    optional: true
   },
   productosOrden:{
     type: Array,
@@ -102,19 +104,24 @@ Schema.Cotizacion = new SimpleSchema({
     type: Number
   },
   "productosOrden.$.precioVenta": {
-    type: Number
+    type: Number,
+    optional: true
   },
   "productosOrden.$.precioTotal": {
-    type: Number
+    type: Number,
+    optional: true
   },
   "productosOrden.$.precioAgencia": {
-    type: Number
+    type: Number,
+    optional: true
   },
   "productosOrden.$.precioComercial": {
-    type: Number
+    type: Number,
+    optional: true
   },
   "productosOrden.$.cantidadP": {
-    type: Number
+    type: Number,
+    optional: true
   },
   "productosOrden.$.comentario": {
     type: String,
@@ -140,11 +147,11 @@ Schema.Cotizacion = new SimpleSchema({
     type: String,
     autoValue:function(){ return this.userId }
   },
-  idOrden:{
+  idCotizacion:{
     type: Number,
     autoValue:function(){
-      if(Ordenes.findOne({},{sort:{idOrden:-1}})){
-        return Ordenes.findOne({},{sort:{idOrden:-1}}).idOrden+1 || 1;
+      if(Cotizacion.findOne({},{sort:{idCotizacion:-1}})){
+        return Cotizacion.findOne({},{sort:{idCotizacion:-1}}).idCotizacion+1 || 1;
       }else{
         return 1;
       }
