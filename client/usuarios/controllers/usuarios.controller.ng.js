@@ -170,8 +170,8 @@ angular.module('graficaExpresionApp')
             $scope.usuarioP = $meteor.object(Meteor.users, id,false).subscribe("users");
             console.log($scope.usuarioP);
             bootbox.dialog({
-                    title: "Desea Eliminar A"+ $scope.usuarioP.profile.displayName,
-                    message: "Eliminando",
+                    title: "Desea Eliminar a: "+ $scope.usuarioP.profile.displayName + " como Usuario del Sistema?",
+                    message: "En espera de eliminación ",
                     buttons: {
                         success: {
                             label: "Eliminar",

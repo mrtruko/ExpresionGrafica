@@ -1,9 +1,9 @@
-<div class="container team-status" ng-controller="TeamUsuariosCtrl" id="team-status">
+<div ng-show="globalRoles(['admin','Gerente','Recepcionista'])"  class="container team-status" ng-controller="TeamUsuariosCtrl" id="team-status">
     <div id="scrollbar">
         <div class="handle">
         </div>
     </div>
-    <div id="teamslider">
+    <div  id="teamslider">
         <ul class="team-list">
             <li data-ng-repeat="usuario in users">
                 <a href="javascript:void(0);">

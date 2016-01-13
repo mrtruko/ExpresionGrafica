@@ -7,8 +7,8 @@ angular.module('graficaExpresionApp')
         $scope.proveedor = $meteor.object(Proveedores, id,false).subscribe("proveedores");
         console.log($scope.empresa);
         bootbox.dialog({
-              title: "Desea Eliminar A: "+ $scope.proveedor.nombre,
-              message: "Eliminando",
+              title: "Desea Eliminar a: "+ $scope.proveedor.nombre +" de su listado de Proveedores?",
+              message: "En espera de eliminaci¨®n",
               buttons: {
                 success: {
                   label: "Eliminar",
