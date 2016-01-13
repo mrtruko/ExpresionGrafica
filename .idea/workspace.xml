@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20b058bc-f2d9-4c5a-82ca-cdf1d28b5527" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/chat/chat.controller.ng.js" afterPath="$PROJECT_DIR$/client/components/chat/chat.controller.ng.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html" afterPath="$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/usuarios/views/perfil-usuario.view.ng.html" afterPath="$PROJECT_DIR$/client/usuarios/views/perfil-usuario.view.ng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/proveedores/views/proveedor-factura.view.ng.html" afterPath="$PROJECT_DIR$/client/proveedores/views/proveedor-factura.view.ng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/proveedores/controllers/proveedores.controller.ng.js" afterPath="$PROJECT_DIR$/client/proveedores/controllers/proveedores.controller.ng.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/proveedores/views/proveedores.view.ng.html" afterPath="$PROJECT_DIR$/client/proveedores/views/proveedores.view.ng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/teamstatus/teamstatus.view.ng.html" afterPath="$PROJECT_DIR$/client/components/teamstatus/teamstatus.view.ng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" afterPath="$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/startup/user.load.js" afterPath="$PROJECT_DIR$/server/startup/user.load.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/usuarios/controllers/usuarios.controller.ng.js" afterPath="$PROJECT_DIR$/client/usuarios/controllers/usuarios.controller.ng.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/usuarios/views/usuarios.view.ng.html" afterPath="$PROJECT_DIR$/client/usuarios/views/usuarios.view.ng.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" afterPath="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" afterPath="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="graficaExpresion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,7 +57,7 @@
       <file leaf-file-name="ordenes-detalle.view.ng.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.245614">
+            <state vertical-scroll-proportion="-24.666666">
               <caret line="74" column="145" selection-start-line="74" selection-start-column="141" selection-end-line="74" selection-end-column="145" />
               <folding />
             </state>
@@ -78,29 +67,32 @@
       <file leaf-file-name="view-orden.view.ng.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.245614">
-              <caret line="111" column="164" selection-start-line="111" selection-start-column="163" selection-end-line="111" selection-end-column="164" />
+            <state vertical-scroll-proportion="-3.5789473">
+              <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
               <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ordenes.view.ng.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ordenes.view.ng.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.245614">
-              <caret line="116" column="18" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="18" />
-              <folding />
+            <state vertical-scroll-proportion="0.58093524">
+              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#4;n#li#0;n#a#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-orden.view.ng.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create-orden.view.ng.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4352518">
+            <state vertical-scroll-proportion="-4.245614">
               <caret line="1001" column="85" selection-start-line="1001" selection-start-column="85" selection-end-line="1001" selection-end-column="85" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="true" />
@@ -179,7 +171,6 @@
         <option value="$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html" />
         <option value="$PROJECT_DIR$/model/ordenes.model.js" />
         <option value="$PROJECT_DIR$/client/ordenes/controllers/ordenes.controller.ng.js" />
-        <option value="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" />
         <option value="$PROJECT_DIR$/client/ordenes/controllers/ordenes-detalle.controller.ng.js" />
         <option value="$PROJECT_DIR$/model/proveedores.model.js" />
         <option value="$PROJECT_DIR$/client/proveedores/controllers/proveedor-factura.controller.ng.js" />
@@ -196,8 +187,9 @@
         <option value="$PROJECT_DIR$/client/usuarios/views/perfil-usuario.view.ng.html" />
         <option value="$PROJECT_DIR$/client/proveedores/controllers/proveedores.controller.ng.js" />
         <option value="$PROJECT_DIR$/client/usuarios/controllers/usuarios.controller.ng.js" />
-        <option value="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" />
         <option value="$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html" />
+        <option value="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" />
+        <option value="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" />
       </list>
     </option>
   </component>
@@ -840,14 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.245614">
-          <caret line="74" column="145" selection-start-line="74" selection-start-column="141" selection-end-line="74" selection-end-column="145" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/ordenes-detalle.controller.ng.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.6896553">
@@ -856,11 +840,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.245614">
+          <caret line="1001" column="85" selection-start-line="1001" selection-start-column="85" selection-end-line="1001" selection-end-column="85" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.666666">
+          <caret line="74" column="145" selection-start-line="74" selection-start-column="141" selection-end-line="74" selection-end-column="145" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.245614">
-          <caret line="111" column="164" selection-start-line="111" selection-start-column="163" selection-end-line="111" selection-end-column="164" />
+        <state vertical-scroll-proportion="-3.5789473">
+          <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
           <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -868,18 +871,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.245614">
-          <caret line="116" column="18" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4352518">
-          <caret line="1001" column="85" selection-start-line="1001" selection-start-column="85" selection-end-line="1001" selection-end-column="85" />
+        <state vertical-scroll-proportion="0.58093524">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#4;n#li#0;n#a#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
