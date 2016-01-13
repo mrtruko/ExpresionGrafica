@@ -102,6 +102,8 @@ Meteor.methods({
                 console.log(responseData)
             }
         });
+    },'idOrden': function(id){
+        return Ordenes.findOne({idOrden: parseInt(id)});
     }
 
 });

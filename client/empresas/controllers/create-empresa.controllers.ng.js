@@ -26,8 +26,7 @@ angular.module('graficaExpresionApp')
         };
         $scope.agregarContacto = function(){
             $scope.empresa.contactos.push({});
-
-        }
+        };
         $scope.eliminarContacto = function(contacto){
             $scope.empresa.contactos.splice(contacto,1);
         }

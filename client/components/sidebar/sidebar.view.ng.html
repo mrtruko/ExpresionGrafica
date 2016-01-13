@@ -1,8 +1,8 @@
 <div id="sidebar" class="sidebar">
     <div class="sidebar-menu nav-collapse">
         <div class="divide-20"></div>
-        <div id="search-bar">
-            <input class="search" type="text" placeholder="Search"><i class="fa fa-search search-icon"></i>
+        <div id="search-bar" ng-show="globalRoles(['admin','Gerente'])" ng-controller="buscadorCtrl">
+            <input class="search" ng-enter="buscar(buscador);" type="text" ng-model="buscador" placeholder="Buscar Orden"><i class="fa fa-search search-icon" ng-click="buscar(buscador);"></i>
         </div>
         <ul>
             <li class="active">
