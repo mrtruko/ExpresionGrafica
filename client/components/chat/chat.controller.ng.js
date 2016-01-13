@@ -10,10 +10,10 @@ angular.module('graficaExpresionApp')
             $scope.chat.imgPerfil = $scope.currentUser.profile.imgPerfil;
             Chats.insert($scope.chat,function(error,result){
                 if(error){
-                    $scope.msgAlerta(error,"error");
+                  //  $scope.msgAlerta(error,"error");
 
                 }else if(result){
-                    $scope.msgAlerta("Msg Enviado.","success");
+                    //$scope.msgAlerta("Msg Enviado.","success");
                     $scope.chat = {};
                 }
             });
