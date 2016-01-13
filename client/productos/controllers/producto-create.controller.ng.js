@@ -1,7 +1,7 @@
 angular.module('graficaExpresionApp')
-    .controller('ProductosCreateCtrl', function($scope, $stateParams, $meteor) {
+    .controller('ProductosCreateCtrl', function($scope, $stateParams, $meteor, $state) {
         $scope.productos = $scope.$meteorCollection(Productos, false);
-        $scope.save = function() {
+        $scope.save = function(regresar) {
             $scope.producto.movimientos = [];
                 Productos.insert($scope.producto,function(error,result){
                     if(error){
@@ -10,6 +10,8 @@ angular.module('graficaExpresionApp')
                     }else if(result){
                         $scope.msgAlerta("Producto Guardado.","success");
                         $scope.producto = {};
+                        if(regresar)
+                            $state.go("productos-list");
                     }
                 });
         };

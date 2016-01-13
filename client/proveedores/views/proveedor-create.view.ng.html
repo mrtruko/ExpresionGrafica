@@ -1,0 +1,133 @@
+<section id="page">
+    <div id="main-content">
+        <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="box-config"   index="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Box Settings</h4>
+                    </div>
+                    <div class="modal-body">
+                        Here goes box setting content.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="container">
+            <div class="row">
+                <div id="content" class="col-lg-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-header">
+                                <ul class="breadcrumb">
+                                    <li>
+                                        <i class="fa fa-home"></i>
+                                        <a href="/#!/">Home</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-list-ol"></i>
+                                        <a href="/proveedores">Listado de Proveedores</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check-square-o"></i>
+                                        <a>Crear Provedor</a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix">
+                                    <h3 class="content-title pull-left">Registrar Proveedor</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="box border orange">
+                                        <div class="box-title">
+                                            <h4><i class="fa fa-bars"></i>Registrar Proveedor</h4>
+                                        </div>
+                                        <div class="box-body big">
+                                            <form class="form-horizontal" ng-init="proveedor"  role="form">
+                                                <div class="separator"></div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">RUT </label>
+                                                    <div class="col-sm-9">
+                                                        <input  type="text" data-ng-model="proveedor.rut" id="rut" class="form-control" placeholder="Rut">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Nombre</label>
+                                                    <div class="col-sm-9">
+                                                        <input  type="text" data-ng-model="proveedor.nombre" id="nombre" class="form-control" placeholder="Nombre">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Telefono</label>
+                                                    <div class="col-sm-9">
+                                                        <input  type="text" data-ng-model="proveedor.telefono" id="nombre" class="form-control" placeholder="Telefono">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Razon Social</label>
+                                                    <div class="col-sm-9">
+                                                        <input data-ng-model="proveedor.razonSocial" id="apellidoCliente" placeholder="Razon Social" type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Email</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">@</span>
+                                                            <input data-ng-model="proveedor.email" id="email" type="text" class="form-control" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Sede</label>
+                                                    <div class="col-sm-9">
+                                                        <input data-ng-model="proveedor.sede" id="fono" type="text" class="form-control" placeholder="Sede">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Pagina Web</label>
+                                                    <div class="col-sm-9">
+                                                        <input data-ng-model="proveedor.paginaWeb" id="direccion" type="text" class="form-control" placeholder="Pagina Web">
+                                                    </div>
+                                                </div>
+
+                                                <div data-ng-show="error" style="text-align: center;" class="text-danger">
+                                                    <strong data-ng-bind="error"></strong>
+                                                </div>
+                                                <div data-ng-show="success" class="text-success" style="text-align: center;">
+                                                    <strong data-ng-bind="success"></strong>
+                                                </div>
+                                                <div class="wizard-buttons">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-offset-3 col-md-9">
+                                                                <button type="button" ng-click="save(true);" class="btn btn-primary">Guardar y Regresar</button>
+                                                                <button type="button" ng-click="save();" class="btn btn-success">Guardar</button>
+                                                                <a type="button" href="/proveedores" class="btn btn-danger">Cancelar</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

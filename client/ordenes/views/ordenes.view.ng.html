@@ -1,65 +1,6 @@
 <section id="page">
     <div id="main-content">
-        <div class="modal fade" id="box-config3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body" style="padding: 1px;">
-                        <div class="container">
-                            <div class="row">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="box border orange" style="margin-bottom: 1px !important">
-                                                    <div class="box-title">
-                                                        <h4><i class="fa fa-bars"></i>Adjuntar Detalles a Producto: {{ producSelec.codigo }}</h4>
-                                                    </div>
-                                                    <div class="box-body big">
-                                                        <form class="form-horizontal" role="form">
-                                                            <div class="separator"></div>
-                                                            <div class="form-group">
-                                                                <label class="col-sm-3 control-label">Comentario</label>
-                                                                <div class="col-sm-9">
-                                                                    <textarea readonly data-ng-model="producSelec.comentario" class="form-control" rows="3"></textarea>
-                                                                </div>
-                                                            </div>
 
-                                                            <table ng-show="producSelec.url" class="table table-striped table-hover font-400 font-14">
-                                                                <thead>
-                                                                <tr>
-
-                                                                    <th>Descargar</th>
-
-                                                                </tr>
-                                                                </thead>
-                                                                <tr ng-repeat="archivo in producSelec.url">
-                                                                    <td><a target="_self" class="btn btn-success" href="{{archivo}}" download>Descargar</a></td>
-                                                                </tr>
-                                                            </table>
-
-                                                            <div class="wizard-buttons">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="col-md-offset-3 col-md-9">
-                                                                            <button type="button" class="btn btn-success btn-lg" ng-click="" data-dismiss="modal">Cerrar</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div id="content" class="col-lg-12">
@@ -102,7 +43,7 @@
                             <div class="box border purple">
                                 <div class="box-title">
                                     <h4><i class="fa fa-list-ul"></i>Detalles Orden de Trabajo</h4>
-                                    <div class="tools">
+                                   <!-- <div class="tools">
                                         <a href="#box-config" data-toggle="modal" class="config">
                                             <i class="fa fa-cog"></i>
                                         </a>
@@ -115,7 +56,7 @@
                                         <a href="javascript:;" class="remove">
                                             <i class="fa fa-times"></i>
                                         </a>
-                                    </div>
+                                    </div>-->
                                 </div>
                                 <div class="box-body">
                                     <!-- ORDERS -->
@@ -124,55 +65,62 @@
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
                                                 <div class="panel-body">
-                                                    panel
-
+                                                    <form class="form-horizontal " action="#" ng-show="globalRoles(['admin'])">
+                                                        <div class="form-group">
+                                                            <label class="col-md-4 control-label">Select product color </label>
+                                                            <div class="col-md-8">
+                                                                <label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
+                                                                <label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
+                                                                <label class="checkbox-inline"><input type="checkbox" value="">Option 3</label>
+                                                                <label class="checkbox-inline"><input type="checkbox" value="">Option 3</label>
+                                                            </div>
+                                                        </div>
+                                                    </form>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <!-- ORDER SCROLL -->
                                         <div class="col-md-4">
+
                                             <div class="panel panel-default">
                                                 <div class="panel-body orders">
                                                     <div style="height: 650px;overflow: auto;" >
-                                                        <ul class="list-unstyled" ng-click="alerta3(ordene);" ng-repeat="ordene in ordenes">
 
-                                                            <li class="clearfix">
+                                                        <ul class="list-unstyled"  ng-repeat="ordene in ordenes | reverse">
+                                                            <a ng-href="/ordenes/{{ordene._id}}">
+                                                                <li class="clearfix">
 
-                                                                <div class="pull-left">
-                                                                    <p>
-                                                                    <h5><strong>#{{ordene.idOrden}}</strong> {{ordene.responsable}}</h5>
-                                                                    </p>
-                                                                    <p><i class="fa fa-clock-o"></i> <abbr class="timeago" title="Oct 9, 2013" >{{ordene.fecha}}</abbr></p>
+                                                                    <div class="pull-left">
+                                                                        <p>
+                                                                        <h5><strong>#{{ordene.idOrden}}</strong> {{ordene.responsable}}</h5>
+                                                                        </p>
+                                                                        <p><i class="fa fa-clock-o"></i> <abbr class="timeago" title="Oct 9, 2013" >{{ordene.fecha}}</abbr></p>
 
-                                                                </div>
-                                                                <div class="text-right pull-right">
-                                                                    <h4 class="cost">{{ordene.fechaCompromiso}}</h4>
-                                                                    <p>
-                                                                        <span class="label label-success arrow-in-right"><i class="fa fa-check"></i>            {{ordene.estado}}</span>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-
-                                                                <div class="progress progress-sm">
-                                                                    <div ng-show="ordene.estado == 'Inicial'" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
-                                                                        <span class="sr-only">15% Complete</span>
                                                                     </div>
-                                                                    <div ng-hide="ordene.estado == 'Inicial'" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                                                                        <span class="sr-only">100% Complete</span>
+                                                                    <div class="text-right pull-right">
+                                                                        <h4 class="cost">{{ordene.fechaCompromiso}}</h4>
+                                                                        <p>
+                                                                            <span class="label label-success arrow-in-right"><i class="fa fa-check"></i>            {{ordene.estado}}</span>
+                                                                        </p>
                                                                     </div>
-                                                                </div>
-                                                                <div ><img ng-repeat="colaboradores in ordene.colaboradores" alt="" src="{{ colaboradores.url }}" style="
-    margin-right: 5px;
-    border-radius: 99px;
-    height: 40px;
-    width: 40px;
-"></div>
+                                                                    <div class="clearfix"></div>
 
+                                                                    <div class="progress progress-sm">
+                                                                        <div class="progress-bar progress-bar-info" role="progressbar"  style="width: {{ordene.avance}}%;">
+                                                                            <span class="sr-only">15% Complete</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div ><img ng-repeat="colaboradores in ordene.colaboradores" alt="" src="{{ colaboradores.url }}" style="
+        margin-right: 5px;
+        border-radius: 99px;
+        height: 40px;
+        width: 40px;
+    "></div>
 
-                                                            </li>
+                                                                </li>
+                                                            </a>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -182,130 +130,7 @@
                                         </div>
                                         <!-- /ORDER SCROLL -->
                                         <!-- ORDER DETAILS -->
-                                        <div class="col-md-8" ng-show="mostrar" ng-init="mostrar=false">
-                                            <div class="panel panel-default">
-                                                <div class="panel-body">
-                                                    <div class="pull-center">
-
-
-                                                        <th>
-                                                            <div class='text-center'>Fecha Emision:<strong> {{ordene.fecha}}</strong></div>
-                                                        </th>
-                                                        <th>
-                                                            <div class='text-center'>Hora Emision: <strong>{{ordene.hora}}</strong></div>
-                                                        </th>
-
-                                                        <th>
-                                                            <div class='text-center'>Fecha Compromiso: <strong> {{ordene.fechaCompromiso }}</strong></div>
-                                                        </th>
-                                                    </div>
-                                                    <div class="pull-right hidden-xs">
-                                                        <div class="btn-group">
-                                                            <a ng-show="colaborando" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Colaborando</a>
-                                                            <a ng-hide="colaborando" ng-click="colaborar()" class="btn btn-primary"><i class="fa fa-square-o"></i> Colaborar</a>
-                                                            <a ng-show="globalRoles(['admin','Gerente','Recepcionista'])" href="/orden/{{ordene._id}}" class="btn btn-default"><i class="fa fa-bars"></i> Detalle Pedido</a>
-                                                            <button ng-show="ordene.estado == 'inicial'"  ng-click="terminada()" class="btn btn-success"><i class="fa fa-check"></i> Marcar como Finalizado</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="pull-left visible-xs">
-                                                        <div class="btn-group">
-                                                            <button class="btn btn-sm btn-default"><i class="fa fa-bars"></i> Fullfill selected</button>
-                                                            <button  ng-click="terminada(ordene)" class="btn btn-sm btn-success"><i class="fa fa-check"></i> Marcar como Completado</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                    <hr>
-                                                    <!-- TABLE -->
-                                                    <table class='table table-hover'>
-                                                        <thead>
-                                                        <tr>
-                                                            <th>
-                                                                Estado
-                                                            </th>
-                                                            <th>
-                                                                <div class='text-center'>Código</div>
-                                                            </th>
-                                                            <th>Detalle </th>
-                                                            <th>
-                                                                <div class='text-center'>Cantidad</div>
-                                                            </th>
-                                                            <th>
-                                                                <div class='text-center'>Cantidad</div>
-                                                            </th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr ng-repeat="producto in ordene.productosOrden" ng-hide="producto.tipo == 'Producto' && globalRoles(['Produccion'])">
-
-                                                            <td>
-                                                                <select ng-disabled="!colaborando" ng-model="producto.estado">
-                                                                    <option value="pendiente">Pendiente</option>
-                                                                    <option value="en proceso">En Proceso</option>
-                                                                    <option value="finalizado">Finalizado</option>
-                                                                    <option value="entregado">Entregado</option>
-                                                                </select>
-
-                                                            </td>
-                                                            <td>
-                                                                <div class='text-center'>{{producto.codigo}}</div>
-                                                            </td>
-                                                            <td>{{producto.nombreProducto}}</td>
-                                                            <td>
-                                                                <div class='text-center'>{{producto.cantidad}}</div>
-                                                            </td>
-                                                            <td>
-                                                                <button ng-disabled="!colaborando" href="#box-config3" ng-show="producto.tipo === 'Sub-Producto' || producto.tipo === 'especial'" class="btn btn-primary config"  ng-click="pSelecionado(producto);" data-toggle="modal">Detalle</button>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <!-- /TABLE -->
-                                                    <div class="text-right">
-                                                    </div>
-                                                    <hr>
-                                                    <!-- CUSTOMER DETAILS -->
-                                                    <div class="row" ng-show="globalRoles(['admin','Gerente','Recepcionista'])">
-                                                        <div class="col-sm-4">
-                                                            <h4><strong>Abono:</strong>
-                                                                <i class="fa fa-dollar"></i>
-                                                                <strong>{{ordene.abono}}</strong>
-                                                            </h4>
-                                                            <h5><strong><span class="label label-success"><i class="fa fa-check"></i> Pagado</span></strong></h5><br>
-                                                            <h4><strong>Saldo:</strong>
-                                                                <i class="fa fa-dollar"></i>
-                                                                <strong>{{ordene.saldo}}</strong>
-                                                            </h4>
-                                                            <h5><strong><span class="label label-primary"><i class="fa fa-check"></i> Por Pagar</span></strong></h5><br>
-                                                        </div>
-                                                        <div class="col-sm-7 col-sm-offset-1">
-                                                            <h4>
-                                                                <i class="fa fa-envelope"></i>
-                                                                Valores Orden de Pedido
-                                                            </h4>
-                                                            <div class="well">
-                                                                <h5><strong>{{ordene.responsable}}</strong></h5><br>
-                                                                TOTAL : <strong>{{ordene.total}}</strong><br>
-                                                                ABONO : <strong>{{ordene.abono}}</strong><br>
-
-                                                                SALDO : <strong>{{ordene.saldo}}</strong>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- PAYMENT STATUS -->
-                                                    <hr>
-                                                    <div class="form-actions form-actions-padding">
-                                                        <h4>
-                                                            <i class="fa fa-envelope"></i>
-                                                            Observaciones
-                                                        </h4>
-                                                        <ul class="pager" > <strong>{{ordene.observacion}}</strong>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <!-- /PANEL BODY -->
-                                            </div>
-                                        </div>
+                                        <div ui-view></div>
                                         <!-- /ORDER DETAILS -->
                                     </div>
                                     <!-- ORDERS -->

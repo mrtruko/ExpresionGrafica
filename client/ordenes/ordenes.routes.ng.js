@@ -30,5 +30,14 @@ angular.module('graficaExpresionApp')
                   return $meteor.requireUser();
               }]
           }
-   });
+   }).state('ordenes.orden', {
+          url: '/:idOrden',
+          templateUrl: 'client/ordenes/views/ordenes-detalle.view.ng.html',
+          controller: 'OrdenesDetalleCtrl',
+          resolve: {
+              currentUser: ['$meteor', function($meteor) {
+                  return $meteor.requireUser();
+              }]
+          }
+      });
 });

@@ -1,12 +1,14 @@
 angular.module('graficaExpresionApp')
-    .controller('ClienteEditCtrl', function($scope, $stateParams, $meteor) {
+    .controller('ClienteEditCtrl', function($scope, $stateParams, $meteor, $state) {
         $scope.cliente = $scope.$meteorObject(Clientes, $stateParams.clienteId, false);
         $scope.$meteorSubscribe('clientes');
 
-        $scope.save = function() {
+        $scope.save = function(regresar) {
             $scope.cliente.save().then(
                 function(numberOfDocs) {
                     $scope.msgAlerta("Cliente Guardado.","success");
+                    if(regresar)
+                        $state.go('clientes');
                 },
                 function(error) {
                     $scope.msgAlerta(error,"error");

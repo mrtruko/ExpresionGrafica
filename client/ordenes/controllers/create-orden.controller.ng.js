@@ -3,7 +3,7 @@
 angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($scope, $location) {
     $scope.ordenes = $scope.$meteorCollection(Ordenes).subscribe("ordenes");
     $scope.clientes = $scope.$meteorCollection(Clientes).subscribe("clientes");
-    $scope.productos = $scope.$meteorCollection(Productos).subscribe("productos");
+    $scope.productos = $scope.$meteorCollection(Productos).subscribe("productosOrden");
     $scope.empresas = $scope.$meteorCollection(Empresas).subscribe("empresas");
     $scope.cotizacion = $scope.$meteorCollection(Cotizacion).subscribe("cotizacion");
     $scope.orden = {};
@@ -23,8 +23,10 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.mempresa = {};
     $scope.mempresa.contactos = [];
 
+
     $scope.fecha = function(){
         if($scope.fechasel){
+
             $scope.orden.fechaCompromiso = moment($scope.fechasel).format("DD-MM-YYYY");
         }
     };
@@ -68,6 +70,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
             }else if(result){
 
                 $scope.msgAlerta("Cotizacion Guardada.","success");
+                $location.path('cotizacion/' + result);
             }
         });
     }
@@ -105,6 +108,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                 $scope.msgAlerta(error,"error");
             }else if(result){
                 $scope.errorProductos = false;
+                console.log($scope.orden);
                     angular.forEach($scope.orden.productosOrden, function(valuePro, keyPro) {
                         if(valuePro.codigo==="espec"){
                             return;
@@ -122,7 +126,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                                 "responsable":$scope.currentUser.profile.displayName,
                                 "cantidad":valuePro.cantidad,
                                 "fecha" : moment().format("DD/MM/YYYY HH:mm"),
-                                "motivo":"Orden de Trabajo: "+result,
+                                "motivo":"Orden de Trabajo: "+$scope.orden.idOrden,
                                 "tipo":"orden"
                             });
                         $scope.producto.save().then(
@@ -187,12 +191,12 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                 'codigo':producto.codigo,
                 'nombreProducto': producto.nombreProducto,
                 'cantidad':1,
-                'precioVenta':producto.precioVenta,
-                'precioTotal':producto.precioTotal,
+                'precioVenta':""+producto.precioComercial,
+                'precioTotal':""+producto.precioComercial,
                 'precioComercial':producto.precioComercial,
                 'precioAgencia':producto.precioAgencia,
-                'estado':"pendiente",
-                'descuento':0,
+                'estado':"Pendiente",
+                'descuento':"0",
                 'cantidadP':producto.cantidad });
         }
         console.log($scope.orden.productosOrden);
@@ -282,7 +286,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         console.log($scope.empresa);
         $scope.orden.total = 0;
         angular.forEach($scope.orden.productosOrden, function(value, key) {
-            $scope.orden.total = $scope.orden.total + value.precioTotal;
+            $scope.orden.total = Number($scope.orden.total) + Number(value.precioTotal);
 
         });
         $scope.orden.neto = window.Math.round($scope.orden.total / 1.19);
@@ -318,7 +322,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.wizClientes = function(){
         var l = document.getElementById('clientesTab');
         l.click();
-    }
+    };
     $scope.wizOrden = function(){
         if(!$scope.fechasel){
             $scope.msgAlerta("Ingrese Fecha de compromiso","error");

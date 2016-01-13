@@ -30,5 +30,14 @@ angular.module('graficaExpresionApp')
                   return $meteor.requireUser();
               }]
           }
+      }).state('perfil', {
+          url: '/perfil',
+          templateUrl: 'client/usuarios/views/perfil-usuario.view.ng.html',
+          controller: 'PerfilUsuariosCtrl',
+          resolve: {
+              currentUser: ['$meteor', function($meteor) {
+                  return $meteor.requireUser();
+              }]
+          }
       });
 });

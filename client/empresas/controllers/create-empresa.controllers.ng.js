@@ -1,11 +1,11 @@
 'use strict'
 
 angular.module('graficaExpresionApp')
-    .controller('CreateEmpresasCtrl', function($scope) {
+    .controller('CreateEmpresasCtrl', function($scope, $state) {
         $scope.empresas = $scope.$meteorCollection(Empresas, false);
         $scope.empresa = {};
         $scope.empresa.contactos = [];
-        $scope.save = function() {
+        $scope.save = function(regresar) {
 
             if($scope.empresa.contactos.length === 0){
                 $scope.msgAlerta("Ingrese almenos 1 Contacto","error");
@@ -19,6 +19,8 @@ angular.module('graficaExpresionApp')
                     $scope.msgAlerta("Empresa Guardada.","success");
                     $scope.empresa = {};
                     $scope.empresa.contactos = [];
+                    if(regresar)
+                        $state.go("empresar");
                 }
             });
         };

@@ -73,8 +73,12 @@
                                         </form>
                                         <div class="slider-content">
 
-                                            <ul data-ng-repeat="cliente in clientes | orderBy:'nombreCliente' | filter:{nombreCliente:searchFish}">
-                                                <li><a id="5592f396da075ec809ca8b7c" name="cliente" ng-click="handleSliderNav(cliente)" data-ng-bind="cliente.nombreCliente" href="javacript:"></a></li>
+                                            <ul style="margin: 19px;padding: 6px;list-style-type: none;">
+                                                <li class="liBorder" data-ng-repeat="cliente in clientes | orderBy:'nombreCliente' | filter:{nombreCliente:searchFish}" ng-click="handleSliderNav(cliente)">
+
+                                                     <strong>Rut:</strong> {{cliente.rut}} - <strong>Nombre:</strong> {{ cliente.nombreCliente }} {{ cliente.apellidoCliente}}
+
+                                                </li>
                                             </ul>
 
 

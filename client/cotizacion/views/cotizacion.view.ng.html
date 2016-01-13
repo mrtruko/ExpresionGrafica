@@ -48,17 +48,17 @@
                                 <ul class="breadcrumb">
                                     <li>
                                         <i class="fa fa-home"></i>
-                                        <a href="/#!/">Home</a>
+                                        <a href="/">Home</a>
                                     </li>
                                     <li>
                                         <i class="fa fa-list-ol"></i>
-                                        <a >Listado de Productos</a>
+                                        <a >Listado de Cotizaciones</a>
                                     </li>
 
                                 </ul>
                                 <!-- /BREADCRUMBS -->
                                 <div class="clearfix">
-                                    <h3 class="content-title pull-left">Control de Bodega</h3>
+                                    <h3 class="content-title pull-left">Cotizaciones</h3>
                                 </div>
                                 <div class="description"></div>
                             </div>
@@ -98,11 +98,11 @@
                             <!-- BOX -->
                             <div class="box border purple">
                                 <div class="box-title">
-                                    <h4><i class="fa fa-table"></i>Productos en Bodega</h4>
+                                    <h4><i class="fa fa-table"></i>Listado de Cotizaciones</h4>
                                     <div class="tools hidden-xs">
-                                        <a href="#box-config" data-toggle="modal" class="config">
+                                        <!--<a href="#box-config" data-toggle="modal" class="config">
                                             <i class="fa fa-cog"></i>
-                                        </a>
+                                        </a>-->
                                     </div>
                                 </div>
                                 <div class="box-body">
@@ -159,7 +159,7 @@
                                                 <td data-ng-bind="cotizacion.idCotizacion"></td>
                                                 <td data-ng-bind="cotizacion.fecha"></td>
                                                 <td data-ng-bind="cotizacion.responsable"></td>
-                                                <td>{{cotizacion.cliente || cotizacion.empresa}}</td>
+                                                <td><a ng-show="cotizacion.cliente" href="javascript:">{{ clienteR(cotizacion.cliente) }}</a><a ng-show="cotizacion.empresa" href="javascript:">{{ empresaR(cotizacion.empresa) }}</a></td>
                                                 <td data-ng-bind="cotizacion.fechaCompromiso"></td>
                                                 <td class="codigo"><a href="/cotizacion/{{cotizacion._id}}">Revisar</a></td>
                                             </tr>
@@ -204,7 +204,7 @@
                                             </tfoot>
 
                                         </table>
-                                        <p>Cantidad De Productos: {{productosCount.count}}</p>
+                                        <!-- <p>Cantidad De Productos: {{productosCount.count}}</p>-->
                                     </div>
                                 </div>
                             </div>

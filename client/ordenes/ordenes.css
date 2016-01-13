@@ -87,6 +87,9 @@
     .backstretch {
         display: none;
     }
+    .wizard-buttons{
+        display: none;
+    }
 }
 .invoice-header {
     display: block;

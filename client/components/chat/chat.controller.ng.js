@@ -2,6 +2,7 @@
 
 angular.module('graficaExpresionApp')
     .controller('chatControll', function($scope,$meteor,$rootScope, $state) {
+
         $scope.chats = $meteor.collection(Chats, false).subscribe("chats");
         $scope.chat = {};
         $scope.saveChat = function(){
@@ -16,6 +17,10 @@ angular.module('graficaExpresionApp')
                     $scope.chat = {};
                 }
             });
+        };
+
+        $scope.scrollBot = function(){
+            $('#chats').scrollTop($('#chats')[0].scrollHeight);
         }
         $scope.msgAlerta = function(msg,tipo){
             Messenger.options = {

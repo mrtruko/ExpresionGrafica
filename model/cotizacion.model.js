@@ -150,12 +150,14 @@ Schema.Cotizacion = new SimpleSchema({
   idCotizacion:{
     type: Number,
     autoValue:function(){
-      if(Cotizacion.findOne({},{sort:{idCotizacion:-1}})){
-        return Cotizacion.findOne({},{sort:{idCotizacion:-1}}).idCotizacion+1 || 1;
-      }else{
-        return 1;
-      }
+      if (this.isInsert) {
+        if(Cotizacion.findOne({},{sort:{idCotizacion:-1}})){
+          return Cotizacion.findOne({},{sort:{idCotizacion:-1}}).idCotizacion+1 || 1;
+        }else{
+          return 1;
+        }
 
+      }
     }
   }
 });

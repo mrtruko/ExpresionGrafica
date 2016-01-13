@@ -1,11 +1,11 @@
 'use strict'
 angular.module('graficaExpresionApp')
-    .controller('ProductoMovimientoCtrl', function($scope, $stateParams, $meteor) {
+    .controller('ProductoMovimientoCtrl', function($scope, $stateParams, $meteor, $state) {
         $scope.producto = $scope.$meteorObject(Productos, $stateParams.productoId,false);
         $scope.$meteorSubscribe('productos');
         $scope.movimiento = {};
 
-        $scope.save = function() {
+        $scope.save = function(regresar) {
             $scope.stock = true;
             if ($scope.movimiento.cantidad % 1 === 0){
                 if($scope.movimiento.tipo=== "Descuento" || $scope.movimiento.tipo ==="Incremento"){
@@ -30,6 +30,9 @@ angular.module('graficaExpresionApp')
                             $scope.producto.save().then(
                                 function(numberOfDocs) {
                                     $scope.msgAlerta("Producto Guardado.","success");
+                                    console.log(regresar);
+                                    if(regresar)
+                                        $state.go("productos-list");
                                 },
                                 function(error) {
                                     $scope.msgAlerta(error,"error");

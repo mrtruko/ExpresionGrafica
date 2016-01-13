@@ -1,15 +1,17 @@
 'use strict'
 
 angular.module('graficaExpresionApp')
-.controller('ProductoDetailCtrl', function($scope, $stateParams, $meteor) {
+.controller('ProductoDetailCtrl', function($scope, $stateParams, $meteor, $state) {
   $scope.producto = $scope.$meteorObject(Productos, $stateParams.productoId, false);
   $scope.$meteorSubscribe('productos');
   
-  $scope.save = function() {
+  $scope.save = function(regresar) {
     console.log($scope.producto.comerciable);
       $scope.producto.save().then(
         function(numberOfDocs) {
           $scope.msgAlerta("Producto Guardado.","success");
+          if(regresar)
+            $state.go("productos-list");
         },
         function(error) {
           $scope.msgAlerta(error,"error");

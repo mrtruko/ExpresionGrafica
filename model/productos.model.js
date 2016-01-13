@@ -1,7 +1,7 @@
 Productos = new Mongo.Collection('productos');
 Productos.allow({
   insert: function(userId, producto) {
-    return true;
+  return true;
   },
   update: function(userId, producto, fields, modifier) {
     return true;

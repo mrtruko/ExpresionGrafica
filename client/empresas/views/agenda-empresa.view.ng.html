@@ -65,8 +65,10 @@
                                             </div>
                                         </form>
                                         <div class="slider-content">
-                                            <ul data-ng-repeat="empresa in empresas | orderBy:'nombreEmpresa' | filter:{nombreEmpresa:searchFish}">
-                                                <li><a id="5594669614f5704021c3efdf" name="empresa" ng-click="handleSliderNav(empresa)" data-ng-bind="empresa.nombreEmpresa" href="javacript:"></a></li>
+                                            <ul style="margin: 19px;padding: 6px;list-style-type: none;">
+                                                <li class="liBorder" data-ng-repeat="empresa in empresas | orderBy:'nombreEmpresa' | filter:{nombreEmpresa:searchFish}" ng-click="handleSliderNav(empresa)">
+                                                    <strong>Rut:</strong> {{empresa.rut}} - <strong>Nombre:</strong> {{ empresa.nombreEmpresa }}
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>

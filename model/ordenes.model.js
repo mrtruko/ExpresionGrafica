@@ -14,6 +14,14 @@ Ordenes.allow({
 
 Schema = {};
 Schema.Orden = new SimpleSchema({
+  _id: {
+    type: String,
+    optional: true
+  },
+  avance: {
+    type: Number,
+    optional: true
+  },
   cliente: {
     type: String,
     optional: true
@@ -121,6 +129,14 @@ Schema.Orden = new SimpleSchema({
   },
   "productosOrden.$.cantidad": {
     type: Number
+  },
+  "productosOrden.$.realizados": {
+    type: Number,
+    optional: true
+  },
+  "productosOrden.$.entregados": {
+    type: Number,
+    optional: true
   },
   "productosOrden.$.precioVenta": {
     type: Number

@@ -1,10 +1,10 @@
 'use strict'
 
 angular.module('graficaExpresionApp')
-    .controller('EditEmpresasCtrl', function($scope, $stateParams) {
+    .controller('EditEmpresasCtrl', function($scope, $stateParams, $state) {
         $scope.empresa = $scope.$meteorObject(Empresas, $stateParams.empresaId, false);
         $scope.$meteorSubscribe('empresas');
-        $scope.save = function() {
+        $scope.save = function(regresar) {
             if($scope.empresa.contactos.length === 0){
                 $scope.msgAlerta("Ingrese almenos 1 Contacto","error");
                 return;
@@ -12,6 +12,8 @@ angular.module('graficaExpresionApp')
             $scope.empresa.save().then(
                 function(numberOfDocs) {
                     $scope.msgAlerta("Cliente Guardado.","success");
+                    if(regresar)
+                        $state.go("empresas");
                 },
                 function(error) {
                     $scope.msgAlerta(error,"error");

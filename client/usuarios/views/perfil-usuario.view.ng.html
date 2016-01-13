@@ -1,0 +1,355 @@
+<section id="page">
+    <div id="main-content" >
+        <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Box Settings</h4>
+                    </div>
+                    <div class="modal-body">
+                        Here goes box setting content.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="container">
+            <div class="row">
+                <div id="content" class="col-lg-12">
+                    <!-- PAGE HEADER-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-header">
+                                <!-- STYLER -->
+
+                                <!-- /STYLER -->
+                                <!-- BREADCRUMBS -->
+                                <ul class="breadcrumb">
+                                    <li>
+                                        <i class="fa fa-home"></i>
+                                        <a href="index.html">Home</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-users"></i>
+                                        <a href="/#!/usuarios">Usuarios</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-user"></i>
+                                        <a >Mi Perfil</a>
+                                    </li>
+
+                                </ul>
+                                <!-- /BREADCRUMBS -->
+                                <div class="clearfix">
+                                    <h3 class="content-title pull-left">Mi Perfil</h3>
+                                </div>
+                                <div class="description">Mi Perfil, Actividades y  otras Estadisticas</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /PAGE HEADER -->
+                    <!-- USER PROFILE -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BOX -->
+                            <div class="box border">
+                                <div class="box-title">
+                                    <h4><i class="fa fa-user"></i><span class="hidden-inline-mobile" >Hola, {{currentUser.profile.displayName }}</span></h4>
+                                </div>
+                                <div class="box-body">
+                                    <div class="tabbable header-tabs user-profile">
+                                        <ul class="nav nav-tabs">
+
+                                            <li><a href="#pro_edit" data-toggle="tab"><i class="fa fa-edit"></i> <span class="hidden-inline-mobile"> Editar Cuenta</span></a></li>
+                                            <li class="active"><a href="#pro_overview" data-toggle="tab"><i class="fa fa-dot-circle-o"></i> <span class="hidden-inline-mobile">Ver</span></a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <!-- OVERVIEW -->
+                                            <div class="tab-pane fade in active" id="pro_overview">
+                                                <div class="row">
+                                                    <!-- PROFILE PIC -->
+                                                    <div class="col-md-3">
+                                                        <div class="list-group">
+                                                            <li class="list-group-item zero-padding">
+                                                                <img alt="" class="img-responsive" style="width: 100%;" src="{{currentUser.profile.imgPerfil }}">
+                                                            </li>
+                                                            <div class="list-group-item profile-details">
+                                                                <h2>{{currentUser.profile.displayName }}</h2>
+
+
+                                                            </div>
+                                                            <a href="#" class="list-group-item"><i class="fa fa-user fa-fw"></i> Perfil</a>
+                                                            <a href="#" class="list-group-item">
+                                                                <span class="badge badge-red">9</span>
+                                                                <i class="fa fa-calendar fa-fw"></i> Eventos
+                                                            </a>
+                                                            <a href="#" class="list-group-item"><i class="fa fa-comment-o fa-fw"></i> Mensajes</a>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- /PROFILE PIC -->
+                                                    <!-- PROFILE DETAILS -->
+                                                    <div class="col-md-9">
+                                                        <!-- ROW 1 -->
+                                                        <div class="row">
+                                                            <div class="col-md-7 profile-details">
+                                                                <h3>Mis Trabajos</h3>
+                                                                <div class="row">
+                                                                    <div class="col-md-4 text-center">
+                                                                        <div id="pie_1" class="piechart" data-percent="76">
+                                                                            <span class="percent"></span>
+                                                                        </div>
+                                                                        <div class="skill-name">En Proceso</div>
+                                                                    </div>
+                                                                    <div class="col-md-4 text-center">
+                                                                        <div id="pie_2" class="piechart" data-percent="82">
+                                                                            <span class="percent"></span>
+                                                                        </div>
+                                                                        <div class="skill-name">Pendientes</div>
+                                                                    </div>
+                                                                    <div class="col-md-4 text-center">
+                                                                        <div id="pie_3" class="piechart" data-percent="66">
+                                                                            <span class="percent"></span>
+                                                                        </div>
+                                                                        <div class="skill-name">Finalizados</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="divide-20"></div>
+                                                                <!-- BUTTONS -->
+
+                                                                <!-- /BUTTONS -->
+                                                            </div>
+                                                            <div class="col-md-5">
+                                                                <!-- BOX -->
+                                                                <div class="box border inverse">
+                                                                    <div class="box-title">
+                                                                        <h4><i class="fa fa-bars"></i>Estadisticas</h4>
+                                                                        <div class="tools">
+                                                                            <a href="#box-config" data-toggle="modal" class="config">
+                                                                                <i class="fa fa-cog"></i>
+                                                                            </a>
+                                                                            <a href="javascript:;" class="reload">
+                                                                                <i class="fa fa-refresh"></i>
+                                                                            </a>
+                                                                            <a href="javascript:;" class="collapse">
+                                                                                <i class="fa fa-chevron-up"></i>
+                                                                            </a>
+                                                                            <a href="javascript:;" class="remove">
+                                                                                <i class="fa fa-times"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="box-body big sparkline-stats">
+                                                                        <div class="sparkline-row">
+                                                                            <span class="title">Ejemplo</span>
+                                                                            <span class="value">7453</span>
+                                                                            <div class="linechart linechart-lg">1:3,2.8:4,3:3,4:3.4,5:7.5,6:2.3,7:5.4</div>
+                                                                        </div>
+                                                                        <div class="sparkline-row">
+                                                                            <span class="title">Ejemplo</span>
+                                                                            <span class="value"><i class="fa fa-usd"></i> 45,732</span>
+                                                                            <span class="sparkline big" data-color="blue">16,6,23,14,12,10,15,4,19,18,4,24</span>
+                                                                        </div>
+                                                                        <div class="sparkline-row">
+                                                                            <span class="title">Ejemplo</span>
+                                                                            <span class="value"><i class="fa fa-usd"></i> 25,674</span>
+                                                                            <span class="sparklinepie big">16,6,23</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- /BOX -->
+                                                                <!-- /SAMPLE -->
+                                                            </div>
+                                                        </div>
+                                                        <!-- /ROW 1 -->
+                                                        <div class="divide-40"></div>
+                                                        <!-- ROW 2 -->
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="box border blue">
+                                                                    <div class="box-title">
+                                                                        <h4><i class="fa fa-columns"></i> <span class="hidden-inline-mobile">Trabajos Realizados</span></h4>
+                                                                    </div>
+                                                                    <div class="box-body">
+                                                                        <div class="tabbable">
+                                                                            <ul class="nav nav-tabs">
+                                                                                <li><a href="#sales" data-toggle="tab"><i class="fa fa-rss"></i> <span class="hidden-inline-mobile">Actividades Recientes</span></a></li>
+                                                                            </ul>
+                                                                            <div class="tab-content">
+                                                                                <div class="tab-pane active" id="sales">
+                                                                                    <table class="table table-striped table-bordered table-hover">
+                                                                                        <thead>
+                                                                                        <tr>
+                                                                                            <th><i class="fa fa-user"></i> Client</th>
+                                                                                            <th class="hidden-xs"><i class="fa fa-quote-left"></i> Sales Item</th>
+                                                                                            <th><i class="fa fa-dollar"></i> Amount</th>
+                                                                                            <th><i class="fa fa-bars"></i> Status</th>
+                                                                                        </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                        <tr>
+                                                                                            <td><a href="#">Fortune 500</a></td>
+                                                                                            <td class="hidden-xs">Gold Level Virtual Server</td>
+                                                                                            <td>$ 2310.23</td>
+                                                                                            <td><span class="label label-success label-sm">Paid</span></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td><a href="#">Cisco Inc.</a></td>
+                                                                                            <td class="hidden-xs">Platinum Level Virtual Server</td>
+                                                                                            <td>$ 5502.67</td>
+                                                                                            <td><span class="label label-warning label-sm">Pending</span></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td><a href="#">VMWare Ltd.</a></td>
+                                                                                            <td class="hidden-xs">Hardware Switch</td>
+                                                                                            <td>$ 3472.54</td>
+                                                                                            <td><span class="label label-success label-sm">Paid</span></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td><a href="#">Wall-Mart Stores</a></td>
+                                                                                            <td class="hidden-xs">Branding & Marketing</td>
+                                                                                            <td>$ 6653.25</td>
+                                                                                            <td><span class="label label-success label-sm">Paid</span></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td><a href="#">Exxon Mobil</a></td>
+                                                                                            <td class="hidden-xs">UX and UI Services</td>
+                                                                                            <td>$ 45645.45</td>
+                                                                                            <td><span class="label label-danger label-sm">Overdue</span></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td><a href="#">General Electric</a></td>
+                                                                                            <td class="hidden-xs">Web Designing</td>
+                                                                                            <td>$ 3432.11</td>
+                                                                                            <td><span class="label label-warning label-sm">Pending</span></td>
+                                                                                        </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /ROW 2 -->
+                                                    </div>
+                                                    <!-- /PROFILE DETAILS -->
+                                                </div>
+                                            </div>
+                                            <!-- /OVERVIEW -->
+                                            <!-- EDIT ACCOUNT -->
+                                            <div class="tab-pane fade" id="pro_edit">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="box border green">
+                                                                <div class="box-title">
+                                                                    <h4><i class="fa fa-bars"></i>Información General</h4>
+                                                                </div>
+                                                                <div class="box-body big">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <h4>Basic Information</h4>
+                                                                            <div class="form-group">
+                                                                                <label class="col-md-4 control-label">Nombre</label>
+                                                                                <div class="col-md-8"><input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.profile.nombre"></div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="col-md-4 control-label">Apellido</label>
+                                                                                <div class="col-md-8"><input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="user.profile.apellido"></div>
+                                                                            </div>
+
+                                                                            <h4>Información de Contacto</h4>
+                                                                            <div class="form-group">
+                                                                                <label class="col-md-4 control-label">Direccion</label>
+                                                                                <div class="col-md-8"><input type="email" id="email" name="email" class="form-control" data-ng-model="user.profile.direccion" placeholder="Email"></div>
+                                                                            </div>
+
+                                                                            <div class="form-group">
+                                                                                <label class="col-md-4 control-label">Telefono</label>
+
+
+                                                                                <div class="col-md-8"><input type="direccion" id="direccion" name="direccion" class="form-control" data-ng-model="user.profile.telefono" placeholder="Telefono"></div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6 form-vertical">
+                                                            <div class="box border inverse">
+                                                                <div class="box-title">
+                                                                    <h4><i class="fa fa-bars"></i>Cambiar Contraseña</h4>
+                                                                </div>
+                                                                <div class="box-body big">
+                                                                    <form class="form-horizontal">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <h4>Contraseña Actual</h4>
+                                                                                <div class="form-group">
+                                                                                    <label class="col-md-4 control-label">Contraseña</label>
+                                                                                    <div class="col-md-8"><input type="password" id="antigua" name="antigua" class="form-control" data-ng-model="passw.antigua"></div>
+                                                                                </div>
+                                                                                <h4>Nueva Contraseña</h4>
+                                                                                <div class="form-group">
+                                                                                    <label class="col-md-4 control-label">Contraseña</label>
+                                                                                    <div class="col-md-8"><input type="password" id="nueva" name="nueva" class="form-control" data-ng-model="passw.nueva"></div>
+                                                                                </div>
+
+
+                                                                                <div class="form-group">
+                                                                                    <label class="col-md-4 control-label">Repetir Contraseña</label>
+                                                                                    <div class="col-md-8"><input type="password" id="repetirnueva" name="repetirnueva" class="form-control" data-ng-model="passw.repetirnueva"></div>
+                                                                                </div>
+
+                                                                                <div class="input-group">
+
+                                                                                    <span class="input-group-btn"> <button id="addItem" ng-click="pass();" class="btn btn-primary" type="button"> Cambiar Contraseña</button></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </form>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions clearfix"> <input type="button" ng-click="save();" value="Actualizar Cuenta" class="btn btn-primary pull-right"> </div>
+
+
+                                            </div>
+                                            <!-- /EDIT ACCOUNT -->
+
+
+                                            <!-- /HELP -->
+                                        </div>
+                                    </div>
+                                    <!-- /USER PROFILE -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-tools">
+							<span class="go-top">
+								<i class="fa fa-chevron-up"></i> Arriba
+							</span>
+                    </div>
+                </div><!-- /CONTENT-->
+            </div>
+        </div>
+    </div>
+</section>
