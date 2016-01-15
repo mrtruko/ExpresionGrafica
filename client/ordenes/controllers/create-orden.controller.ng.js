@@ -34,7 +34,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.saveEmpresa = function() {
 
         if($scope.mempresa.contactos.length === 0){
-            $scope.msgAlerta("Ingrese almenos 1 Contacto","error");
+            $scope.msgAlerta("Ingrese al menos 1 Contacto","error");
             return;
         }
         Empresas.insert($scope.mempresa,function(error,result){
@@ -224,7 +224,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                 console.log(files[i]);
                Uploads.insert(files[i], function (err, fileObj){
                    if(err){
-                       $scope.msgAlerta("Error al subir un archivo Intente denuevo","error");
+                       $scope.msgAlerta("Error al subir un archivo intente de nuevo","error");
                    }else{
                        console.log($scope.producSelec.codigo);
                        console.log(fileObj.url({brokenIsFine: true}));
@@ -278,9 +278,19 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.eliminarArchivo = function(arhivo){
         $scope.producSelec.archivos.splice(arhivo,1);
     }
+
+
     $scope.abono = function(){
+
+        if(  $scope.orden.abono >  $scope.orden.total ){
+            $scope.orden.abono = $scope.orden.total
+        }
+
         $scope.orden.saldo = $scope.orden.total - $scope.orden.abono;
+
     };
+
+
     $scope.calcularTotal =  function(){
         console.log($scope.cliente);
         console.log($scope.empresa);
