@@ -20,7 +20,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Fecha Factura:</label>
                                     <div class="col-sm-9">
-                                        <input type="date" ng-change="fecha();" class="form-control" data-ng-model="fechasel" name="fechae">
+                                        <input type="date" ng-change="fecha();" class="form-control" data-ng-model="facturaSeleccionada.fecha" name="fechae">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -29,11 +29,11 @@
                                         <input data-ng-model="facturaSeleccionada.monto" id="nombreProducto" type="text" class="form-control" placeholder="Monto">
                                     </div>
                                 </div>
-                                <div ng-hide="archivoFactura" class="form-group">
+                                <div ng-hide="facturaSeleccionada.factura" class="form-group">
                                     <label class="col-sm-3 control-label">Agregar Factura </label>
                                     <div class="col-sm-9">
                                         <div ngf-drop ngf-select
-                                             ngf-change="addImages($files)"
+                                             ngf-change="addImages3($files)"
                                              ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" class="drop-box"
                                              ngf-multiple="false"  ngf-allow-dir="false"
                                              ngf-drop-available="dropAvailable">
@@ -41,11 +41,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div ng-show="archivoFactura" class="form-group">
+                                <div ng-show="facturaSeleccionada.factura" class="form-group">
                                     <label class="col-sm-3 control-label">Factura </label>
                                     <div class="col-sm-9">
-                                        {{ archivoFactura.original.name }}
-                                        <input type="button" class="btn btn-danger" ng-click="archivoFactura=null" value="Eliminar">
+                                        <a target="_self" class="btn btn-success" href="{{facturaSeleccionada.factura}}" download>Descargar</a>
+                                        <input type="button" class="btn btn-danger" ng-click="facturaSeleccionada.factura=null" value="Eliminar">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -89,7 +89,7 @@
                                     <label class="col-sm-3 control-label">Comprobante</label>
                                     <div class="col-sm-9">
                                         <div ngf-drop ngf-select
-                                             ngf-change="addImages2($files)"
+                                             ngf-change="addImages4($files)"
                                              ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" class="drop-box"
                                              ngf-multiple="false"  ngf-allow-dir="false"
                                              ngf-drop-available="dropAvailable">
@@ -97,7 +97,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div ng-show="factura.archivoComprobanteUrl" class="form-group">
+                                <div ng-show="facturaSeleccionada.archivoComprobanteUrl" class="form-group">
                                     <label class="col-sm-3 control-label">Comprobante Pago Factura </label>
                                     <div class="col-sm-9">
                                         {{ archivoComprobante.original.name }}
@@ -114,8 +114,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" ng-click="proveedor.reset();" data-dismiss="modal">Close</button>
-                        <button type="button"  ng-click="save2()" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger" ng-click="proveedor.reset();" data-dismiss="modal">Cancelar</button>
+                        <button type="button"  ng-click="save2()" class="btn btn-success">Guardar</button>
                     </div>
                 </div>
             </div>

@@ -114,7 +114,8 @@ angular.module('graficaExpresionApp')
 
         };
         $scope.selecFactura = function(factura){
-            $scope.facturaSeleccionada = factura;
+            //$scope.facturaSeleccionada = factura;
+            $scope.facturaSeleccionada.fecha = moment($scope.facturaSeleccionada.fecha, "DD/MM/YYYY");
         }
         $scope.addImages2 = function(files) {
             if (files.length > 0) {
@@ -128,6 +129,48 @@ angular.module('graficaExpresionApp')
                             console.log(fileObj.url({brokenIsFine: true}));
                             $scope.factura.archivoComprobanteUrl = fileObj.url({brokenIsFine: true});
                             $scope.archivoComprobante = fileObj;
+                            $scope.$apply();
+                        }
+
+                        // });
+                    });
+                }
+            }
+
+        };
+        $scope.addImages3 = function(files) {
+            if (files.length > 0) {
+                console.log(files);
+                for (var i = 0, ln = files.length; i < ln; i++) {
+                    console.log(files[i]);
+                    Uploads.insert(files[i], function (err, fileObj){
+                        if(err){
+                            $scope.msgAlerta("Error al subir un archivo Intente denuevo","error");
+                        }else{
+                            console.log(fileObj.url({brokenIsFine: true}));
+                            $scope.facturaSeleccionada.archivoComprobanteUrl = fileObj.url({brokenIsFine: true});
+                            $scope.archivoFacturaSel = fileObj;
+                            $scope.$apply();
+                        }
+
+                        // });
+                    });
+                }
+            }
+
+        };
+        $scope.addImages4 = function(files) {
+            if (files.length > 0) {
+                console.log(files);
+                for (var i = 0, ln = files.length; i < ln; i++) {
+                    console.log(files[i]);
+                    Uploads.insert(files[i], function (err, fileObj){
+                        if(err){
+                            $scope.msgAlerta("Error al subir un archivo Intente denuevo","error");
+                        }else{
+                            console.log(fileObj.url({brokenIsFine: true}));
+                            $scope.facturaSeleccionada.archivoComprobanteUrl = fileObj.url({brokenIsFine: true});
+                            $scope.archivoComprobanteSel = fileObj;
                             $scope.$apply();
                         }
 
