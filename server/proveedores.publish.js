@@ -1,5 +1,5 @@
 'use strict'
 
-Meteor.publish('proveedores', function() {
-  return Proveedores.find({});
+Meteor.publish('facturas', function() {
+  return Facturas.find({});
 });

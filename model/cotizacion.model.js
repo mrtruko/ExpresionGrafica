@@ -156,7 +156,6 @@ Schema.Cotizacion = new SimpleSchema({
         }else{
           return 1;
         }
-
       }
     }
   }

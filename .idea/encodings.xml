@@ -39,5 +39,6 @@
     <file url="file://$PROJECT_DIR$/client/usuarios/usuarios.routes.ng.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/usuarios/views/perfil-usuario.view.ng.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/usuarios/views/usuarios.view.ng.html" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

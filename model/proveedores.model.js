@@ -1,6 +1,6 @@
-Proveedores = new Mongo.Collection('proveedores');
+Facturas = new Mongo.Collection('facturas');
 
-Proveedores.allow({
+Facturas.allow({
   insert: function(userId, proveedore) {
     return userId;
   },
@@ -12,74 +12,46 @@ Proveedores.allow({
   }
 });
 Schema = {};
-Schema.Proveedor = new SimpleSchema({
-  rut: {
+Schema.Factura = new SimpleSchema({
+  idEmpresa: {
     type: String,
   },
-  nombre: {
-    type: String,
-  },
-  email: {
-    type: String,
-    regEx: SimpleSchema.RegEx.Email
-  },
-  telefono: {
-    type: String,
-  },
-    razonSocial: {
-    type: String,
-  },
-  sede: {
-    type: String,
-  },
-  paginaWeb: {
-    type: String,
-    optional: true
-  },
-  facturas:{
-    type: Array,
-    optional: true
-  },
-  "facturas.$": {
-    type: Object
-  },
-  "facturas.$.numeroFactura": {
+  numeroFactura: {
     type: String
   },
-  "facturas.$.fecha": {
-    type: String
+  fecha: {
+    type: Date
   },
-  "facturas.$.monto": {
+  monto: {
     type: Number
   },
-  "facturas.$.factura": {
+  factura: {
     type: String
   },
-  "facturas.$.estado": {
+  estado: {
     type: String
   },
-  "facturas.$.formaPago": {
+  tipoPago: {
     type: String,
     optional: true
   },
-  "facturas.$.fechaPago": {
+  fechaPago: {
+    type: Date,
+    optional: true
+  },
+  cheque: {
     type: String,
     optional: true
   },
-  "facturas.$.cheque": {
+  banco: {
     type: String,
     optional: true
   },
-  "facturas.$.banco": {
+  archivoComprobante: {
     type: String,
     optional: true
   },
-
-  "facturas.$.archivoComprobanteUrl": {
-    type: String,
-    optional: true
-  },
-  "facturas.$.detalle": {
+  detalle: {
     type: String,
     optional: true
   },
@@ -100,4 +72,4 @@ Schema.Proveedor = new SimpleSchema({
     autoValue:function(){ return this.userId }
   }
 });
-Proveedores.attachSchema(Schema.Proveedor);
+Facturas.attachSchema(Schema.Factura);

@@ -35,6 +35,10 @@ Schema.Empresa = new SimpleSchema({
     type: String,
     regEx: SimpleSchema.RegEx.Email
   },
+  paginaWeb: {
+    type: String,
+    optional: true
+  },
   vip: {
     type: Boolean,
     optional: true
