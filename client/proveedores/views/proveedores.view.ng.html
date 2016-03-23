@@ -71,6 +71,13 @@
 
                                 </a>
                             </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-success btn-icon input-block-level multiple-buttons" href="/factura">
+                                    <i class="fa fa-plus fa-2x"></i>
+                                    <div>Nueva Factura</div>
+
+                                </a>
+                            </div>
 
 
                         </div>
@@ -141,25 +148,19 @@
                                                 </a>
                                             </th>
 
-
-
-
-
                                             <th>Acciones</th>
                                         </tr>
                                         </thead>
                                         <tbody>
 
-                                        <tr data-ng-repeat="proveedor in proveedores | orderBy:sortType:sortReverse | filter:{nombre:searchFish}; ">
-                                            <td data-ng-bind="proveedor.rut"></td>
-                                            <td data-ng-bind="proveedor.nombre"></td>
-                                            <td data-ng-bind="proveedor.razonSocial"></td>
+                                        <tr data-ng-repeat="factura in facturas | orderBy:sortType:sortReverse | filter:{nombre:searchFish}; ">
+                                            <td data-ng-bind="factura.rut"></td>
+                                            <td data-ng-bind="factura.nombre"></td>
+                                            <td data-ng-bind="factura.razonSocial"></td>
+                                            <td data-ng-bind="factura.email"></td>
 
-
-                                            <td data-ng-bind="proveedor.email"></td>
-
-                                            <td><a href="/proveedor/{{proveedor._id}}">Editar</a><a href="/proveedor/facturas/{{proveedor._id}}"> Facturas</a><br>
-                                                <a ng-click="eliminarProveedor(proveedor._id);" >Eliminar</a></td>
+                                            <td><a href="/proveedor/{{factura._id}}">Editar</a><a href="/proveedor/facturas/{{factura._id}}"> Facturas</a><br>
+                                                <a ng-click="eliminarProveedor(factura._id);" >Eliminar</a></td>
 
                                         </tr>
 

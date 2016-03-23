@@ -2,20 +2,34 @@
 
 angular.module('graficaExpresionApp')
     .controller('ProveedorCtrl', function($scope, $state) {
-        $scope.proveedores = $scope.$meteorCollection(Proveedores, false);
-        $scope.proveedor = {};
+        $scope.proveedores = $scope.$meteorCollection(Empresas, false);
+        $scope.empresa = {};
+        $scope.empresa.contactos = [];
+
         $scope.save = function(regresar) {
-            console.log($scope.proveedor);
-            Proveedores.insert($scope.proveedor,function(error,result){
+
+            if($scope.empresa.contactos.length === 0){
+                $scope.msgAlerta("Ingrese almenos 1 Contacto","error");
+                return;
+            }
+            Empresas.insert($scope.empresa,function(error,result){
                 if(error){
                     $scope.msgAlerta(error,"error");
+
                 }else if(result){
-                    $scope.msgAlerta("Proveedor Guardado.","success");
-                    $scope.proveedor = {};
+                    $scope.msgAlerta("Empresa Guardada.","success");
+                    $scope.empresa = {};
+                    $scope.empresa.contactos = [];
                     if(regresar)
                         $state.go("proveedores");
                 }
             });
+        };
+        $scope.agregarContacto = function(){
+            $scope.empresa.contactos.push({});
+        };
+        $scope.eliminarContacto = function(contacto){
+            $scope.empresa.contactos.splice(contacto,1);
         };
         $scope.msgAlerta = function(msg,tipo){
             Messenger.options = {

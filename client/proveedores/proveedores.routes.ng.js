@@ -31,8 +31,8 @@ angular.module('graficaExpresionApp')
               }]
           }
       })
-      .state('facturaProveedor', {
-          url: '/proveedor/facturas/:idProveedor',
+      .state('factura', {
+          url: '/factura',
           templateUrl: 'client/proveedores/views/proveedor-factura.view.ng.html',
           controller: 'ProveedorFacturaCtrl',
           resolve: {

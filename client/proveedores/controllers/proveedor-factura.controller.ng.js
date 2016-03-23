@@ -1,96 +1,26 @@
 'use strict'
 
 angular.module('graficaExpresionApp')
-    .controller('ProveedorFacturaCtrl', function($scope, $stateParams) {
-        $scope.proveedor = $scope.$meteorObject(Proveedores, $stateParams.idProveedor, false);
-        $scope.$meteorSubscribe('proveedores');
-        console.log($stateParams.idProveedor);
+    .controller('ProveedorFacturaCtrl', function($scope, $stateParams, $reactive) {
+        $scope.empresas = $scope.$meteorCollection(Empresas).subscribe('empresas');
+        $reactive(this).attach($scope);
+        this.subscribe('uploads');
         $scope.factura = {};
-        $scope.factura.tipoPago = "Cheque";
-        $scope.factura.estado = "No Pagado";
-        $scope.save = function() {
-            console.log($scope.proveedor);
-            if(!$scope.proveedor.facturas)
-                     $scope.proveedor.facturas = [];
-            console.log($scope.factura);
-            $scope.factura.fecha = moment($scope.fechasel).format("DD-MM-YYYY");
-            if($scope.fechasel2){
-                $scope.factura.fechaPago = moment($scope.fechasel2).format("DD-MM-YYYY");
-            }
-            $scope.factura.fecha = moment($scope.fechasel).format("DD-MM-YYYY");
-            if(!$scope.factura.numeroFactura){
-                $scope.msgAlerta("Ingrese Numero de la factura","error");
-                return;
-            }
-            if(!$scope.factura.fecha){
-                $scope.msgAlerta("Ingrese fecha de la factura","error");
-                return;
-            }
-            if(!$scope.factura.monto){
-                $scope.msgAlerta("Ingrese Monto de la factura","error");
-                return;
-            }
-            if(!$scope.factura.factura){
-                $scope.msgAlerta("Ingrese una imagen o respaldo de la factura","error");
-                return;
-            }
-            $scope.proveedor.facturas.push($scope.factura);
-            $scope.proveedor.save().then(
-                function(numberOfDocs) {
-                    $scope.msgAlerta("Proveedor Guardado.","success");
-                    $scope.factura = {};
-                    $scope.factura.tipoPago = "Cheque";
-                    $scope.factura.estado = "No Pagado";
-                    $scope.archivoComprobante = null;
-                    $scope.archivoFactura = null;
-                },
-                function(error) {
-                    $scope.msgAlerta(error,"error");
+        $scope.facturaSeleccionada = null;
+        var _selected;
+        $scope.selected = undefined;
+        $scope.editar = true;
+        $scope.clienteSeleccionado = function(item, model, label){
+            if(model){
+                if(model._id){
+                    $scope.empresa = model;
+                    $scope.factura.idEmpresa = model._id;
+                    $scope.facturas = $scope.$meteorCollection(function() {
+                        return Facturas.find({idEmpresa:model._id});
+                    }).subscribe("facturas");
                 }
-            );
-        };
-        $scope.save2 = function() {
-            console.log($scope.proveedor);
-            if(!$scope.proveedor.facturas)
-                $scope.proveedor.facturas = [];
-            console.log($scope.factura);
-            $scope.factura.fecha = moment($scope.fechasel).format("DD-MM-YYYY");
-            if($scope.fechasel2){
-                $scope.facturaSeleccionada.fechaPago = moment($scope.fechasel2).format("DD-MM-YYYY");
             }
-            $scope.facturaSeleccionada.fecha = moment($scope.fechasel).format("DD-MM-YYYY");
-            if(!$scope.facturaSeleccionada.numeroFactura){
-                $scope.msgAlerta("Ingrese Numero de la factura","error");
-                return;
-            }
-            if(!$scope.facturaSeleccionada.fecha){
-                $scope.msgAlerta("Ingrese fecha de la factura","error");
-                return;
-            }
-            if(!$scope.facturaSeleccionada.monto){
-                $scope.msgAlerta("Ingrese Monto de la factura","error");
-                return;
-            }
-            if(!$scope.facturaSeleccionada.factura){
-                $scope.msgAlerta("Ingrese una imagen o respaldo de la factura","error");
-                return;
-            }
-
-            $scope.proveedor.save().then(
-                function(numberOfDocs) {
-                    $scope.msgAlerta("Proveedor Guardado.","success");
-                    $scope.factura = {};
-                    $scope.factura.tipoPago = "Cheque";
-                    $scope.factura.estado = "No Pagado";
-                    $scope.archivoComprobante = null;
-                    $scope.archivoFactura = null;
-                },
-                function(error) {
-                    $scope.msgAlerta(error,"error");
-                }
-            );
-        };
-
+        }
         $scope.addImages = function(files) {
             if (files.length > 0) {
                 console.log(files);
@@ -98,12 +28,13 @@ angular.module('graficaExpresionApp')
                     console.log(files[i]);
                     Uploads.insert(files[i], function (err, fileObj){
                         if(err){
-                            $scope.msgAlerta("Error al subir un archivo Intente denuevo","error");
+                            $scope.msgAlerta("Error al subir un archivo intente de nuevo","error");
                         }else{
-                            console.log(fileObj.url({brokenIsFine: true}));
-                            $scope.factura.factura = fileObj.url({brokenIsFine: true});
-                            $scope.archivoFactura = fileObj;
-                            console.log(fileObj);
+                            $scope.factura.factura = fileObj._id;
+                            $scope.factura.facturaImg = fileObj;
+
+                           // $scope.producSelec.url.push(fileObj.url({brokenIsFine: true}));
+                            //$scope.producSelec.archivos.push(fileObj);
                             $scope.$apply();
                         }
 
@@ -111,76 +42,74 @@ angular.module('graficaExpresionApp')
                     });
                 }
             }
-
         };
-        $scope.selecFactura = function(factura){
-            //$scope.facturaSeleccionada = factura;
-            $scope.facturaSeleccionada.fecha = moment($scope.facturaSeleccionada.fecha, "DD/MM/YYYY");
-        }
         $scope.addImages2 = function(files) {
+            console.log($scope.factura);
             if (files.length > 0) {
                 console.log(files);
                 for (var i = 0, ln = files.length; i < ln; i++) {
                     console.log(files[i]);
                     Uploads.insert(files[i], function (err, fileObj){
                         if(err){
-                            $scope.msgAlerta("Error al subir un archivo Intente denuevo","error");
+                            $scope.msgAlerta("Error al subir un archivo intente de nuevo","error");
                         }else{
-                            console.log(fileObj.url({brokenIsFine: true}));
-                            $scope.factura.archivoComprobanteUrl = fileObj.url({brokenIsFine: true});
-                            $scope.archivoComprobante = fileObj;
+                            $scope.factura.archivoComprobante = fileObj._id;
+                            $scope.factura.archivoComprobanteImg = fileObj;
+
+                            // $scope.producSelec.url.push(fileObj.url({brokenIsFine: true}));
+                            //$scope.producSelec.archivos.push(fileObj);
                             $scope.$apply();
                         }
-
-                        // });
                     });
                 }
             }
-
         };
-        $scope.addImages3 = function(files) {
-            if (files.length > 0) {
-                console.log(files);
-                for (var i = 0, ln = files.length; i < ln; i++) {
-                    console.log(files[i]);
-                    Uploads.insert(files[i], function (err, fileObj){
-                        if(err){
-                            $scope.msgAlerta("Error al subir un archivo Intente denuevo","error");
-                        }else{
-                            console.log(fileObj.url({brokenIsFine: true}));
-                            $scope.facturaSeleccionada.archivoComprobanteUrl = fileObj.url({brokenIsFine: true});
-                            $scope.archivoFacturaSel = fileObj;
-                            $scope.$apply();
-                        }
+        $scope.saveEdit = function(){
 
-                        // });
-                    });
+            Facturas.update($scope.factura._id,{$set:$scope.factura}, function(error, result){
+                if(result){
+                    $scope.msgAlerta("Factura Guardada.","success");
+                    $scope.factura = {estado:"No Pagado",tipoPago:"Cheque",idEmpresa:$scope.empresa._id};
+                    $scope.$apply();
+                }else if(error){
+                    $scope.msgAlerta("Error.","error");
+                    console.log(error);
                 }
-            }
+            });
 
-        };
-        $scope.addImages4 = function(files) {
-            if (files.length > 0) {
-                console.log(files);
-                for (var i = 0, ln = files.length; i < ln; i++) {
-                    console.log(files[i]);
-                    Uploads.insert(files[i], function (err, fileObj){
-                        if(err){
-                            $scope.msgAlerta("Error al subir un archivo Intente denuevo","error");
-                        }else{
-                            console.log(fileObj.url({brokenIsFine: true}));
-                            $scope.facturaSeleccionada.archivoComprobanteUrl = fileObj.url({brokenIsFine: true});
-                            $scope.archivoComprobanteSel = fileObj;
-                            $scope.$apply();
-                        }
+        }
+        $scope.save = function(){
+            console.log($scope.factura);
+            Facturas.insert($scope.factura, function(error, result){
+               if(result){
+                   $scope.msgAlerta("Factura Guardada.","success");
+                   $scope.factura = {estado:"No Pagado",tipoPago:"Cheque",idEmpresa:$scope.empresa._id};
 
-                        // });
-                    });
-                }
-            }
+               }else if(error){
+                   $scope.msgAlerta("Error.","error");
+                   console.log(error);
+               }
+            });
+        }
+        $scope.cargarFactura = function(id){
+            $scope.factura = $scope.$meteorObject(Facturas, id, false);
+            $scope.factura.facturaImg = $scope.cargarArchivo($scope.factura.factura);
+            if($scope.factura.archivoComprobante)
+                $scope.factura.archivoComprobanteImg = $scope.cargarArchivo($scope.factura.archivoComprobante);
+            $scope.editar = false;
 
-        };
+        }
+        $scope.editarFactura = function(id){
+            $scope.factura = Facturas.findOne({_id:id});
+            $scope.factura.facturaImg = $scope.cargarArchivo($scope.factura.factura);
+            if($scope.factura.archivoComprobante)
+                $scope.factura.archivoComprobanteImg = $scope.cargarArchivo($scope.factura.archivoComprobante);
+            $scope.editar = true;
 
+        }
+        $scope.cargarArchivo = function(id){
+            return Uploads.findOne({_id:id});
+        }
         $scope.msgAlerta = function(msg,tipo){
             Messenger.options = {
                 extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
@@ -191,6 +120,5 @@ angular.module('graficaExpresionApp')
                 showCloseButton: true,
                 type: tipo
             });
-
         }
     });

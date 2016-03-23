@@ -5,7 +5,8 @@ angular.module('graficaExpresionApp', [
   'angularUtils.directives.dirPagination',
   'ngMaterial',
   'ngFileUpload',
-  'ngImgCrop'
+  'ngImgCrop',
+  'ui.bootstrap.typeahead'
 ]);
 
 onReady = function() {

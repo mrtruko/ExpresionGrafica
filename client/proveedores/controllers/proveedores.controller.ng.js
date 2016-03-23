@@ -2,19 +2,19 @@
 
 angular.module('graficaExpresionApp')
 .controller('ProveedoresCtrl', function($scope, $meteor) {
-      $scope.proveedores = $scope.$meteorCollection(Proveedores).subscribe('proveedores');
+      $scope.facturas = $scope.$meteorCollection(Facturas).subscribe('facturas');
       $scope.eliminarProveedor = function(id){
-        $scope.proveedor = $meteor.object(Proveedores, id,false).subscribe("proveedores");
+        $scope.factura = $meteor.object(Facturas, id,false).subscribe("facturas");
         console.log($scope.empresa);
         bootbox.dialog({
-              title: "Desea Eliminar a: "+ $scope.proveedor.nombre +" de su listado de Proveedores?",
-              message: "En espera de eliminaci®Æn",
+              title: "Desea Eliminar a: "+ $scope.factura.nombre +" de su listado de Facturas?",
+              message: "En espera de eliminaci√≥n",
               buttons: {
                 success: {
                   label: "Eliminar",
                   className: "btn-error",
                   callback: function () {
-                    $scope.proveedores.remove($scope.proveedor);
+                    $scope.proveedores.remove($scope.factura);
                   }
                 }
               }

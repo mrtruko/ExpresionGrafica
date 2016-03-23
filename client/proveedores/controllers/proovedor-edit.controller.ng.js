@@ -2,27 +2,41 @@
 
 angular.module('graficaExpresionApp')
     .controller('ProveedorEditCtrl', function($scope, $stateParams, $state) {
-        $scope.proveedor = $scope.$meteorObject(Proveedores, $stateParams.idProveedor, false);
-        $scope.$meteorSubscribe('proveedores');
-        console.log($stateParams.idProveedor);
+        $scope.empresa = $scope.$meteorObject(Empresas, $stateParams.empresaId, false);
+        $scope.$meteorSubscribe('empresas');
         $scope.save = function(regresar) {
-            console.log($scope.proveedor);
-            $scope.proveedor.save().then(
+            if($scope.empresa.contactos.length === 0){
+                $scope.msgAlerta("Ingrese almenos 1 Contacto","error");
+                return;
+            }
+            $scope.empresa.save().then(
                 function(numberOfDocs) {
-                    $scope.msgAlerta("Proveedor Guardado.","success");
+                    $scope.msgAlerta("Cliente Guardado.","success");
                     if(regresar)
-                        $state.go("proveedores");
+                        $state.go("empresas");
                 },
                 function(error) {
                     $scope.msgAlerta(error,"error");
                 }
-            );
+            )
+
+        };
+        $scope.agregarContacto = function(){
+            $scope.empresa.contactos.push({});
+
+        }
+        $scope.eliminarContacto = function(contacto){
+            $scope.empresa.contactos.splice(contacto,1);
+        }
+        $scope.reset = function() {
+            $scope.empresa.reset();
         };
         $scope.msgAlerta = function(msg,tipo){
             Messenger.options = {
                 extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
                 theme: "future"
             }
+            //Call
             Messenger().post({
                 message:msg,
                 showCloseButton: true,

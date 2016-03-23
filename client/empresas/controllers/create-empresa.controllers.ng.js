@@ -29,12 +29,12 @@ angular.module('graficaExpresionApp')
         };
         $scope.eliminarContacto = function(contacto){
             $scope.empresa.contactos.splice(contacto,1);
-        }
+        };
         $scope.msgAlerta = function(msg,tipo){
             Messenger.options = {
                 extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
                 theme: "future"
-            }
+            };
             Messenger().post({
                 message:msg,
                 showCloseButton: true,
