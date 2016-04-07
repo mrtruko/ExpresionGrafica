@@ -125,77 +125,67 @@
 
                                             <th>
                                                 <a ng-click="sortType = 'rutEmpresa'; sortReverse = !sortReverse">
-                                                    Rut Proveedor
+                                                    Nombre Empresa
                                                     <span ng-show="sortType == 'rutEmpresa'" class="fa fa-caret-down"></span>
                                                 </a>
                                             </th>
                                             <th>
                                                 <a ng-click="sortType = 'nombreEmpresa'; sortReverse = !sortReverse">
-                                                    Nombre Proveedor
+                                                    Estado
                                                     <span ng-show="sortType == 'nombreEmpresa'" class="fa fa-caret-down"></span>
                                                 </a>
                                             </th>
                                             <th>
                                                 <a ng-click="sortType = 'direccionEmpresa'; sortReverse = !sortReverse">
-                                                    Razon Social
+                                                    Monto
                                                     <span ng-show="sortType == 'direccionEmpresa'" class="fa fa-caret-down"></span>
                                                 </a>
                                             </th>
                                             <th>
                                                 <a ng-click="sortType = 'mailempresa'; sortReverse = !sortReverse">
-                                                    Mail
+                                                    Fecha
                                                     <span ng-show="sortType == 'mailempresa'" class="fa fa-caret-down"></span>
                                                 </a>
                                             </th>
 
-                                            <th>Acciones</th>
                                         </tr>
                                         </thead>
                                         <tbody>
 
-                                        <tr data-ng-repeat="factura in facturas | orderBy:sortType:sortReverse | filter:{nombre:searchFish}; ">
-                                            <td data-ng-bind="factura.rut"></td>
-                                            <td data-ng-bind="factura.nombre"></td>
-                                            <td data-ng-bind="factura.razonSocial"></td>
-                                            <td data-ng-bind="factura.email"></td>
-
-                                            <td><a href="/proveedor/{{factura._id}}">Editar</a><a href="/proveedor/facturas/{{factura._id}}"> Facturas</a><br>
-                                                <a ng-click="eliminarProveedor(factura._id);" >Eliminar</a></td>
+                                        <tr data-ng-repeat="factura in facturas | orderBy:sortType:sortReverse | filter:{nombre:searchFish}; " ng-init="factura.empresa = cargarEmpresa(factura.idEmpresa);" ng-click="abrirDetalle(factura._id)">
+                                            <td>{{ factura.empresa.nombreEmpresa }}</td>
+                                            <td data-ng-bind="factura.estado"></td>
+                                            <td data-ng-bind="factura.monto"></td>
+                                            <td>{{ factura.fecha | date:"dd/MM/yyyy"}}</td>
 
                                         </tr>
-
-
                                         </tbody>
                                         <tfoot>
                                         <tr>
                                             <th>
                                                 <a ng-click="sortType = 'rutEmpresa'; sortReverse = !sortReverse">
-                                                    Rut Proveedor
+                                                    Nombre Empresar
                                                     <span ng-show="sortType == 'rutEmpresa'" class="fa fa-caret-down"></span>
                                                 </a>
                                             </th>
                                             <th>
                                                 <a ng-click="sortType = 'nombreEmpresa'; sortReverse = !sortReverse">
-                                                    Nombre Proveedor
+                                                    Estado
                                                     <span ng-show="sortType == 'nombreEmpresa'" class="fa fa-caret-down"></span>
                                                 </a>
                                             </th>
                                             <th>
                                                 <a ng-click="sortType = 'direccionEmpresa'; sortReverse = !sortReverse">
-                                                    Razon Social
+                                                    Monto
                                                     <span ng-show="sortType == 'direccionEmpresa'" class="fa fa-caret-down"></span>
                                                 </a>
                                             </th>
                                             <th>
                                                 <a ng-click="sortType = 'mailempresa'; sortReverse = !sortReverse">
-                                                    Email
+                                                    Fecha
                                                     <span ng-show="sortType == 'mailempresa'" class="fa fa-caret-down"></span>
                                                 </a>
                                             </th>
-
-
-                                            <th>Acciones</th>
-
                                         </tr>
                                         </tfoot>
                                     </table>

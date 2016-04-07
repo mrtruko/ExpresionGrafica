@@ -21,7 +21,4 @@ if (Meteor.isServer) {
         }
     });
 
-    Meteor.publish('uploads', function() {
-        return Uploads.find({});
-    });
 }

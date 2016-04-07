@@ -35,9 +35,13 @@ angular.module('graficaExpresionApp')
           url: '/factura',
           templateUrl: 'client/proveedores/views/proveedor-factura.view.ng.html',
           controller: 'ProveedorFacturaCtrl',
+          controllerAs:'facturaEdita',
           resolve: {
               currentUser: ['$meteor', function($meteor) {
                   return $meteor.requireUser();
+              }],
+              "data": ["$meteor", function($meteor){
+                  return $meteor.subscribe('facturas');
               }]
           }
       });

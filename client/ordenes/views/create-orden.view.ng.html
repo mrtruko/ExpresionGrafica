@@ -813,7 +813,7 @@
                                                                                             <div class="form-group">
                                                                                                 <label class="control-label col-md-2">Fecha Entrega:<span class="required"></span></label>
                                                                                                 <div class="col-md-4">
-                                                                                                    <input type="date" ng-change="fecha();" min="{{ hoy }}" data-ng-model="fechasel" name="fechae">
+                                                                                                    <input type="date" ng-model="orden.fechaCompromiso" min="{{ hoy }}"  name="fechae">
                                                                                                     <span class="error-span"></span>
                                                                                                 </div>
                                                                                             </div>
@@ -1223,7 +1223,7 @@
 
                                                                                             <strong>*VALORES MAS IVA.-</strong>
                                                                                             <br>
-                                                                                            <strong>Fecha de Entrega</strong> {{ orden.fechaCompromiso }}
+                                                                                            <strong>Fecha de Entrega</strong> {{ orden.fechaCompromiso | date:"dd/MM/yyyy" }}
                                                                                             <br>
                                                                                             <strong>Plazo de retiro de trabajo hasta 60 dias, luego de esa fecha. La empresa no se hace responsable.</strong>
                                                                                             <br>

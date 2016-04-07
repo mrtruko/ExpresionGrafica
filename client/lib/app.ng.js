@@ -7,7 +7,9 @@ angular.module('graficaExpresionApp', [
   'ngFileUpload',
   'ngImgCrop',
   'ui.bootstrap.typeahead'
-]);
+]).config(['$angularMeteorSettings', function($angularMeteorSettings) {
+  $angularMeteorSettings.suppressWarnings = true; // Disables write of warnings to console
+}]);
 
 onReady = function() {
   angular.bootstrap(document, ['graficaExpresionApp']);

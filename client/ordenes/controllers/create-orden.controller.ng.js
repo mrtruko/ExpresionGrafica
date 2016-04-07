@@ -24,12 +24,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
     $scope.mempresa.contactos = [];
 
 
-    $scope.fecha = function(){
-        if($scope.fechasel){
 
-            $scope.orden.fechaCompromiso = moment($scope.fechasel).format("DD-MM-YYYY");
-        }
-    };
 
     $scope.saveEmpresa = function() {
 
@@ -125,7 +120,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                         $scope.producto.movimientos.push({
                                 "responsable":$scope.currentUser.profile.displayName,
                                 "cantidad":valuePro.cantidad,
-                                "fecha" : moment().format("DD/MM/YYYY HH:mm"),
+                                "fecha" : moment(),
                                 "motivo":"Orden de Trabajo: "+$scope.orden.idOrden,
                                 "tipo":"orden"
                             });
@@ -334,7 +329,8 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         l.click();
     };
     $scope.wizOrden = function(){
-        if(!$scope.fechasel){
+        console.log($scope.orden);
+        if(!$scope.orden.fechaCompromiso){
             $scope.msgAlerta("Ingrese Fecha de compromiso","error");
             return;
         }

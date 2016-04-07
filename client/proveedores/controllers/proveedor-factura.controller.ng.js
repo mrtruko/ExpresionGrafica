@@ -1,25 +1,63 @@
 'use strict'
 
 angular.module('graficaExpresionApp')
-    .controller('ProveedorFacturaCtrl', function($scope, $stateParams, $reactive) {
-        $scope.empresas = $scope.$meteorCollection(Empresas).subscribe('empresas');
+    .controller('ProveedorFacturaCtrl', function($scope, $stateParams, $reactive,sharedProperties) {
         $reactive(this).attach($scope);
         this.subscribe('uploads');
-        $scope.factura = {};
+        this.subscribe('facturas');
+        this.subscribe('empresas');
+        this.helpers({
+                    empresas: () => Empresas.find({}),
+        });
+
+        this.factura = {};
+        $scope.modal = false;
         $scope.facturaSeleccionada = null;
-        var _selected;
+        $scope.facturaImg = null;
+        $scope.comprobanteImg = null;
         $scope.selected = undefined;
         $scope.editar = true;
+        $scope.PropiedadCompartida = sharedProperties.getProperty();
+        sharedProperties.setProperty(null);
+
+
         $scope.clienteSeleccionado = function(item, model, label){
             if(model){
                 if(model._id){
-                    $scope.empresa = model;
-                    $scope.factura.idEmpresa = model._id;
-                    $scope.facturas = $scope.$meteorCollection(function() {
-                        return Facturas.find({idEmpresa:model._id});
-                    }).subscribe("facturas");
+                    $scope.facturaEdita.empresa = model;
+                    $scope.facturaEdita.factura.idEmpresa = model._id;
+                    $scope.facturaEdita.helpers({
+                            facturas: () => Facturas.find({idEmpresa:model._id}),
+                    });
+                    //console.log(this.facturas);
+
                 }
             }
+        }
+        $scope.cargarFacturaClick = function(){
+
+            if($scope.PropiedadCompartida){
+                $scope.helpers({
+                        factura: () => Facturas.findOne({_id:$scope.PropiedadCompartida}),
+                    facturas: () => Facturas.find({idEmpresa:$scope.facturaEdita.factura.idEmpresa}),
+                    empresa: () => Empresas.findOne({_id:$scope.facturaEdita.factura.idEmpresa}),
+            });
+                $scope.editar = false;
+                $scope.modal = true;
+
+                // Meteor.wrapAsync(func, [context])
+               // $scope.facturaEdita.factura.facturaImg = $scope.cargarArchivo($scope.facturaEdita.factura.factura);
+               // if($scope.facturaEdita.factura.archivoComprobante){
+               //     $scope.facturaEdita.factura.archivoComprobanteImg = $scope.cargarArchivo($scope.facturaEdita.factura.archivoComprobante);
+              //  }
+                //console.log(Meteor.call('img',$scope.facturaEdita.factura.factura));
+                //$scope.facturaEdita.factura.facturaImg = Meteor.call('img',$scope.facturaEdita.factura.factura);
+                //console.log($scope.facturaEdita.factura.facturaImg);
+                //if($scope.facturaEdita.factura.archivoComprobante)
+                //$scope.facturaEdita.factura.archivoComprobanteImg = Uploads.findOne({_id:$scope.facturaEdita.factura.archivoComprobante});
+               //
+            }
+
         }
         $scope.addImages = function(files) {
             if (files.length > 0) {
@@ -44,11 +82,11 @@ angular.module('graficaExpresionApp')
             }
         };
         $scope.addImages2 = function(files) {
-            console.log($scope.factura);
+
             if (files.length > 0) {
-                console.log(files);
+
                 for (var i = 0, ln = files.length; i < ln; i++) {
-                    console.log(files[i]);
+
                     Uploads.insert(files[i], function (err, fileObj){
                         if(err){
                             $scope.msgAlerta("Error al subir un archivo intente de nuevo","error");
@@ -65,7 +103,6 @@ angular.module('graficaExpresionApp')
             }
         };
         $scope.saveEdit = function(){
-
             Facturas.update($scope.factura._id,{$set:$scope.factura}, function(error, result){
                 if(result){
                     $scope.msgAlerta("Factura Guardada.","success");
@@ -79,36 +116,39 @@ angular.module('graficaExpresionApp')
 
         }
         $scope.save = function(){
-            console.log($scope.factura);
             Facturas.insert($scope.factura, function(error, result){
                if(result){
                    $scope.msgAlerta("Factura Guardada.","success");
                    $scope.factura = {estado:"No Pagado",tipoPago:"Cheque",idEmpresa:$scope.empresa._id};
-
                }else if(error){
                    $scope.msgAlerta("Error.","error");
                    console.log(error);
                }
             });
         }
-        $scope.cargarFactura = function(id){
-            $scope.factura = $scope.$meteorObject(Facturas, id, false);
-            $scope.factura.facturaImg = $scope.cargarArchivo($scope.factura.factura);
-            if($scope.factura.archivoComprobante)
-                $scope.factura.archivoComprobanteImg = $scope.cargarArchivo($scope.factura.archivoComprobante);
-            $scope.editar = false;
-
-        }
-        $scope.editarFactura = function(id){
-            $scope.factura = Facturas.findOne({_id:id});
-            $scope.factura.facturaImg = $scope.cargarArchivo($scope.factura.factura);
-            if($scope.factura.archivoComprobante)
-                $scope.factura.archivoComprobanteImg = $scope.cargarArchivo($scope.factura.archivoComprobante);
-            $scope.editar = true;
-
-        }
         $scope.cargarArchivo = function(id){
             return Uploads.findOne({_id:id});
+        }
+        $scope.cargarFactura = function(id){
+            $scope.modal = false;
+            $scope.facturaEdita.helpers({
+                    factura: () => Facturas.findOne({_id:id}),
+        });
+            $scope.facturaEdita.factura.facturaImg = $scope.cargarArchivo($scope.facturaEdita.factura.factura);
+            if($scope.facturaEdita.factura.archivoComprobante)
+                $scope.facturaEdita.factura.archivoComprobanteImg = $scope.cargarArchivo($scope.facturaEdita.factura.archivoComprobante);
+            $scope.editar = false;
+        }
+        $scope.editarFactura = function(id){
+            $scope.modal = false;
+            $scope.facturaEdita.helpers({
+                        factura: () => Facturas.findOne({_id:id}),
+            });
+
+            $scope.facturaEdita.factura.facturaImg = $scope.cargarArchivo($scope.facturaEdita.factura.factura);
+            if($scope.facturaEdita.factura.archivoComprobante)
+                $scope.facturaEdita.factura.archivoComprobanteImg = $scope.cargarArchivo($scope.facturaEdita.factura.archivoComprobante);
+            $scope.editar = true;
         }
         $scope.msgAlerta = function(msg,tipo){
             Messenger.options = {
@@ -121,4 +161,11 @@ angular.module('graficaExpresionApp')
                 type: tipo
             });
         }
+
+            $scope.archivos = function(){
+
+            }
+
+
+
     });

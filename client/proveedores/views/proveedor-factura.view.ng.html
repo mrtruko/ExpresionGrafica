@@ -45,41 +45,55 @@
                                         <div class="box-title">
                                             <h4><i class="fa fa-bars"></i>Facturación Proveedores</h4>
                                         </div>
-                                        <div class="box-body big">
+                                        <div class="box-body big" ng-init="cargarFacturaClick();">
                                             <form class="form-horizontal" ng-init="x = 0" data-ng-submit="movimientos(x)" role="form">
-                                                <div class="form-group" ng-hide="empresa">
+                                                <div class="form-group" ng-hide="facturaEdita.empresa">
                                                     <label class="col-sm-3 control-label">Buscador</label>
                                                     <div class="col-sm-9 typeahead-demo">
-                                                        <input type="text" class="form-control" ng-change="clienteSeleccionado();" ng-model="selected"  typeahead="empresa as empresa.rutEmpresa for empresa in empresas | filter:$viewValue | limitTo:8" typeahead-on-select="clienteSeleccionado($item, $model, $label)">
+                                                        <input type="text" class="form-control" ng-change="clienteSeleccionado();" ng-model="selected"  typeahead="empresa as empresa.rutEmpresa for empresa in facturaEdita.empresas | filter:$viewValue | limitTo:8" typeahead-on-select="clienteSeleccionado($item, $model, $label)">
                                                     </div>
                                                 </div>
-                                                <div class="form-group" ng-show="empresa">
+                                                <div class="form-group" ng-show="facturaEdita.empresa">
                                                     <label class="col-sm-3 control-label">Buscador</label>
                                                     <div class="col-sm-9 typeahead-demo">
-                                                        <a type="button" href="#" ng-click="empresa=null;selected=null;facturas=null;factura = {estado:'No Pagado',tipoPago:'Cheque'};" class="btn btn-danger">Cancelar</a>
+                                                        <a type="button" href="#" ng-click="facturaEdita.empresa=null;selected=null;facturaEdita.facturas=undifined;facturaEdita.factura = {estado:'No Pagado',tipoPago:'Cheque'};" class="btn btn-danger">Cancelar</a>
                                                     </div>
                                                 </div>
                                                 <div class="separator"></div>
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label">Rut Empresa</label>
                                                     <div class="col-sm-9">
-                                                        <input readonly  type="text" data-ng-model="empresa.rutEmpresa" id="codigo" class="form-control" placeholder="Rut">
+                                                        <input readonly  type="text" data-ng-model="facturaEdita.empresa.rutEmpresa" id="codigo" class="form-control" placeholder="Rut">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label">Nombre Empresa</label>
                                                     <div class="col-sm-9">
-                                                        <input readonly data-ng-model="empresa.nombreEmpresa" id="nombreProducto" type="text" class="form-control" placeholder="Nombre">
+                                                        <input readonly data-ng-model="facturaEdita.empresa.nombreEmpresa" id="nombreProducto" type="text" class="form-control" placeholder="Nombre">
                                                     </div>
                                                 </div>
-                                                <div class="form-group" ng-show="factura._id && editar">
+                                                <div class="form-group" ng-show="facturaEdita.factura._id && editar">
                                                     <div class="col-sm-3">
                                                     </div>
                                                     <div class="col-sm-9">
                                                         <div class="ibox-content">
                                                             <div class="list-group">
                                                                 <a class="list-group-item active" href="#">
-                                                                    <h4 class="list-group-item-heading">Usted esta Editando la Factura: <b>{{ factura.numeroFactura }}</b> de la empresa <b>{{ empresa.nombreEmpresa }}</b> desea <b class="btn btn-danger" ng-click=""> CANCELAR?</b> </h4>
+                                                                    <h4 class="list-group-item-heading">Usted esta Editando la Factura: <b>{{ facturaEdita.factura.numeroFactura }}</b> de la empresa <b>{{ facturaEdita.empresa.nombreEmpresa }}</b> desea <b class="btn btn-danger" ng-click="facturaEdita.factura = {estado:'No Pagado',tipoPago:'Cheque'}"> CANCELAR?</b> </h4>
+                                                                </a>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" ng-show="modal">
+                                                    <div class="col-sm-3">
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <div class="ibox-content">
+                                                            <div class="list-group">
+                                                                <a class="list-group-item active" href="#">
+                                                                    <h4 class="list-group-item-heading">Usted esta selecciono la Factura: <b>{{ facturaEdita.factura.numeroFactura }}</b> de la empresa <b>{{ facturaEdita.empresa.nombreEmpresa }}</b> desea <b class="btn btn-danger" ng-click="editarFactura(facturaEdita.factura._id)"> Editar</b>, <b class="btn btn-danger" ng-click="cargarFactura(facturaEdita.factura._id)"> Ver </b> o <b class="btn btn-danger" ng-click="facturaEdita.factura = {estado:'No Pagado',tipoPago:'Cheque'};modal=false"> CANCELAR?</b></h4>
                                                                 </a>
 
                                                             </div>
@@ -87,26 +101,26 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
+                                                <div class="form-group" ng-hide="modal">
                                                     <label class="col-sm-3 control-label">Numero Factura:</label>
                                                     <div class="col-sm-9">
-                                                        <input data-ng-model="factura.numeroFactura" id="nombreProducto" type="text" class="form-control" ng-disabled="!editar" placeholder="Numero Factura">
+                                                        <input data-ng-model="facturaEdita.factura.numeroFactura" id="nombreProducto" type="text" class="form-control" ng-disabled="!editar" placeholder="Numero Factura">
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <div class="form-group"  ng-hide="modal">
                                                     <label class="col-sm-3 control-label">Fecha Factura:</label>
                                                     <div class="col-sm-9">
-                                                        <input type="date"  class="form-control" data-ng-model="factura.fecha" name="fechae" ng-disabled="!editar">
+                                                        <input type="date"  class="form-control" data-ng-model="facturaEdita.factura.fecha" name="fechae" ng-disabled="!editar">
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <div class="form-group" ng-hide="modal">
                                                     <label class="col-sm-3 control-label">Monto Factura</label>
                                                     <div class="col-sm-9">
-                                                        <input data-ng-model="factura.monto" id="nombreProducto" type="text" class="form-control" placeholder="Monto" ng-disabled="!editar">
+                                                        <input data-ng-model="facturaEdita.factura.monto" id="nombreProducto" type="text" class="form-control" placeholder="Monto" ng-disabled="!editar">
                                                     </div>
                                                 </div>
-                                                <div ng-hide="factura.facturaImg" class="form-group">
-                                                    <label class="col-sm-3 control-label">Agregar Factura </label>
+                                                <div ng-hide="facturaEdita.factura.facturaImg || modal" class="form-group">
+                                                    <label class="col-sm-3 control-label" ng-click="cargarFacturaClick();">Agregar Factura </label>
                                                     <div class="col-sm-9">
                                                         <div ngf-drop ngf-select
                                                              ngf-change="addImages($files)"
@@ -117,53 +131,53 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div ng-show="factura.facturaImg" class="form-group">
+                                                <div ng-show="facturaEdita.factura.facturaImg || !modal" class="form-group">
                                                     <label class="col-sm-3 control-label">Factura </label>
                                                     <div class="col-sm-9">
-                                                        <span ng-hide="factura._id">{{ factura.facturaImg.original.name }}</span>
-                                                        <a  target="_blank" ng-show="factura._id"  href="{{ factura.facturaImg.url({brokenIsFine: true}) }}"  >{{ factura.facturaImg.original.name }}</a>
-                                                        <a type="button"  ng-show="factura._id" target="_self" class="btn btn-success" href="{{ factura.facturaImg.url({brokenIsFine: true}) }}" download >Descargar</a>
-                                                        <input type="button" class="btn btn-danger" ng-click="factura.facturaImg=null" value="Eliminar">
+                                                        <span ng-hide="facturaEdita.factura._id">{{ facturaEdita.factura.facturaImg.original.name }}</span>
+                                                        <a  target="_blank" ng-show="facturaEdita.factura._id"  href="{{ facturaEdita.factura.facturaImg.url({brokenIsFine: true}) }}"  >{{ facturaEdita.factura.facturaImg.original.name }}</a>
+                                                        <a type="button"  ng-show="facturaEdita.factura._id" target="_self" class="btn btn-success" href="{{ facturaEdita.factura.facturaImg.url({brokenIsFine: true}) }}" download >Descargar</a>
+                                                        <input type="button" class="btn btn-danger" ng-click="facturaEdita.factura.facturaImg=null" value="Eliminar">
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <div class="form-group"  ng-hide="modal">
                                                     <label class="col-sm-3 control-label">Estado</label>
                                                     <div class="col-sm-9">
-                                                        <select data-ng-model="factura.estado" ng-init="factura.estado = 'No Pagado'" id="estado" class="form-control" ng-disabled="!editar">
+                                                        <select data-ng-model="facturaEdita.factura.estado" ng-init="facturaEdita.factura.estado = 'No Pagado'" id="estado" class="form-control" ng-disabled="!editar">
                                                             <option value="No Pagado">No Pagado</option>
                                                             <option value="Pagado">Pagado</option>
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="form-group" ng-hide="factura.estado=='No Pagado'">
+                                                <div class="form-group" ng-hide="facturaEdita.factura.estado=='No Pagado' || modal">
                                                     <label class="col-sm-3 control-label">Forma de Pago</label>
                                                     <div class="col-sm-9">
-                                                        <select data-ng-model="factura.tipoPago" ng-init="factura.tipoPago = 'Cheque'" id="estado" class="form-control" ng-disabled="!editar">
+                                                        <select data-ng-model="facturaEdita.factura.tipoPago" ng-init="facturaEdita.factura.tipoPago = 'Cheque'" id="estado" class="form-control" ng-disabled="!editar">
                                                             <option value="Cheque">Cheque</option>
                                                             <option value="Efectivo">Efectivo</option>
                                                             <option value="Transferencia">Transferencia</option>
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="form-group" ng-hide="factura.estado=='No Pagado'">
+                                                <div class="form-group" ng-hide="facturaEdita.factura.estado=='No Pagado' || modal">
                                                     <label class="col-sm-3 control-label">Fecha</label>
                                                     <div class="col-sm-9">
-                                                        <input type="date" class="form-control" data-ng-model="factura.fechaPago" name="fechae" ng-disabled="!editar">
+                                                        <input type="date" class="form-control" data-ng-model="facturaEdita.factura.fechaPago" name="fechae" ng-disabled="!editar">
                                                     </div>
                                                 </div>
-                                                <div class="form-group" ng-hide="factura.estado=='No Pagado' || factura.tipoPago!='Cheque'">
+                                                <div class="form-group" ng-hide="facturaEdita.factura.estado=='No Pagado' || facturaEdita.factura.tipoPago!='Cheque' || modal">
                                                     <label class="col-sm-3 control-label">Numero Cheque</label>
                                                     <div class="col-sm-9">
-                                                        <input data-ng-model="factura.cheque" id="numeroCheque" type="text" class="form-control" placeholder="Numero cheque">
+                                                        <input data-ng-model="facturaEdita.factura.cheque" id="numeroCheque" type="text" class="form-control" placeholder="Numero cheque">
                                                     </div>
                                                 </div>
-                                                <div class="form-group" ng-hide="factura.estado=='No Pagado' || factura.tipoPago!='Cheque'">
+                                                <div class="form-group" ng-hide="facturaEdita.factura.estado=='No Pagado' || facturaEdita.factura.tipoPago!='Cheque' || modal">
                                                     <label class="col-sm-3 control-label">Banco</label>
                                                     <div class="col-sm-9">
-                                                        <input data-ng-model="factura.banco" id="banco" type="text" class="form-control" placeholder="Banco">
+                                                        <input data-ng-model="facturaEdita.factura.banco" id="banco" type="text" class="form-control" placeholder="Banco">
                                                     </div>
                                                 </div>
-                                                <div class="form-group" ng-hide="factura.estado=='No Pagado' || factura.archivoComprobanteImg">
+                                                <div class="form-group" ng-hide="facturaEdita.factura.estado=='No Pagado' || facturaEdita.factura.archivoComprobanteImg || modal">
                                                     <label class="col-sm-3 control-label">Comprobante</label>
                                                     <div class="col-sm-9">
                                                         <div ngf-drop ngf-select
@@ -175,21 +189,21 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div ng-show="factura.archivoComprobanteImg" class="form-group">
+                                                <div ng-show="facturaEdita.factura.archivoComprobanteImg" class="form-group">
                                                     <label class="col-sm-3 control-label">Comprobante Pago Factura </label>
                                                     <div class="col-sm-9">
-                                                        <span ng-hide="factura._id"> {{ factura.archivoComprobanteImg.original.name }}</span>
-                                                        <a  target="_blank" ng-show="factura._id"  href="{{ factura.archivoComprobanteImg.url() }}"  >{{ factura.archivoComprobanteImg.original.name }}</a>
+                                                        <span ng-hide="facturaEdita.factura._id"> {{ facturaEdita.factura.archivoComprobanteImg.original.name }}</span>
+                                                        <a  target="_blank" ng-show="facturaEdita.factura._id"  href="{{ facturaEdita.factura.archivoComprobanteImg.url() }}"  >{{ facturaEdita.factura.archivoComprobanteImg.original.name }}</a>
 
-                                                        <a type="button" ng-show="factura._id"  target="_self" class="btn btn-success" href="{{ factura.archivoComprobanteImg.url() }}" download >Descargar</a>
-                                                        <input type="button" class="btn btn-danger" ng-click="factura.archivoComprobanteImg=null" value="Eliminar">
+                                                        <a type="button" ng-show="facturaEdita.factura._id"  target="_self" class="btn btn-success" href="{{ facturaEdita.factura.archivoComprobanteImg.url() }}" download >Descargar</a>
+                                                        <input type="button" class="btn btn-danger" ng-click="facturaEdita.factura.archivoComprobanteImg=null" value="Eliminar">
                                                     </div>
                                                 </div>
 
 
-                                                <div class="form-group">
+                                                <div class="form-group"  ng-hide="modal">
                                                     <label class="col-md-3 control-label">Detalle:</label>
-                                                    <div class="col-md-9"><textarea data-ng-model="factura.detalle" id="descripcion" style="max-width:100%;margin: 0px -8px 0px 0px; width: 640px; height: 79px;" rows="3" cols="5" name="textarea" class="form-control" ng-disabled="!editar"></textarea></div>
+                                                    <div class="col-md-9"><textarea data-ng-model="facturaEdita.factura.detalle" id="descripcion" style="max-width:100%;margin: 0px -8px 0px 0px; width: 640px; height: 79px;" rows="3" cols="5" name="textarea" class="form-control" ng-disabled="!editar"></textarea></div>
                                                 </div>
                                                 <div data-ng-show="error" style="text-align: center;" class="text-danger">
                                                     <strong data-ng-bind="error"></strong>
@@ -214,7 +228,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="col-md-offset-3 col-md-9">
-                                                                <button type="button" ng-click="factura = {estado:'No Pagado',tipoPago:'Cheque'};editar=true;" class="btn btn-success">Cerrar Detalle</button>
+                                                                <button type="button" ng-click="facturaEdita.factura = {estado:'No Pagado',tipoPago:'Cheque'};editar=true;" class="btn btn-success">Cerrar Detalle</button>
                                                                 <a type="button" href="/proveedores" class="btn btn-danger">Cancelar</a>
                                                             </div>
                                                         </div>
@@ -241,12 +255,12 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr data-ng-repeat="factura in facturas | reverse"><!-- reverse -->
+                                                <tr data-ng-repeat="factura in facturaEdita.facturas | reverse"><!-- reverse -->
                                                     <td data-ng-bind="factura.numeroFactura"></td>
                                                         <td data-ng-bind="factura.estado"></td>
                                                         <td data-ng-bind="factura.monto"></td>
                                                         <td data-ng-bind="factura.detalle"></td>
-                                                        <td>{{factura.fecha | date:"dd/MM/yyyy 'A las' h:mma"}}</td>
+                                                        <td>{{facturaEdita.factura.fecha | date:"dd/MM/yyyy 'A las' h:mma"}}</td>
                                                         <td> <a href="#"   class="btn btn-primary" ng-click="cargarFactura(factura._id)">Detalle</a><a href="#"   class="btn btn-success" ng-click="editarFactura(factura._id)">editar</a></td>
                                                 </tr>
 

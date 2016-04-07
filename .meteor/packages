@@ -39,3 +39,4 @@ check
 cfs:filesystem
 mrt:twilio-meteor
 angular
+simple:reactive-method
