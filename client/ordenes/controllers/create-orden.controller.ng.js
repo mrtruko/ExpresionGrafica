@@ -120,7 +120,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                         $scope.producto.movimientos.push({
                                 "responsable":$scope.currentUser.profile.displayName,
                                 "cantidad":valuePro.cantidad,
-                                "fecha" : moment(),
+                                "fecha" : moment().format("DD/MM/YYYY HH:mm"),
                                 "motivo":"Orden de Trabajo: "+$scope.orden.idOrden,
                                 "tipo":"orden"
                             });
