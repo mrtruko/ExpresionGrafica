@@ -51,7 +51,7 @@ Schema.Orden = new SimpleSchema({
     optional: true
   },
   fechaCompromiso: {
-    type: String,
+    type: Date,
     optional: true
   },
   abono: {

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20b058bc-f2d9-4c5a-82ca-cdf1d28b5527" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js" afterPath="$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html" afterPath="$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" afterPath="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" afterPath="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/ordenes.model.js" afterPath="$PROJECT_DIR$/model/ordenes.model.js" />
     </list>
     <ignored path="graficaExpresion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +27,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create-orden.controller.ng.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create-orden.controller.ng.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.601983">
+            <state vertical-scroll-proportion="-14.655172">
               <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view-orden.controller.ng.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/view-orden.controller.ng.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ordenes-detalle.view.ng.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.9649122">
+              <caret line="66" column="116" selection-start-line="66" selection-start-column="116" selection-end-line="66" selection-end-column="116" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ordenes.model.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/ordenes.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35977337">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ordenes.view.ng.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.9649122">
+              <caret line="99" column="114" selection-start-line="99" selection-start-column="114" selection-end-line="99" selection-end-column="114" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view-orden.view.ng.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.9649122">
+              <caret line="279" column="143" selection-start-line="279" selection-start-column="143" selection-end-line="279" selection-end-column="143" />
               <folding />
             </state>
           </provider>
@@ -36,8 +90,8 @@
       <file leaf-file-name="create-orden.view.ng.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.857142">
-              <caret line="1240" column="61" selection-start-line="1240" selection-start-column="61" selection-end-line="1240" selection-end-column="61" />
+            <state vertical-scroll-proportion="-3.9649122">
+              <caret line="1225" column="170" selection-start-line="1225" selection-start-column="151" selection-end-line="1225" selection-end-column="170" />
               <folding />
             </state>
           </provider>
@@ -70,53 +124,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dots.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/img/dots.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidebar.view.ng.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/sidebar/sidebar.view.ng.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="44" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toolbar.view.ng.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="87" selection-start-line="4" selection-start-column="87" selection-end-line="4" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/dependencias/css/default.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.view.ng.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/login/login.view.ng.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="101" selection-start-line="6" selection-start-column="101" selection-end-line="6" selection-end-column="101" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -135,11 +142,7 @@
         <option value="$PROJECT_DIR$/server/startup/proveedores.load.js" />
         <option value="$PROJECT_DIR$/client/ordenes/ordenes.routes.ng.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
-        <option value="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" />
-        <option value="$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html" />
-        <option value="$PROJECT_DIR$/model/ordenes.model.js" />
         <option value="$PROJECT_DIR$/client/ordenes/controllers/ordenes.controller.ng.js" />
-        <option value="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" />
         <option value="$PROJECT_DIR$/client/ordenes/controllers/ordenes-detalle.controller.ng.js" />
         <option value="$PROJECT_DIR$/mup.json" />
         <option value="$PROJECT_DIR$/server/startup/user.load.js" />
@@ -176,6 +179,10 @@
         <option value="$PROJECT_DIR$/client/dependencias/css/default.css" />
         <option value="$PROJECT_DIR$/client/login/login.view.ng.html" />
         <option value="$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js" />
+        <option value="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" />
+        <option value="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" />
+        <option value="$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html" />
+        <option value="$PROJECT_DIR$/model/ordenes.model.js" />
       </list>
     </option>
   </component>
@@ -506,13 +513,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/clientes.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/empresas/views/create-empresa.view.ng.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.178572">
@@ -688,34 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/view-orden.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="185" column="68" selection-start-line="185" selection-start-column="68" selection-end-line="185" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="48" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/ordenes/ordenes.routes.ng.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -851,18 +823,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
+    <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/view-orden.controller.ng.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.857142">
-          <caret line="1240" column="61" selection-start-line="1240" selection-start-column="61" selection-end-line="1240" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9649122">
+          <caret line="279" column="143" selection-start-line="279" selection-start-column="143" selection-end-line="279" selection-end-column="143" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.601983">
+        <state vertical-scroll-proportion="-14.655172">
           <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9649122">
+          <caret line="1225" column="170" selection-start-line="1225" selection-start-column="151" selection-end-line="1225" selection-end-column="170" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9649122">
+          <caret line="99" column="114" selection-start-line="99" selection-start-column="114" selection-end-line="99" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9649122">
+          <caret line="66" column="116" selection-start-line="66" selection-start-column="116" selection-end-line="66" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/ordenes.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35977337">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
           <folding />
         </state>
       </provider>
