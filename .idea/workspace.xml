@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="20b058bc-f2d9-4c5a-82ca-cdf1d28b5527" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html" afterPath="$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" afterPath="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" afterPath="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/ordenes.model.js" afterPath="$PROJECT_DIR$/model/ordenes.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" afterPath="$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" />
     </list>
     <ignored path="graficaExpresion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,11 +54,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ordenes.model.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ordenes.model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/ordenes.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35977337">
-              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+            <state vertical-scroll-proportion="6.3103447">
+              <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="toolbar.directive.ng.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/components/toolbar/toolbar.directive.ng.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,28 +94,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-orden.view.ng.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
+      <file leaf-file-name="toolbar.view.ng.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9649122">
-              <caret line="1225" column="170" selection-start-line="1225" selection-start-column="151" selection-end-line="1225" selection-end-column="170" />
+            <state vertical-scroll-proportion="0.52359885">
+              <caret line="38" column="70" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="favicon.ico" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/favicon.ico">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="productos.publish.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/productos.publish.js">
+      <file leaf-file-name="create-orden.view.ng.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-3.9649122">
+              <caret line="1225" column="170" selection-start-line="1225" selection-start-column="151" selection-end-line="1225" selection-end-column="170" />
               <folding />
             </state>
           </provider>
@@ -175,7 +175,6 @@
         <option value="$PROJECT_DIR$/client/proveedores/views/proveedor-factura.view.ng.html" />
         <option value="$PROJECT_DIR$/client/cotizacion/views/cotizacion-editar.view.ng.html" />
         <option value="$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html" />
-        <option value="$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" />
         <option value="$PROJECT_DIR$/client/dependencias/css/default.css" />
         <option value="$PROJECT_DIR$/client/login/login.view.ng.html" />
         <option value="$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js" />
@@ -183,6 +182,7 @@
         <option value="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" />
         <option value="$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html" />
         <option value="$PROJECT_DIR$/model/ordenes.model.js" />
+        <option value="$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" />
       </list>
     </option>
   </component>
@@ -360,6 +360,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpresionGrafica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpresionGrafica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toolbar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpresionGrafica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpresionGrafica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -513,13 +553,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/empresas/views/create-empresa.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.178572">
-          <caret line="151" column="60" selection-start-line="0" selection-start-column="0" selection-end-line="217" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/empresas/controllers/create-empresa.controllers.ng.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -770,14 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="87" selection-start-line="4" selection-start-column="87" selection-end-line="4" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/dependencias/css/default.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -873,8 +898,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/ordenes.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35977337">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        <state vertical-scroll-proportion="6.3103447">
+          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/toolbar/toolbar.directive.ng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52359885">
+          <caret line="38" column="70" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="70" />
           <folding />
         </state>
       </provider>
