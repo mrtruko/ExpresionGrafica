@@ -80,6 +80,10 @@ Meteor.methods({
     },'roles': function(id){
         //console.log(id);
         Roles.addUsersToRoles(id, ['inactivo']);
+    },'validarStock':function(id,cantidad){
+        var resultado = Productos.findOne({_id:id,cantidad: { $gte:cantidad }});
+        console.log(resultado);
+        return resultado;
     },'setPass': function(usuario){
         //console.log(usuario.pass+"_Pass");
         //console.log(usuario);

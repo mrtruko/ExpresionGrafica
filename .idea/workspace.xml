@@ -3,7 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="20b058bc-f2d9-4c5a-82ca-cdf1d28b5527" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" afterPath="$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.editar.controller.ng.js" afterPath="$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.editar.controller.ng.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/cotizacion/views/cotizacion-editar.view.ng.html" afterPath="$PROJECT_DIR$/client/cotizacion/views/cotizacion-editar.view.ng.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/cotizacion/views/cotizacion-revisar.view.ng.html" afterPath="$PROJECT_DIR$/client/cotizacion/views/cotizacion-revisar.view.ng.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/cotizacion/views/cotizacion.view.ng.html" afterPath="$PROJECT_DIR$/client/cotizacion/views/cotizacion.view.ng.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js" afterPath="$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html" afterPath="$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/proveedores/controllers/proveedor-factura.controller.ng.js" afterPath="$PROJECT_DIR$/client/proveedores/controllers/proveedor-factura.controller.ng.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/proveedores/views/proveedor-factura.view.ng.html" afterPath="$PROJECT_DIR$/client/proveedores/views/proveedor-factura.view.ng.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/cotizacion.model.js" afterPath="$PROJECT_DIR$/model/cotizacion.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/ordenes.model.js" afterPath="$PROJECT_DIR$/model/ordenes.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/users.js" afterPath="$PROJECT_DIR$/server/users.js" />
     </list>
     <ignored path="graficaExpresion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,28 +37,18 @@
       <file leaf-file-name="create-orden.controller.ng.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.655172">
-              <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view-orden.controller.ng.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/view-orden.controller.ng.js">
+      <file leaf-file-name="ordenes.publish.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/ordenes.publish.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ordenes-detalle.view.ng.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9649122">
-              <caret line="66" column="116" selection-start-line="66" selection-start-column="116" selection-end-line="66" selection-end-column="116" />
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -57,48 +57,28 @@
       <file leaf-file-name="ordenes.model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/ordenes.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.3103447">
-              <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="7" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="toolbar.directive.ng.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/toolbar/toolbar.directive.ng.js">
+      <file leaf-file-name="user.load.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/startup/user.load.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ordenes.view.ng.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html">
+      <file leaf-file-name="cotizacion.editar.controller.ng.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.editar.controller.ng.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9649122">
-              <caret line="99" column="114" selection-start-line="99" selection-start-column="114" selection-end-line="99" selection-end-column="114" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view-orden.view.ng.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9649122">
-              <caret line="279" column="143" selection-start-line="279" selection-start-column="143" selection-end-line="279" selection-end-column="143" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toolbar.view.ng.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52359885">
-              <caret line="38" column="70" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="70" />
+            <state vertical-scroll-proportion="1.2087913">
+              <caret line="81" column="60" selection-start-line="81" selection-start-column="53" selection-end-line="81" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -107,19 +87,82 @@
       <file leaf-file-name="create-orden.view.ng.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9649122">
-              <caret line="1225" column="170" selection-start-line="1225" selection-start-column="151" selection-end-line="1225" selection-end-column="170" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1086" column="152" selection-start-line="1086" selection-start-column="152" selection-end-line="1086" selection-end-column="152" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#th#2;n#tr#2;n#tfoot#0;n#table#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cotizacion-revisar.view.ng.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/cotizacion/views/cotizacion-revisar.view.ng.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="268" column="114" selection-start-line="268" selection-start-column="114" selection-end-line="268" selection-end-column="114" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="productos.model.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/productos.model.js">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/users.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="83" column="67" selection-start-line="83" selection-start-column="67" selection-end-line="83" selection-end-column="67" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cotizacion-revisar.controller.ng.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/cotizacion/controllers/cotizacion-revisar.controller.ng.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cotizacion-editar.view.ng.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/cotizacion/views/cotizacion-editar.view.ng.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="128" column="60" selection-start-line="128" selection-start-column="60" selection-end-line="128" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#tr#0;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#3;n#tr#0;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#tr#1;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#th#0;n#tr#1;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#1;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#3;n#tr#1;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#3;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#4;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#4;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#5;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,13 +175,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/clientes/views/cliente-create.view.ng.html" />
-        <option value="$PROJECT_DIR$/client/clientes/controllers/cliente-edit.controller.ng.js" />
         <option value="$PROJECT_DIR$/client/clientes/controllers/cliente-create.controller.ng.js" />
         <option value="$PROJECT_DIR$/client/empresas/views/create-empresa.view.ng.html" />
         <option value="$PROJECT_DIR$/client/empresas/controllers/edit-empresa.controller.ng.js" />
         <option value="$PROJECT_DIR$/client/productos/views/productos-list.view.ng.html" />
-        <option value="$PROJECT_DIR$/client/cotizacion/views/cotizacion.view.ng.html" />
         <option value="$PROJECT_DIR$/server/startup/proveedores.load.js" />
         <option value="$PROJECT_DIR$/client/ordenes/ordenes.routes.ng.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
@@ -147,23 +187,19 @@
         <option value="$PROJECT_DIR$/mup.json" />
         <option value="$PROJECT_DIR$/server/startup/user.load.js" />
         <option value="$PROJECT_DIR$/client/main/main.controller.ng.js" />
-        <option value="$PROJECT_DIR$/server/users.js" />
         <option value="$PROJECT_DIR$/client/components/sidebar/sidebar.directive.ng.js" />
         <option value="$PROJECT_DIR$/client/components/sidebar/sidebar.view.ng.html" />
         <option value="$PROJECT_DIR$/client/empresas/controllers/create-empresa.controllers.ng.js" />
-        <option value="$PROJECT_DIR$/model/cotizacion.model.js" />
         <option value="$PROJECT_DIR$/model/empresas.model.js" />
         <option value="$PROJECT_DIR$/client/proveedores/controllers/proovedor-edit.controller.ng.js" />
         <option value="$PROJECT_DIR$/client/proveedores/views/proveedor-create.view.ng.html" />
         <option value="$PROJECT_DIR$/client/proveedores/proveedores.css" />
         <option value="$PROJECT_DIR$/server/clientes.publish.js" />
         <option value="$PROJECT_DIR$/client/clientes/controllers/clientes.controller.ng.js" />
-        <option value="$PROJECT_DIR$/model/proveedores.model.js" />
         <option value="$PROJECT_DIR$/client/proveedores/controllers/proveedor-create.controller.ng.js" />
         <option value="$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.editar.view.ng.html" />
         <option value="$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.editar.view.ng.js" />
         <option value="$PROJECT_DIR$/client/cotizacion/cotizacion.routes.ng.js" />
-        <option value="$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.editar.controller.ng.js" />
         <option value="$PROJECT_DIR$/client/proveedores/views/proveedores.view.ng.html" />
         <option value="$PROJECT_DIR$/client/proveedores/controllers/proveedores.controller.ng.js" />
         <option value="$PROJECT_DIR$/client/lib/app.ng.js" />
@@ -171,18 +207,25 @@
         <option value="$PROJECT_DIR$/client/proveedores/proveedores.routes.ng.js" />
         <option value="$PROJECT_DIR$/model/uploads.model.js" />
         <option value="$PROJECT_DIR$/server/ordenes.publish.js" />
-        <option value="$PROJECT_DIR$/client/proveedores/controllers/proveedor-factura.controller.ng.js" />
-        <option value="$PROJECT_DIR$/client/proveedores/views/proveedor-factura.view.ng.html" />
-        <option value="$PROJECT_DIR$/client/cotizacion/views/cotizacion-editar.view.ng.html" />
-        <option value="$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html" />
         <option value="$PROJECT_DIR$/client/dependencias/css/default.css" />
         <option value="$PROJECT_DIR$/client/login/login.view.ng.html" />
-        <option value="$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js" />
         <option value="$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html" />
         <option value="$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html" />
         <option value="$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html" />
-        <option value="$PROJECT_DIR$/model/ordenes.model.js" />
         <option value="$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html" />
+        <option value="$PROJECT_DIR$/model/proveedores.model.js" />
+        <option value="$PROJECT_DIR$/client/proveedores/controllers/proveedor-factura.controller.ng.js" />
+        <option value="$PROJECT_DIR$/client/proveedores/views/proveedor-factura.view.ng.html" />
+        <option value="$PROJECT_DIR$/client/cotizacion/views/cotizacion.view.ng.html" />
+        <option value="$PROJECT_DIR$/model/cotizacion.model.js" />
+        <option value="$PROJECT_DIR$/server/users.js" />
+        <option value="$PROJECT_DIR$/client/cotizacion/controllers/cotizacion-revisar.controller.ng.js" />
+        <option value="$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.editar.controller.ng.js" />
+        <option value="$PROJECT_DIR$/client/cotizacion/views/cotizacion-revisar.view.ng.html" />
+        <option value="$PROJECT_DIR$/client/cotizacion/views/cotizacion-editar.view.ng.html" />
+        <option value="$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html" />
+        <option value="$PROJECT_DIR$/model/ordenes.model.js" />
+        <option value="$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js" />
       </list>
     </option>
   </component>
@@ -222,7 +265,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -252,48 +294,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpresionGrafica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpresionGrafica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpresionGrafica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpresionGrafica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpresionGrafica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpresionGrafica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -312,7 +312,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ordenes" />
+              <option name="myItemId" value="cotizacion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -330,7 +330,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ordenes" />
+              <option name="myItemId" value="cotizacion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -352,7 +352,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ordenes" />
+              <option name="myItemId" value="cotizacion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -360,52 +360,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpresionGrafica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpresionGrafica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpresionGrafica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExpresionGrafica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../comicPro" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/geolocation-example-master" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="js.meteor.project" value="true" />
@@ -509,26 +470,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15858799" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18181819" sideWeight="0.42202318" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17424242" sideWeight="0.5421496" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.49789253" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17424242" sideWeight="0.45785037" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15753424" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18181819" sideWeight="0.5779768" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.49789253" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33296824" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33296824" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -553,55 +514,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/empresas/controllers/create-empresa.controllers.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="25" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/empresas/controllers/edit-empresa.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/proveedores/controllers/proovedor-edit.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/proveedores/views/proveedor-create.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/proveedores/proveedores.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.285715">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/clientes.publish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/clientes/controllers/clientes.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="78" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/empresas.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -613,41 +525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/proveedores/controllers/proveedor-create.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/cotizacion/views/cotizacion-revisar.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="297" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/cotizacion.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/cotizacion.publish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -679,20 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/cotizacion/controllers/cotizacion-revisar.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="21" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/proveedores/proveedores.routes.ng.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -714,25 +577,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/ordenes.publish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/ordenes/ordenes.routes.ng.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/proveedores.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="20" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -743,45 +591,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/proveedores/controllers/proveedor-factura.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="142" column="33" selection-start-line="142" selection-start-column="33" selection-end-line="142" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/proveedores/views/proveedor-factura.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="542" selection-start-line="95" selection-start-column="542" selection-end-line="95" selection-end-column="542" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/cotizacion/cotizacion.routes.ng.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="27" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.editar.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/cotizacion/views/cotizacion-editar.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="118" column="99" selection-start-line="118" selection-start-column="99" selection-end-line="118" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/ordenes.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -799,7 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="44" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,7 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="101" selection-start-line="6" selection-start-column="101" selection-end-line="6" selection-end-column="101" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,7 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -836,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,7 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -852,55 +659,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9649122">
-          <caret line="279" column="143" selection-start-line="279" selection-start-column="143" selection-end-line="279" selection-end-column="143" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.655172">
-          <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9649122">
-          <caret line="1225" column="170" selection-start-line="1225" selection-start-column="151" selection-end-line="1225" selection-end-column="170" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes.view.ng.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9649122">
+        <state vertical-scroll-proportion="0.0">
           <caret line="99" column="114" selection-start-line="99" selection-start-column="114" selection-end-line="99" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9649122">
-          <caret line="66" column="116" selection-start-line="66" selection-start-column="116" selection-end-line="66" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/ordenes.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.3103447">
-          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,14 +673,237 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/toolbar/toolbar.view.ng.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52359885">
+        <state vertical-scroll-proportion="0.0">
           <caret line="38" column="70" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/proveedores.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/views/view-orden.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9649122">
+          <caret line="307" column="92" selection-start-line="307" selection-start-column="91" selection-end-line="307" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/ordenes.controller.ng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/views/ordenes-detalle.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="116" selection-start-line="66" selection-start-column="116" selection-end-line="66" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/proveedores/controllers/proveedor-create.controller.ng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/proveedores/views/proveedor-factura.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="147" column="74" selection-start-line="147" selection-start-column="74" selection-end-line="147" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/proveedores/controllers/proveedor-factura.controller.ng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="129" column="8" selection-start-line="129" selection-start-column="8" selection-end-line="131" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/cotizacion.publish.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/cotizacion.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="122" column="17" selection-start-line="122" selection-start-column="17" selection-end-line="122" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/usuarios/views/create-usuario.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.392857">
+          <caret line="150" column="76" selection-start-line="150" selection-start-column="76" selection-end-line="150" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/cotizacion/views/cotizacion.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4736843">
+          <caret line="189" column="67" selection-start-line="189" selection-start-column="66" selection-end-line="189" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main/main.controller.ng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.controller.ng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/usuarios/controllers/usuarios.controller.ng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="50" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="67" selection-start-line="83" selection-start-column="67" selection-end-line="83" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/cotizacion/controllers/cotizacion-revisar.controller.ng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/cotizacion/views/cotizacion-revisar.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="268" column="114" selection-start-line="268" selection-start-column="114" selection-end-line="268" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/cotizacion/views/cotizacion-editar.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="128" column="60" selection-start-line="128" selection-start-column="60" selection-end-line="128" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#tr#0;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#tr#1;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#1;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#1;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#table#0;n#th#1;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#2;n#tfoot#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ordenes.publish.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/views/create-orden.view.ng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1086" column="152" selection-start-line="1086" selection-start-column="152" selection-end-line="1086" selection-end-column="152" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#2;n#tr#2;n#tfoot#0;n#table#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ordenes/controllers/create-orden.controller.ng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/ordenes.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="7" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/startup/user.load.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/cotizacion/controllers/cotizacion.editar.controller.ng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2087913">
+          <caret line="81" column="60" selection-start-line="81" selection-start-column="53" selection-end-line="81" selection-end-column="60" />
           <folding />
         </state>
       </provider>

@@ -84,6 +84,10 @@ Schema.Orden = new SimpleSchema({
   saldo: {
     type: Number
   },
+  contactoSeleccionado: {
+    type: Object,
+    optional:true
+  },
   colaboradores:{
     type: Array,
     optional: true
@@ -160,7 +164,7 @@ Schema.Orden = new SimpleSchema({
     type: String,
     optional: true
   },
-  "productosOrden.$.url": {
+  "productosOrden.$.idImg": {
     type: [String],
     optional: true
   },

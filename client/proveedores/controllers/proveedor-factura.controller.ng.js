@@ -68,8 +68,8 @@ angular.module('graficaExpresionApp')
                         if(err){
                             $scope.msgAlerta("Error al subir un archivo intente de nuevo","error");
                         }else{
-                            $scope.factura.factura = fileObj._id;
-                            $scope.factura.facturaImg = fileObj;
+                            $scope.facturaEdita.factura.factura = fileObj._id;
+                            $scope.facturaEdita.factura.facturaImg = fileObj;
 
                            // $scope.producSelec.url.push(fileObj.url({brokenIsFine: true}));
                             //$scope.producSelec.archivos.push(fileObj);
@@ -91,8 +91,8 @@ angular.module('graficaExpresionApp')
                         if(err){
                             $scope.msgAlerta("Error al subir un archivo intente de nuevo","error");
                         }else{
-                            $scope.factura.archivoComprobante = fileObj._id;
-                            $scope.factura.archivoComprobanteImg = fileObj;
+                            $scope.facturaEdita.factura.archivoComprobante = fileObj._id;
+                            $scope.facturaEdita.factura.archivoComprobanteImg = fileObj;
 
                             // $scope.producSelec.url.push(fileObj.url({brokenIsFine: true}));
                             //$scope.producSelec.archivos.push(fileObj);
@@ -103,10 +103,10 @@ angular.module('graficaExpresionApp')
             }
         };
         $scope.saveEdit = function(){
-            Facturas.update($scope.factura._id,{$set:$scope.factura}, function(error, result){
+            Facturas.update($scope.facturaEdita.factura._id,{$set:$scope.factura}, function(error, result){
                 if(result){
                     $scope.msgAlerta("Factura Guardada.","success");
-                    $scope.factura = {estado:"No Pagado",tipoPago:"Cheque",idEmpresa:$scope.empresa._id};
+                    $scope.facturaEdita.factura = {estado:"No Pagado",tipoPago:"Cheque",idEmpresa:$scope.facturaEdita.empresa._id};
                     $scope.$apply();
                 }else if(error){
                     $scope.msgAlerta("Error.","error");
@@ -116,12 +116,13 @@ angular.module('graficaExpresionApp')
 
         }
         $scope.save = function(){
-            Facturas.insert($scope.factura, function(error, result){
+            Facturas.insert($scope.facturaEdita.factura, function(error, result){
                if(result){
                    $scope.msgAlerta("Factura Guardada.","success");
-                   $scope.factura = {estado:"No Pagado",tipoPago:"Cheque",idEmpresa:$scope.empresa._id};
+                   $scope.facturaEdita.factura = {estado:"No Pagado",tipoPago:"Cheque",idEmpresa:$scope.facturaEdita.empresa._id};
+                   $scope.$apply();
                }else if(error){
-                   $scope.msgAlerta("Error.","error");
+                   $scope.msgAlerta(error,"error");
                    console.log(error);
                }
             });

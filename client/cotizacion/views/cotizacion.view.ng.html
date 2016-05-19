@@ -160,8 +160,8 @@
                                                 <td data-ng-bind="cotizacion.fecha"></td>
                                                 <td data-ng-bind="cotizacion.responsable"></td>
                                                 <td><a ng-show="cotizacion.cliente" href="javascript:">{{ clienteR(cotizacion.cliente) }}</a><a ng-show="cotizacion.empresa" href="javascript:">{{ empresaR(cotizacion.empresa) }}</a></td>
-                                                <td data-ng-bind="cotizacion.fechaCompromiso"></td>
-                                                <td class="codigo"><a href="/cotizacion/{{cotizacion._id}}">Revisar</a></td>
+                                                <td>{{ cotizacion.fechaCompromiso | date:'dd-MM-yyyy'}}</td>
+                                                <td class="codigo"><a href="/cotizacion/{{cotizacion._id}}">Imprimir</a> <a href="/cotizacion/editar/{{cotizacion._id}}"> Revisar</a></td>
                                             </tr>
 
 

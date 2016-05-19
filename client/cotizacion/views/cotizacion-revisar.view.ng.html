@@ -242,7 +242,7 @@
 
                                                                 <strong>*VALORES MAS IVA.-</strong>
                                                                 <br>
-                                                                <strong>Fecha de Entrega</strong> {{ orden.fechaCompromiso }}
+                                                                <strong>Fecha de Entrega</strong> {{ orden.fechaCompromiso | date:'dd-MM-yyyy' }}
                                                                 <br>
                                                                 <strong>Plazo de retiro de trabajo hasta 60 dias, luego de esa fecha. La empresa no se hace responsable.</strong>
                                                                 <br>
@@ -268,7 +268,7 @@
                                                                 <a href="/cotizacion" class="btn btn-danger prevBtn">
                                                                     <i class="fa fa-arrow-circle-left"></i> Cancelar
                                                                 </a>
-                                                                <a ng-click="saveOrden();" class="btn btn-success prevBtn">
+                                                                <a  ng-href="/cotizacion/editar/{{orden._id}}" class="btn btn-success prevBtn">
                                                                     <i class="fa fa-arrow-circle-right"></i> Generar Orden
                                                                 </a>
                                                                 <a onclick="javascript:window.print();" href="javascript:;"  class="btn btn-default nextBtn">Imprimir</a>

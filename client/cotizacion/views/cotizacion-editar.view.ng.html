@@ -1,20 +1,110 @@
 <section id="page">
     <div id="main-content">
         <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
-        <div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  aria-hidden="true">
+        <div class="modal fade" id="box-config3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Box Settings</h4>
+                    <div class="modal-body" style="padding: 1px;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="box border orange" style="margin-bottom: 1px !important">
+                                                    <div class="box-title">
+                                                        <h4><i class="fa fa-bars"></i> Detalles del Producto: {{ producSelec.codigo }}</h4>
+                                                    </div>
+                                                    <div class="box-body big">
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="separator"></div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Comentario</label>
+                                                                <div class="col-sm-9">
+                                                                    <textarea data-ng-model="producSelec.comentario" class="form-control" rows="3"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <table class="table table-striped table-hover font-400 font-14">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>Nombre Archivo</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tr ng-repeat="archivo in producSelec.idImg" ng-init="archivoimg = cargarArchivo(archivo);">
+                                                                    <td><a ng-href="{{ archivoimg.url() }}" target="_blank">{{ archivoimg.original.name }}</a></td>
+                                                                </tr>
+                                                            </table>
+
+                                                            <div class="wizard-buttons">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="col-md-offset-3 col-md-9">
+                                                                            <button type="button" class="btn btn-success btn-lg" ng-click="" data-dismiss="modal">Cerrar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        Here goes box setting content.
+
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="box-config4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body" style="padding: 1px;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="box border orange" style="margin-bottom: 1px !important">
+                                                    <div class="box-title">
+                                                        <h4><i class="fa fa-bars"></i> Detalles del Producto: {{ producSelec.codigo }}</h4>
+                                                    </div>
+                                                    <div class="box-body big">
+                                                        <form class="form-horizontal" role="form">
+                                                            <table class="table table-striped table-hover font-400 font-14">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>Producto</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tr ng-repeat="producto in stock.productosDetalle">
+                                                                    <td>{{ producto }}</td>
+                                                                </tr>
+                                                            </table>
+
+                                                            <div class="wizard-buttons">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="col-md-offset-3 col-md-9">
+                                                                            <button type="button" class="btn btn-success btn-lg"  data-dismiss="modal">Cerrar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -33,18 +123,17 @@
                                 <ul class="breadcrumb">
                                     <li>
                                         <i class="fa fa-home"></i>
-                                        <a href="index.html">Home</a>
+                                        <a href="/">Inicio</a>
                                     </li>
                                     <li>
-                                        <a href="#">More Pages</a>
+                                        <a href="/cotizacion">Cotizaciones</a>
                                     </li>
-                                    <li>Invoice</li>
+                                    <li>Cotizacion</li>
                                 </ul>
                                 <!-- /BREADCRUMBS -->
                                 <div class="clearfix">
-                                    <h3 class="content-title pull-left">Invoice</h3>
+                                    <h3 class="content-title pull-left">Cotizacion</h3>
                                 </div>
-                                <div class="description">Payment and Invoice</div>
                             </div>
                         </div>
                     </div>
@@ -60,6 +149,7 @@
                                 <div class="box-body">
                                     <div class="panel panel-default">
                                         <div class="panel-body">
+                                            <form class="form-horizontal" role="form">
                                             <div class="tab-pane" id="payment">
                                                 <div class="box-body">
                                                     <div class="row">
@@ -73,7 +163,7 @@
                                                                 <div class="box-body">
                                                                     <div class="panel panel-default">
                                                                         <div class="panel-body">
-                                                                            <form class="form-horizontal" role="form">
+
                                                                             <div class='row'>
 
                                                                                 <div class='col-md-12'>
@@ -95,14 +185,14 @@
                                                                                 <div class="form-group">
                                                                                     <label class="control-label col-md-1">Fecha:<span class="required"></span> </label>
                                                                                     <div class="col-md-2">
-                                                                                        <input readonly type="text" class="form-control" data-ng-model="cotEdit.cot.fecha">
+                                                                                        <input readonly type="text" class="form-control" data-ng-model="orden.fecha">
                                                                                         <span class="error-span"></span>
 
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <label class="control-label col-md-2">Fecha Entrega:<span class="required"></span></label>
                                                                                         <div class="col-md-4">
-                                                                                            <input type="date" ng-change="fecha();" min="{{ hoy }}" data-ng-model="cotEdit.cot.fechaCompromiso" name="fechae">
+                                                                                            <input type="date"  min="{{ hoy }}" data-ng-model="orden.fechaCompromiso" name="fechae">
                                                                                             <span class="error-span"></span>
                                                                                         </div>
                                                                                     </div>
@@ -112,30 +202,7 @@
                                                                             </div>
 
 
-                                                                            <div class="separator"></div>
-                                                                            <div class='invoice-title' style="margin-left: 20px;">Buscar Producto</div>
 
-
-                                                                            <div class="form-group">
-                                                                                <label class="control-label col-md-1">Buscar:<span class="required"></span></label>
-                                                                                <div class="col-md-4">
-
-                                                                                    <div class="input-group">
-                                                                                        <div class="input-group-addon"><i class="fa fa-search"></i></div>
-
-                                                                                        <input type="text" class="form-control" placeholder="Buscar" ng-model="searchDog">
-
-                                                                                    </div>
-
-
-
-
-                                                                                    <span class="">Producto no existe? <A href="#box-config4" ng-click="mproducto={}" data-toggle="modal" class="config">Agregar nuevo producto</A>, <A href="javascript:" ng-click="orden.productosOrden.push({'codigo':'espec','tipo':'especial',id:'0000','cantidad':1,'estado':'pendiente','descuento':0})">Agregar Producto Especial</A></span>
-                                                                                    <span class="error-span"></span>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="separator"></div>
                                                                             <div class="form-group">
 
                                                                             </div>
@@ -169,7 +236,6 @@
                                                                             <!-- COST TABLE -->
                                                                             <table class="table table-striped table-hover font-400 font-14">
                                                                                 <thead>
-                                                                                <div class="separator"></div>
                                                                                 <tr>
                                                                                     <th>Código</th>
                                                                                     <th>Item/ Descripción</th>
@@ -189,50 +255,31 @@
                                                                                     <th>
 
                                                                                     </th>
-                                                                                    <th>
-
-                                                                                    </th>
                                                                                 </tr>
                                                                                 </thead>
                                                                                 <tbody>
-                                                                                <tr ng-repeat="produc in cotEdit.cot.productosOrden">
+                                                                                <tr ng-repeat="produc in orden.productosOrden" ng-init="habilitado = habilitar(produc);">
                                                                                     <td>
                                                                                         {{produc.codigo}}
                                                                                     </td>
                                                                                     <td>
-                                                                                        <input ng-model="produc.nombreProducto" type="text">
+                                                                                        <input ng-model="produc.nombreProducto" type="text" ng-readonly="!habilitado">
                                                                                     </td>
                                                                                     <td>
-                                                                                        <div ng-show="produc.tipo === 'Sub-Producto' || produc.tipo === 'especial'"><input ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();" class="medidas" ng-init="produc.ancho=1" style="width: 45px;" ng-model="produc.ancho" type="number"> x
-                                                                                            <input ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();" ng-init="produc.alto=1" class="medidas" style="width: 45px;" ng-model="produc.alto" type="number">
+                                                                                        <div ng-show="produc.tipo === 'Sub-Producto' || produc.tipo === 'especial'">
+                                                                                            <input ng-readonly="!habilitado" ng-change="calcular(produc)"   class="medidas" style="width: 45px;" ng-model="produc.alto" type="number"> x
+                                                                                            <input ng-readonly="!habilitado" ng-change="calcular(produc)"  class="medidas"  style="width: 45px;" ng-model="produc.ancho" type="number">
                                                                                         </div>
-
                                                                                     </td>
                                                                                     <td id="cantidad">
-                                                                                        <input ng-model="produc.cantidad" max="{{produc.cantidadP}}" min="0" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();" type="number">
+                                                                                        <input ng-readonly="!habilitado" ng-change="calcular(produc)" ng-model="produc.cantidad" max="{{produc.cantidadP}}" min="0"  type="number">
                                                                                     </td>
                                                                                     <td>
-                                                                                        <input ng-model="produc.precioVenta" ng-show="produc.tipo === 'especial'" type="text" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();">
-                                                                                        <select ng-model="produc.precioVenta" ng-hide="produc.tipo === 'especial'" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();">
-                                                                                            <option selected="true" value="{{produc.precioComercial}}">{{ produc.precioComercial }} | Precio Comercial</option>
-                                                                                            <option ng-hide="descuentoA();" value="{{produc.precioAgencia}}">{{produc.precioAgencia}} | Precio Agencia</option>
-                                                                                        </select>
+
+                                                                                        <input ng-readonly="!habilitado" ng-change="calcular(produc)" class="" ng-model="produc.precioVenta">
                                                                                     </td>
                                                                                     <td>
-                                                                                        <select ng-model="produc.descuento" ng-change="produc.precioTotal=((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))-((((produc.precioVenta*produc.cantidad)*(produc.ancho*produc.alto))/100)*produc.descuento);calcularTotal();">
-                                                                                            <option value="0">0%</option>
-                                                                                            <option ng-hide="descuentoA();" value="5">5%</option>
-                                                                                            <option ng-hide="descuentoA();" value="10">10%</option>
-                                                                                            <option ng-hide="descuentoA();" value="20">20%</option>
-                                                                                            <option ng-hide="descuentoA();" value="30">30%</option>
-                                                                                            <option ng-hide="descuentoA();" value="40">40%</option>
-                                                                                            <option ng-hide="descuentoV();" value="50">50%</option>
-                                                                                            <option ng-hide="descuentoV();" value="60">60%</option>
-                                                                                            <option ng-hide="descuentoV();" value="70">70%</option>
-                                                                                            <option ng-hide="descuentoV();" value="80">80%</option>
-                                                                                            <option ng-hide="descuentoV();" value="90">90%</option>
-                                                                                            <option ng-hide="descuentoV();" value="100">100%</option>
-                                                                                        </select>
+                                                                                        <input ng-readonly="!habilitado" ng-change="calcular(produc)" class="" ng-model="produc.descuento">
                                                                                     </td>
                                                                                     <td>
                                                                                         {{produc.precioTotal}}
@@ -240,14 +287,71 @@
                                                                                     <td>
                                                                                         <A href="#box-config3" ng-show="produc.tipo === 'Sub-Producto' || produc.tipo === 'especial'" class="btn btn-primary config"  ng-click="pSelecionado(produc);" data-toggle="modal">Detalle</A>
                                                                                     </td>
-                                                                                    <td data-ng-click="eliminar($index)">
-                                                                                        X
-                                                                                    </td>
                                                                                 </tr>
                                                                                 </tbody>
+                                                                                <tfoot>
+                                                                                <div class="separator"></div>
+                                                                                <tr>
+                                                                                    <th colspan="3" style="border-top: 0px solid #dddddd;"></th>
+                                                                                    <th  style="border-top: 0px solid #dddddd;"></th>
+                                                                                    <th style="border-top: 0px solid #dddddd;"></th>
+                                                                                    <th colspan="2" style="float:right;width:40%;text-align:right;border-left: 1px solid #dddddd;border-right: 1px solid #dddddd;">
+                                                                                        NETO
+                                                                                    </th>
+                                                                                    <th colspan="2">
+                                                                                        ${{ orden.neto }}
+                                                                                    </th>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th colspan="3" style="border-top: 0px solid #dddddd;"></th>
+                                                                                    <th style="border-top: 0px solid #dddddd;">
+
+                                                                                    </th>
+                                                                                    <th style="border-top: 0px solid #dddddd;"></th>
+                                                                                    <th colspan="2" style="float:right;width:40%;text-align:right;border-left: 1px solid #dddddd;border-right: 1px solid #dddddd;">
+                                                                                        I.V.A
+                                                                                    </th>
+                                                                                    <th colspan="2">
+                                                                                        ${{ orden.iva }}
+                                                                                    </th>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th colspan="3" style="border-top: 0px solid #dddddd;"></th>
+                                                                                    <th style="border-top: 0px solid #dddddd;padding:0px;"><table style="width:100%;">
+                                                                                        <tr>
+                                                                                            <td style="width:30%">
+                                                                                                <input style="padding:0 0px 0px 10px;height: 27px;" type="text" readonly class="form-control" value="${{ orden.total }}" placeholder="Total">
+
+                                                                                            </td>
+                                                                                            <td style="width:30%">
+
+                                                                                                <input style="padding:0 0px 0px 10px;height: 27px;" type="number" min="0"  ng-change="abono(orden.abono)" ng-init="orden.abono=0;" data-ng-model="orden.abono" class="form-control" placeholder="Abono">
+
+                                                                                            </td>
+                                                                                            <td style="width:30%">
+
+
+                                                                                                <input style="padding:0 0px 0px 10px;height: 27px;" type="number" readonly ng-init="orden.saldo=0" data-ng-model="orden.saldo" class="form-control" placeholder="Saldo">
+
+
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                    </table></th>
+                                                                                    <th style="border-top: 0px solid #dddddd;"></th>
+                                                                                    <th style="float:right;width:40%;text-align:right;border-left: 1px solid #dddddd;border-right: 1px solid #dddddd;border-bottom: 2px solid #dddddd;">
+                                                                                        Total
+                                                                                    </th>
+                                                                                    <th style="border-bottom: 2px solid #dddddd;">
+                                                                                        ${{ orden.total }}
+                                                                                    </th>
+
+                                                                                </tr>
+                                                                                </tfoot>
                                                                             </table>
                                                                             <hr>
-                                                                            </form>
+
                                                                         </div>
                                                                         <!-- /FOOTER -->
 
@@ -265,15 +369,34 @@
                                                 <div class="form-group">
                                                     <label class="control-label col-md-1"><span class="required"></span></label>
                                                     <div class="col-md-10">
-                                                        <textarea data-ng-model="cotEdit.cot.observacion" class="form-control" rows="3"></textarea>
+                                                        <textarea data-ng-model="orden.observacion" class="form-control" rows="3"></textarea>
                                                         <span class="error-span"></span>
                                                     </div>
                                                 </div>
-                                                <div class="separator"></div>
                                                 <div class="row">
                                                     <div class="row">
                                                         <div class="col-md-12">
+                                                        <table>
+                                                            <tr>
+                                                                <td style="width: 10%;text-align:right;">
+                                                                    Documento:
+                                                                </td>
+                                                                <td style="width: 10%;text-align:right;">
+                                                                    <input type="text" class="form-control" ng-model="orden.documento" placeholder="Documentos N°">
+                                                                </td>
+                                                                <td style="border-bottom: 2px solid #dddddd;width:10%;text-align:right;">
+                                                                Banco:
+                                                                </td>
+                                                                <td style="width: 10%;text-align:right;">
+                                                                    <input type="text" class="form-control" ng-model="orden.banco"  placeholder="Banco">
+                                                                </td>
+                                                                <td style="width: 10%;text-align:right;">
 
+                                                                </td><td style="width: 10%;text-align:right;">
+
+                                                            </td>
+                                                            </tr>
+                                                        </table>
 
                                                         </div>
                                                     </div>
@@ -285,17 +408,24 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="col-md-offset-3 col-md-9">
-                                                                <a ng-click="wizClientes();" href="javascript:;" class="btn btn-default prevBtn">
-                                                                    <i class="fa fa-arrow-circle-left"></i> Volver
+                                                                <a href="/cotizacion" class="btn btn-danger">
+                                                                    <i class="fa fa-arrow-circle-left"></i> Cancelar
                                                                 </a>
-                                                                <a ng-click="wizOrden();" href="javascript:;" class="btn btn-primary nextBtn">
-                                                                    Continuar <i class="fa fa-arrow-circle-right"></i>
+                                                                <a href="/cotizacion/{{orden._id}}"  class="btn btn-default">
+                                                                    Cotizacion
+                                                                </a>
+                                                                <a href="#" ng-click="guardado();"  class="btn btn-success">
+                                                                    Guardar Cotizacion
+                                                                </a>
+                                                                <a  href="javascript:;" ng-click="generar();" class="btn btn-primary">
+                                                                    Generar Orden <i class="fa fa-arrow-circle-right"></i>
                                                                 </a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                                </form>
                                         </div>
                                     </div>
                                     <!-- /BOX -->

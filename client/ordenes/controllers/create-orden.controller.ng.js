@@ -73,7 +73,6 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         $scope.mproducto.movimientos = [];
         Productos.insert($scope.mproducto,function(error,result){
             if(error){
-                console.log(error);
                 $scope.msgAlerta(error,"error");
             }else if(result){
                 $scope.msgAlerta("Producto Guardado.","success");
@@ -96,8 +95,11 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
             $scope.orden.cliente = $scope.cliente._id;
         }else{
             $scope.orden.empresa = $scope.empresa._id;
+            $scope.orden.contactoSeleccionado = $scope.contactoSeleccionado;
+
         }
         $scope.orden.estado = "inicial";
+        console.log($scope.orden);
         Ordenes.insert($scope.orden,function(error,result){
             if(error){
                 $scope.msgAlerta(error,"error");
@@ -111,12 +113,11 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                         $scope.producto = $scope.$meteorObject(Productos, valuePro.id, false);
                         $scope.producto.cantidad = $scope.producto.cantidad - valuePro.cantidad;
                         if(!$scope.producto.movimientos){
-                            console.log("arreglo")
+                            //console.log("arreglo")
                             $scope.producto.movimientos = [];
                         }else{
-                            console.log($scope.producto.movimientos);
+                            //console.log($scope.producto.movimientos);
                         }
-                        console.log($scope.producto);
                         $scope.producto.movimientos.push({
                                 "responsable":$scope.currentUser.profile.displayName,
                                 "cantidad":valuePro.cantidad,
@@ -160,6 +161,7 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         $scope.mostrarCliente = true;
         $scope.empresa = null;
         $scope.contactoSeleccionado = null;
+
     };
     $scope.mostrarEmpresa = function(){
         $scope.mostrarCliente = false;
@@ -194,7 +196,6 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                 'descuento':"0",
                 'cantidadP':producto.cantidad });
         }
-        console.log($scope.orden.productosOrden);
         $scope.calcularTotal();
     };
     $scope.eliminar = function(index){
@@ -209,7 +210,6 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         $scope.calcularTotal();
     };
     $scope.pSelecionado = function(producto){
-        console.log(producto);
         $scope.producSelec = producto;
     };
     $scope.addImages = function(files) {
@@ -226,10 +226,11 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
                        if(!$scope.producSelec.archivos)
                            $scope.producSelec.archivos = [];
 
-                       if(!$scope.producSelec.url)
-                           $scope.producSelec.url = [];
+                       if(!$scope.producSelec.idImg)
+                           $scope.producSelec.idImg = [];
 
-                       $scope.producSelec.url.push(fileObj.url({brokenIsFine: true}));
+                       console.log(fileObj);
+                       $scope.producSelec.idImg.push(fileObj._id);
                        $scope.producSelec.archivos.push(fileObj);
                        $scope.$apply();
                    }
@@ -287,8 +288,6 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
 
 
     $scope.calcularTotal =  function(){
-        console.log($scope.cliente);
-        console.log($scope.empresa);
         $scope.orden.total = 0;
         angular.forEach($scope.orden.productosOrden, function(value, key) {
             $scope.orden.total = Number($scope.orden.total) + Number(value.precioTotal);
@@ -329,7 +328,6 @@ angular.module('graficaExpresionApp').controller('CreateOrdenCtrl', function($sc
         l.click();
     };
     $scope.wizOrden = function(){
-        console.log($scope.orden);
         if(!$scope.orden.fechaCompromiso){
             $scope.msgAlerta("Ingrese Fecha de compromiso","error");
             return;

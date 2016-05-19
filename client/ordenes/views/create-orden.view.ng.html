@@ -1084,7 +1084,7 @@
                                                                                     <div class='invoice-title text-muted'>Detalle Acuerdo Empresa</div>
                                                                                     <div  class="col-sm-12 well" style="border-left:1px solid #e3e3e3;border-radius: 20px 0 0 20px;">
                                                         <span style="float:left">
-                                                        <strong>SEÑOR (ES): </strong> {{ empresa.nombrec }} {{ this.apellidoc }}
+                                                        <strong>SEÑOR (ES): </strong> {{ contactoSeleccionado.nombre }} {{ contactoSeleccionado.apellido }}
                                                             <br>
                                                         <strong>EMPRESA: </strong> {{ empresa.nombreEmpresa }}
                                                             <br>
@@ -1092,7 +1092,7 @@
                                                             <br>
                                                        </span>
                                                       <span style="float:left;margin-left: 40px;">
-                                                        <strong>Telefono Cliente: </strong> {{ empresa.fono }}
+                                                        <strong>Telefono Cliente: </strong> {{ contactoSeleccionado.fono }}
                                                           <br>
                                                         <strong>Email Cliente: </strong> {{ empresa.mailempresa }}
                                                           <br>

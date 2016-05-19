@@ -42,7 +42,7 @@ Schema.Cotizacion = new SimpleSchema({
     optional: true
   },
   fechaCompromiso: {
-    type: String,
+    type: Date,
     optional: true
   },
   abono: {
@@ -111,7 +111,19 @@ Schema.Cotizacion = new SimpleSchema({
     type: Number,
     optional: true
   },
+  "productosOrden.$.descuento": {
+    type: Number,
+    optional: true
+  },
   "productosOrden.$.precioAgencia": {
+    type: Number,
+    optional: true
+  },
+  "productosOrden.$.alto": {
+    type: Number,
+    optional: true
+  },
+  "productosOrden.$.ancho": {
     type: Number,
     optional: true
   },
@@ -127,7 +139,7 @@ Schema.Cotizacion = new SimpleSchema({
     type: String,
     optional: true
   },
-  "productosOrden.$.url": {
+  "productosOrden.$.idImg": {
     type: [String],
     optional: true
   },
